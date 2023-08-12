@@ -33,7 +33,7 @@ xxx.xx.xx.xxx
 
 Muqobil ravishda, [ifconfig.me](https://ifconfig.me) saytiga broveringizda tashrif buyursangiz ham bo'ladi (aytgancha, men proxy'dan foydalanyapman :) ).
 
-![ifconfig-me-page.png](ifconfig-me-page.png)
+![ifconfig-me-page.png](images/ifconfig-me-page.png)
 
 ## Veb-serverni ishga tushirish
 
