@@ -9,7 +9,7 @@ Salom, dunyo!
 
 ## Foydalanuvchi parolini o'zgartirish
 
-Linux'da parolingizni o'zgartirish `passwd` buyrug'i yordamida amalga oshiriladi. U birinchi navbatda sizning avvalgi parolingizni so'raydi; to'g'ri kiritsangiz, joriy foydalanuvchi uchun yangi parol o'rnatishga imkon beradi. Agar buyruq **"root"** foydalanuvchi nomi ostida berilsa,  u holda **"root"** foydalanuvchi paroli o'zgartiriladi. 
+Linux'da parolingizni o'zgartirish `passwd` buyrug'i yordamida amalga oshiriladi. U birinchi navbatda sizning avvalgi parolingizni so'raydi; to'g'ri kiritsangiz, joriy foydalanuvchi uchun yangi parol o'rnatishga imkon beradi. Agar buyruq **"root"** foydalanuvchi tomonidan berilsa,  u holda **"root"** foydalanuvchi paroli o'zgartiriladi. 
 
 ~~~bash
 $ passwd
@@ -18,7 +18,7 @@ Enter your new password: ****
 Password set successfully!
 ~~~
 
-## Joriy ishchi katalogini chop etish
+## Joriy katalogini chop etish
 
 `pwd` (print-working-directory) terminaldagi joriy ishchi manzilini chop etadi. 
 
@@ -35,7 +35,7 @@ $ pwd
 mkdir papka1 papka2 papka3
 ```
 
-Bo'sh papkani o'chirish uchun `rmdir` buyrug'idan foydalaning. Agar papka bo'sh bo'lmasa, buruq bekor qilinadi - papka o'chirilmaydi.
+Bo'sh papkani o'chirish uchun `rmdir` buyrug'idan foydalaning. Agar papka bo'sh bo'lmasa, buyruq bekor qilinadi - papka o'chirilmaydi.
 
 ```bash
 rmdir papka1 papka2 papka3
@@ -47,7 +47,7 @@ rmdir papka1 papka2 papka3
 ls
 ```
 
-agar siz `-l`  (long-list) optsiyasini qo'shsangiz, u permissions (ruxsatlar), o'zgartirilgan sana, fayl yoki papkaga egalik qiluvchi foydalanuvchilar va boshqa foydali ma'lumotlarni o'z ichiga oladi.
+Agar siz `-l`  (long-listing) optsiyasini qo'shsangiz, u ruxsatlar (permissions), o'zgartirilgan sana (last-modified-date), fayl yoki papkaga egalik qiluvchi foydalanuvchilar (owners) va boshqa foydali ma'lumotlarni o'z ichiga oladi.
 
 ```bash
 $ ls -l
@@ -62,13 +62,13 @@ Odatda, `ls` buyrug'i yashirin fayllarni ko'rsatmaydi. Yashirin fayllarni ham ko
 
 ## stdout'ni faylga yo'naltirish
 
-Quyidagi buruq `new_file.txt` nomli fayl ichiga **"this is string"** matnini kiritadi. Diqqat, agar joriy katalogda ushbu fayl mavjud bo'lmasa, u yangi yaratiladi. Agar fayl kontentga ega bo'lsa, fayl ustiga yoziladi (eski kontent o'chirilib tashlanadi).
+Quyidagi buruq `new_file.txt` nomli fayl ichiga **"this is string"** matnini kiritadi. Diqqat, agar joriy katalogda ushbu fayl mavjud bo'lmasa, u yangi yaratiladi. Agar fayl ichi bo'sh **bo'lmasa**, fayl qaytadan yoziladi (eski kontent o'chirilib tashlanadi).
 
 ```bash
 $ echo "this is string" > new_file.txt
 ```
 
-Faylga qo'shish quyidagi buyruq yordamida amalga oshirilishi mumkin:
+Faylga qo'shish quyidagi buyruq yordamida amalga oshiriladi:
 
 ```bash
 $ echo "this is string" >> new_file.txt
@@ -105,7 +105,7 @@ $ locate hi.txt
 /root/hello/hi.txt
 ```
 
-Agar u siz qidirayotgan narsani topa olmasa, ma'lumotlar bazasini yangilang.
+Agar u siz qidirayotgan narsani topib berolmasa, ma'lumotlar bazasini yangilang.
 
 ```bash
 $ updatedb
@@ -115,13 +115,21 @@ $ locate hi2.txt
 
 ## Fayl/papka permissions (ruxsatlar)
 
-FILE TYPE + USER PERMISSION + GROUP PERMISSION + OTHERS
+**Sintaks:**
+	*FAYL TIPI + FOYDALANUVCHI RUXSATLARI + GURUX RUXSATLARI + BOSHQALAR*
+
+**Fayl tiplari:** 
+- **D**: directory (papka)
+- **L**: link (havola)
+- **F**: file (fayl)
+
+**Misol:** 
 
 ```
 dr-xr-x---
 ```
 
-![permissions.png](images/permissions.png)
+![permissions.png](permissions.png)
 
 ## Ruxsatlarni o'zgartirish 
 
@@ -172,11 +180,13 @@ Enter bosilgach, sizdan "root" foydalanuvchisining paroli so'raladi.
 
 ## /etc/passwd
 
-**/etc/passwd** fayli tizimga kirishda zarur bo'lgan muhim ma'lumotlarni saqlaydi. Boshqacha qilib aytganda, u foydalanuvchi hisobi ma'lumotlarini saqlaydi. **/etc/passwd** oddiy matnli fayldir. Unda tizim hisoblari ro'yxati mavjud bo'lib, har bir hisob uchun foydalanuvchi identifikatori, guruh identifikatori, uy katalogi, qobiq va boshqalar kabi foydali ma'lumotlarni taqdim etadi. Batafsil [bu yerda](https://www.cyberciti.biz/faq/understanding-etcpasswd-file-format/)
+**/etc/passwd** fayli tizimga kirishda zarur bo'lgan ma'lumotlarni saqlaydi. Boshqacha qilib aytganda, u foydalanuvchilarning hisob ma'lumotlarini saqlaydi. **/etc/passwd** oddiy matnli fayldir.  U har bir hisob uchun foydalanuvchi identifikatori, guruh identifikatori, uy katalogi, qobiq va boshqalar kabi foydali ma'lumotlarni taqdim etadi. Batafsil [bu yerda](https://www.cyberciti.biz/faq/understanding-etcpasswd-file-format/)
 
 ## /etc/shadow
 
-**/etc/shadow** faylida barcha parollaringiz shifrlangan formatda saqlanadi. Hashcat va JohnTheRipper yordamida xeshlangan parollarni buzish oson. Ushbu faylni faqat "root" foydalanuvchisi ko'rishi mumkin.
+**/etc/shadow** faylida barcha parollaringiz shifrlangan formatda saqlanadi. Faylni faqat "root" foydalanuvchisi ko'rishi mumkin.
+
+**P.S.** Hashcat va JohnTheRipper kabi dasturlar xeshlangan parollarni buzish uchun qo'llaniladi. Parol qanchalik kuchli bo'lsa, shuncha yaxshi.
 
 ## /var/log/auth.log
 
@@ -185,7 +195,6 @@ Ushbu fayl tizimga kirgan va chiqayotgan foydalanuvchilarni kuzatib boradi. Quyi
 ```bash
 $ watch "cat /var/log/auth.log | grep 'khumoyun'"
 ```
-
 
 ## Sizning ikkinchi eng yaxshi do'stingiz...
 
@@ -216,5 +225,6 @@ Siz ushbu kodni `.bashrc` fayl ichiga qo'shishingiz va uni terminalda buyruq sif
 alias cheatsheet="$(xdg-open '/path/to/image.png')"
 ```
 
-![linux-commands-cheatsheet.png](images/linux-commands-cheatsheet.png)
+![linux-commands-cheatsheet.png](linux-commands-cheatsheet.png)
 
+[\> 02-kun](02-kun.md)

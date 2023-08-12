@@ -1,12 +1,12 @@
-Linux'ni o'rganar ekansiz, sizga IP manzillar, TCP/UDP protokollar, tunel, port, xost kabi turli-xil tarmoqga oid termlarga duch kelasiz, shu sababli, ular haqida Internet'da yetarlicha "research" qilishingizni maslahat beraman. Ba'zi keyvordlar:
+## Zarur!
+
+Linux'ni o'rganar ekansiz, sizga IP manzillar, subnet, OSI Model,  TCP/UDP protokollar, tunel, port, xost kabi turli-xil tarmoqga oid termlarga duch kelasiz, shu sababli, ular haqida Internet'da yetarlicha "research" qilishingizni maslahat beraman. Muhimi, dangasa bo'lmang. Siz buni uddalaysiz! ;). Ba'zi keyvordlar:
 
 - Networking Fundamentals
 - CCNA course 
-- Networking for dummies
+- [Networking for dummies](https://edu.anarcho-copy.org/TCP%20IP%20-%20Network/Networking%20For%20Dummies.pdf) (kitob)
 - Network administration course
 - Network penetration testing course
-
-Muhimi, dangasa bo'lmang. Siz buni uddalaysiz! ;)
 
 ## Bir nechta fayllar yaratish/o'chirish
 
@@ -33,7 +33,7 @@ xxx.xx.xx.xxx
 
 Muqobil ravishda, [ifconfig.me](https://ifconfig.me) saytiga broveringizda tashrif buyursangiz ham bo'ladi (aytgancha, men proxy'dan foydalanyapman :) ).
 
-![ifconfig-me-page.png](images/ifconfig-me-page.png)
+![ifconfig-me-page.png](ifconfig-me-page.png)
 
 ## Veb-serverni ishga tushirish
 
@@ -70,7 +70,7 @@ $ service apache2 status
 
 Endi esa brovzeringizni ochib, "[localhost](http://localhost)" yoki [127.0.0.1](http://127.0.0.1) manzilini qidiruv paneliga kiriting.
 
-![apache2-web-server.png](images/apache2-web-server.png)
+![apache2-web-server.png](apache2-web-server.png)
 
 Veb-serverni o'chirib qo'yish uchun esa `service apache2 stop` burug'idan foydalanasiz!
 
@@ -122,7 +122,7 @@ SSH haqida ko'proq ma'lumot olish uchun, quyidagi resurslar bilan tanishib chiqi
 
 ## Linux - service vs systemctl
 
-`service` va `systemctl` ikkalasi ham Linux'da tizim xizmatlarini boshqarish uchun foydalaniladigan vositalardir. Ular xizmatlarni yoqish, o'chirish, qayta ishga tushirish usullarini taqdim etadi. Farqi, `systemctl` yanada keng xususiyatlarga ega va u xizmatlarni boshqarishning standart usuliga aylanib bormoqda. 
+`service` va `systemctl` ikkalasi ham tizim xizmatlarini boshqarish uchun foydalaniladigan vositalardir. Ular xizmatlarni yoqish, o'chirish, qayta ishga tushirish usullarini taqdim etadi. Farqi, `systemctl` yanada keng xususiyatlarga ega va u xizmatlarni boshqarishning standart usuliga aylanib bormoqda. 
 
 >systemctl = new
 >service = old 
@@ -157,7 +157,8 @@ systemctl restart ssh
 ## Foydali
  
  - **CTRL + C**  - script'dan yoki terminaldagi dasturdan chiqish uchun qo'llaniladi.
- - **CTRL + D** - terminaldan yoki dastudan chiqib ketadi
+ - **CTRL + D** - terminal yoki dasturdan chiqish uchun qo'llaniladi
  - **CTRL + SHIFT + C** - belgilangan matnni nusxalaydi
- - **CTRL + SHIFT + V** - nusxalangan matnni chiqaradi
+ - **CTRL + SHIFT + V** - nusxalangan matnni maydonga qo'yadi
 
+[> 04-kun.md](04-kun.md)

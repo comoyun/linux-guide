@@ -125,7 +125,7 @@ $ ls -l grass
 
 ## Linux - nano 
 
-nano - bu terminaldagi kod muharriri. U turli kengaytmadagi fayllar bilan ishlaydi: py, js, html, c, sh va h.k 
+nano - bu terminaldagi kod muharriri. U turli kengaytmadagi fayllarni qo'llab quvvatlaydi: py, js, html, c, sh va h.k 
 
 ```bash
 $ nano hello-world.py
@@ -148,3 +148,5 @@ sudo apt install nano
 - **CTRL + TAB** (brovzerda) - tabni almashtirish
 - **CTRL + Pg Up** (brovzer + terminal) - tablarni almashtirish chapga/o'ngga
 - **ALT + 1..9** (brovzer + terminal) - tablarni indeks bo'ylab almashtirish
+
+[\> 03-kun](03-kun.md)
