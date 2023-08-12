@@ -31,7 +31,7 @@ $ curl ifconfig.me
 xxx.xx.xx.xxx
 ```
 
-Muqobil ravishda, [ifconfig.me](https://ifconfig.me) saytiga broveringizda tashrif buyursangiz ham bo'ladi (aytgancha, men proxydan foydalanyapman :) ).
+Muqobil ravishda, [ifconfig.me](https://ifconfig.me) saytiga broveringizda tashrif buyursangiz ham bo'ladi (aytgancha, men proxy'dan foydalanyapman :) ).
 
 ![ifconfig-me-page.png](images/ifconfig-me-page.png)
 
@@ -70,7 +70,7 @@ $ service apache2 status
 
 Endi esa brovzeringizni ochib, "[localhost](http://localhost)" yoki [127.0.0.1](http://127.0.0.1) manzilini qidiruv paneliga kiriting.
 
-![apache2-web-server.png](apache2-web-server.png)
+![apache2-web-server.png](images/apache2-web-server.png)
 
 Veb-serverni o'chirib qo'yish uchun esa `service apache2 stop` burug'idan foydalanasiz!
 
@@ -88,7 +88,7 @@ So'ng, ssh-servisni yoqishimiz mumkin.
 service ssh start
 ```
 
-statusni bilish uchun
+status'ni bilish uchun:
 
 ```
 $ service ssh status
@@ -120,12 +120,14 @@ SSH haqida ko'proq ma'lumot olish uchun, quyidagi resurslar bilan tanishib chiqi
  - [SSH nima?](https://www.websiterating.com/uz/web-hosting/glossary/what-is-ssh/)
  - [Ubuntu'da SSH server o'rnatish](https://uz.termotools.com/8299-installing-ssh-server-in-ubuntu.html)
 
+
 ### Linux - service vs systemctl
 
 `service` va `systemctl` ikkalasi ham Linux'da tizim xizmatlarini boshqarish uchun foydalaniladigan vositalardir. Ular xizmatlarni yoqish, o'chirish, qayta ishga tushirish usullarini taqdim etadi. Farqi, `systemctl` yanada keng xususiyatlarga ega va u xizmatlarni boshqarishning standart usuliga aylanib bormoqda. 
 
 >systemctl = new
 >service = old 
+
 
 ### Sintaks - systemctl
 
