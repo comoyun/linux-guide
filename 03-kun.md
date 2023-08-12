@@ -70,7 +70,7 @@ $ service apache2 status
 
 Endi esa brovzeringizni ochib, "[localhost](http://localhost)" yoki [127.0.0.1](http://127.0.0.1) manzilini qidiruv paneliga kiriting.
 
-![apache2-web-server.png](apache2-web-server.png)
+![apache2-web-server.png](images/apache2-web-server.png)
 
 Veb-serverni o'chirib qo'yish uchun esa `service apache2 stop` burug'idan foydalanasiz!
 
