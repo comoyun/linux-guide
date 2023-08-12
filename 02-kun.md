@@ -12,7 +12,6 @@ Muayyan wlan adapteri haqida malumot olish:
 $ ifconfig wlan0 
 ```
 
-
 ## Xost tirik yoki yo'qligini tekshirish
 
 ```bash
@@ -29,8 +28,9 @@ rtt min/avg/max/mdev = 0.030/0.036/0.040/0.004 ms
 
 localhost **127.0.0.1** bilan barobar. Ba'zilar `ping` buyrug'ini xostning IP manzilini bilish uchun ishlatadilar.
 
+> 
 > ping'dan chiqish uchun **CTRL + C** tugmalarini bosing yoki `ping -c 3 localhost` kommandasini bering va dastur serverga 3 marta so'rov yuboradi va tamomlagach dastudan avtomatik chiqib ketadi. 
-
+> 
 
 ## IP manzillarni MAC manzillari bilan bog'lash
 
@@ -54,7 +54,6 @@ $ netstat -tul
 - "**-u**" : UDP bog'lanishlarni ichiga oladi.
 - "**-l**" : ochiq portlarni ichiga oladi.
 
-
 ## Buyruqlar tarixini qanday ko'rish mumkin?
 
 ```bash
@@ -71,7 +70,6 @@ $ history -c
 $ history
   1  history
 ```
-
 
 ## Uyga qaytish
 
@@ -91,7 +89,6 @@ $ pwd
 /home/khumoyun
 ```
 
-
 ## Fayl kontentini ko'rish
 
 ```
@@ -99,7 +96,6 @@ $ echo "Linux ajoyib!" > linux.txt
 $ cat linux.txt
 Linux ajoyib!
 ```
-
 
 ## Bo'sh bo'lmagan papkalarni o'chirish
 
@@ -115,7 +111,6 @@ Bu yerda:
    `-f` (force) optsiyasi:
         -f opsiyasi "majbur" degan ma'noni anglatadi va `rm` bilan foydalanilganda u ko'pgina ogohlantirish xabarlari va takliflarni e'tibordan qoldiradi. Agar yozishdan himoyalangan yoki mavjud bo'lmagan fayllarni o'chirishga harakat qilsangiz ham, rm buyrug'ini tasdiqlashni so'ramasdan davom ettirishga imkon beradi.
 
-
 ## Linux - touch
 
 Touch burug'i ko'pincha fayl yaratish uchun ishlatiladi. Lekin, uning asosiy maqsadi fayllarning oxirgi o'zgartirilgan sanasini (last-modified-date) yangilashdir.
@@ -127,7 +122,6 @@ $ touch grass
 $ ls -l grass
 -rw-rw-r-- 1 khumoyun khumoyun 1044 Aug 12 05:16 grass
 ```
-
 
 ## Linux - nano 
 
@@ -146,7 +140,6 @@ sudo apt update
 sudo apt upgrade
 sudo apt install nano
 ```
-
 
 ## Foydali
 

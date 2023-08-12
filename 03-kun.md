@@ -8,7 +8,6 @@ Linux'ni o'rganar ekansiz, sizga IP manzillar, TCP/UDP protokollar, tunel, port,
 
 Muhimi, dangasa bo'lmang. Siz buni uddalaysiz! ;)
 
-
 ## Bir nechta fayllar yaratish/o'chirish
 
 ```bash
@@ -25,7 +24,6 @@ $ ls
 
 ```
 
-
 ## Publichniy IP manzilni aniqlash
 
 ```
@@ -36,7 +34,6 @@ xxx.xx.xx.xxx
 Muqobil ravishda, [ifconfig.me](https://ifconfig.me) saytiga broveringizda tashrif buyursangiz ham bo'ladi (aytgancha, men proxy'dan foydalanyapman :) ).
 
 ![ifconfig-me-page.png](images/ifconfig-me-page.png)
-
 
 ## Veb-serverni ishga tushirish
 
@@ -76,7 +73,6 @@ Endi esa brovzeringizni ochib, "[localhost](http://localhost)" yoki [127.0.0.1](
 ![apache2-web-server.png](images/apache2-web-server.png)
 
 Veb-serverni o'chirib qo'yish uchun esa `service apache2 stop` burug'idan foydalanasiz!
-
 
 ## SSH serverni ishga tushirish
 
@@ -124,14 +120,12 @@ SSH haqida ko'proq ma'lumot olish uchun, quyidagi resurslar bilan tanishib chiqi
  - [SSH nima?](https://www.websiterating.com/uz/web-hosting/glossary/what-is-ssh/)
  - [Ubuntu'da SSH server o'rnatish](https://uz.termotools.com/8299-installing-ssh-server-in-ubuntu.html)
 
-
 ## Linux - service vs systemctl
 
 `service` va `systemctl` ikkalasi ham Linux'da tizim xizmatlarini boshqarish uchun foydalaniladigan vositalardir. Ular xizmatlarni yoqish, o'chirish, qayta ishga tushirish usullarini taqdim etadi. Farqi, `systemctl` yanada keng xususiyatlarga ega va u xizmatlarni boshqarishning standart usuliga aylanib bormoqda. 
 
 >systemctl = new
 >service = old 
-
 
 ## Sintaks - systemctl
 
@@ -159,7 +153,6 @@ systemctl stop ssh
 ```bash
 systemctl restart ssh
 ```
-
 
 ## Foydali
  

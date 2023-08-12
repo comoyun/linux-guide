@@ -7,7 +7,6 @@ $ echo "Salom, dunyo!"
 Salom, dunyo!
 ```
 
-
 ## Foydalanuvchi parolini o'zgartirish
 
 Linux'da parolingizni o'zgartirish `passwd` buyrug'i yordamida amalga oshiriladi. U birinchi navbatda sizning avvalgi parolingizni so'raydi; to'g'ri kiritsangiz, joriy foydalanuvchi uchun yangi parol o'rnatishga imkon beradi. Agar buyruq **"root"** foydalanuvchi nomi ostida berilsa,  u holda **"root"** foydalanuvchi paroli o'zgartiriladi. 
@@ -19,7 +18,6 @@ Enter your new password: ****
 Password set successfully!
 ~~~
 
-
 ## Joriy ishchi katalogini chop etish
 
 `pwd` (print-working-directory) terminaldagi joriy ishchi manzilini chop etadi. 
@@ -28,7 +26,6 @@ Password set successfully!
 $ pwd
 /root
 ~~~
-
 
 ## Papka yaratish & o'chirish
 
@@ -43,7 +40,6 @@ Bo'sh papkani o'chirish uchun `rmdir` buyrug'idan foydalaning. Agar papka bo'sh 
 ```bash
 rmdir papka1 papka2 papka3
 ```
-
 
 ## Fayl & papkalarni ro'yxatini olish
 
@@ -63,7 +59,6 @@ drwxr-xr-x  2 khumoyun khumoyun 4096 Aug  7 01:32 Downloads
 ```
 
 Odatda, `ls` buyrug'i yashirin fayllarni ko'rsatmaydi. Yashirin fayllarni ham ko'rish uchun `-a` (all) opsiyasini qo'shishingiz kerak.
-
 
 ## stdout'ni faylga yo'naltirish
 
@@ -86,7 +81,6 @@ this is string
 this is string
 ```
 
-
 ## Fayl & papkalarni nusxalash
 
 Faylni nusxalash:
@@ -100,7 +94,6 @@ Bo'sh bo'lmagan papkani nusxalash:
 ```bash
 $ cp folder ../destination/path/folder
 ```
-
 
 ## Fayl yoki papkani qidirish
 
@@ -120,7 +113,6 @@ $ locate hi2.txt
 /root/hello/hi2.txt
 ```
 
-
 ## Fayl/papka permissions (ruxsatlar)
 
 FILE TYPE + USER PERMISSION + GROUP PERMISSION + OTHERS
@@ -130,7 +122,6 @@ dr-xr-x---
 ```
 
 ![permissions.png](images/permissions.png)
-
 
 ## Ruxsatlarni o'zgartirish 
 
@@ -146,7 +137,6 @@ Siz boshqa foydalanuvchilarning shaxsiy malumotlaringizni o'qishini oldini olish
 $ chmod 600 shaxsiy.txt
 ```
 
-
 ## Eng xavfli buyruq
 
 Hech kimga o'qish+yozish+bajarish ruxsatini bermang, bu juda katta xato.
@@ -155,7 +145,6 @@ Hech kimga o'qish+yozish+bajarish ruxsatini bermang, bu juda katta xato.
 $ chmod 777 file.txt 
 $ chmod guo+rwx file.txt
 ```
-
 
 ## Foydalanuvchi qo'shish/o'chirish
 
@@ -171,7 +160,6 @@ Foydalanuvchini o'chirib yuborish:
 $ deluser Bob
 ```
 
-
 ## Foydalanuvchilarni almashtirish
 
 `su` (switch-user) buyrugi yordamida siz istalgan foydalanuvchiga otishingiz mumkin. E'tibor bering, agar siz root foydalanuvchisiga o'tayotgan bo'lsangiz, sudo qo'shishingiz kerak.
@@ -182,16 +170,13 @@ $ sudo su root
 
 Enter bosilgach, sizdan "root" foydalanuvchisining paroli so'raladi.
 
-
 ## /etc/passwd
 
 **/etc/passwd** fayli tizimga kirishda zarur bo'lgan muhim ma'lumotlarni saqlaydi. Boshqacha qilib aytganda, u foydalanuvchi hisobi ma'lumotlarini saqlaydi. **/etc/passwd** oddiy matnli fayldir. Unda tizim hisoblari ro'yxati mavjud bo'lib, har bir hisob uchun foydalanuvchi identifikatori, guruh identifikatori, uy katalogi, qobiq va boshqalar kabi foydali ma'lumotlarni taqdim etadi. Batafsil [bu yerda](https://www.cyberciti.biz/faq/understanding-etcpasswd-file-format/)
 
-
 ## /etc/shadow
 
 **/etc/shadow** faylida barcha parollaringiz shifrlangan formatda saqlanadi. Hashcat va JohnTheRipper yordamida xeshlangan parollarni buzish oson. Ushbu faylni faqat "root" foydalanuvchisi ko'rishi mumkin.
-
 
 ## /var/log/auth.log
 
@@ -212,7 +197,6 @@ $ man kerakli_kommanda_shu_yerda
 
 **Q** tugmasini bosish orqali "man" sahifasidan chiqish mumkin.
 
-
 ## Foydali
 
 1. **CTRL + L** - terminalni tezkor tozalaydi
@@ -223,7 +207,6 @@ $ man kerakli_kommanda_shu_yerda
 6. **CTRL + ALT + T** - yangi terminal oyna ochish 
 7. **SUPER + TAB** - oynalarni tezkorlik bilan alishtirish
 8. **CTRL + ALT + ARROW_KEYS** 
-
 
 ## Linux buyruqlari - cheatsheet
 
