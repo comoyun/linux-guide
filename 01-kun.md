@@ -1,0 +1,217 @@
+### Salom, dunyo!
+
+Keling, an'anaga rioya qilgan holda "Salom Dunyo" dasturini yozamiz. Kompyuteringizda terminal oynasini ochib quyida ko'rsatilgan buyruqni kiriting. (`CTRL` + `ALT` + `T`)
+
+```
+$ echo "Salom, dunyo!"
+Salom, dunyo!
+```
+
+### Foydalanuvchi parolini o'zgartirish
+
+Linux'da parolingizni o'zgartirish `passwd` buyrug'i yordamida amalga oshiriladi. U birinchi navbatda sizning avvalgi parolingizni so'raydi; to'g'ri kiritsangiz, joriy foydalanuvchi uchun yangi parol o'rnatishga imkon beradi. Agar buyruq **"root"** foydalanuvchi nomi ostida berilsa,  u holda **"root"** foydalanuvchi paroli o'zgartiriladi. 
+
+~~~
+$ passwd
+Enter your first password: ****
+Enter your new password: ****
+Password set successfully!
+~~~
+
+### Joriy ishchi katalogini chop etish
+
+`pwd` (print-working-directory) terminaldagi joriy ishchi manzilini chop etadi. 
+
+~~~
+$ pwd
+/root
+~~~
+
+### Papka yaratish & o'chirish
+
+`mkdir` (remove-directory) buyrug'i yordamida bir nechta bo'sh papka yaratishingiz mumkin.
+
+```
+$ mkdir papka1 papka2 papka3
+```
+
+Bo'sh papkani o'chirish uchun `rmdir` buyrug'idan foydalaning. Agar papka bo'sh bo'lmasa, buruq bekor qilinadi - papka o'chirilmaydi.
+
+```
+$ rmdir papka1 papka2 papka3
+```
+
+### Fayl & papkalarni ro'yxatini olish
+
+```
+$ ls
+```
+
+agar siz `-l`  (long-list) optsiyasini qo'shsangiz, u permissions (ruxsatlar), o'zgartirilgan sana, fayl yoki papkaga egalik qiluvchi foydalanuvchilar va boshqa foydali ma'lumotlarni o'z ichiga oladi.
+
+```
+$ ls -l
+total 36
+drwxr-xr-x  4 khumoyun khumoyun 4096 Aug  7 19:10 Desktop
+drwxr-xr-x  3 khumoyun khumoyun 4096 Aug  7 16:40 Documents
+drwxr-xr-x  2 khumoyun khumoyun 4096 Aug  7 01:32 Downloads
+...
+```
+
+Odatda, `ls` buyrug'i yashirin fayllarni ko'rsatmaydi. Yashirin fayllarni ham ko'rish uchun `-a` (all) opsiyasini qo'shishingiz kerak.
+
+### stdout'ni faylga yo'naltirish
+
+Quyidagi buruq `new_file.txt` nomli fayl ichiga **"this is string"** matnini kiritadi. Diqqat, agar joriy katalogda ushbu fayl mavjud bo'lmasa, u yangi yaratiladi. Agar fayl kontentga ega bo'lsa, fayl ustiga yoziladi (eski kontent o'chirilib tashlanadi).
+
+```
+$ echo "this is string" > new_file.txt
+```
+
+Faylga qo'shish quyidagi buyruq yordamida amalga oshirilishi mumkin:
+
+```
+$ echo "this is string" >> new_file.txt
+```
+
+Natija (new_file.txt):
+
+```
+this is string
+this is string
+```
+
+### Fayl & papkalarni nusxalash
+
+Faylni nusxalash:
+
+```
+$ cp file ../destination/path/file
+```
+
+Bo'sh bo'lmagan papkani nusxalash:
+
+```
+$ cp folder ../destination/path/folder
+```
+
+### Fayl yoki papkani qidirish
+
+Biz ko'rib chiqmoqchi bo'lgan buyruq ba'zi Linux distro'larida mavjud bo'lmasligi mumkin:
+
+```
+$ sudo apt install plocate
+$ locate hi.txt
+/root/hello/hi.txt
+```
+
+Agar u siz qidirayotgan narsani topa olmasa, ma'lumotlar bazasini yangilang.
+
+```
+$ updatedb
+$ locate hi2.txt
+/root/hello/hi2.txt
+```
+
+### Fayl/papka permissions (ruxsatlar)
+
+FILE TYPE + USER PERMISSION + GROUP PERMISSION + OTHERS
+
+```
+dr-xr-x---
+```
+
+![permissions.png](images/permissions.png)
+
+### Ruxsatlarni o'zgartirish 
+
+Yuqoridagi tablitsaga qarab, faylni boshqa foydalanuvchilar tomonidan bajarilish yoki o'qilmasligini belgilashingiz mumkin. Faylni bajariladigan qilish quyidagicha:
+
+```
+$ chmod +x file_name.sh
+```
+
+Siz boshqa foydalanuvchilarning shaxsiy malumotlaringizni o'qishini oldini olishingiz mumkin:
+
+```
+$ chmod 600 shaxsiy.txt
+```
+
+### Eng xavfli buyruq
+
+Hech kimga o'qish+yozish+bajarish ruxsatini bermang, bu juda katta xato.
+
+```
+$ chmod 777 file.txt 
+$ chmod guo+rwx file.txt
+```
+
+### Foydalanuvchi qo'shish/o'chirish
+
+Foydalanuvchi qo'shish juda oddiy. Quyidagi buyruqni kiriting so'ngra siz foydalanuvchi uchun yangi parol o'rnatishingiz va bir nechta ixtiyoriy savollarga javob berishingiz kerak bo'ladi. Quyida Bob ismli foydlanuvchi yaratiladi:
+
+```
+$ adduser Bob
+```
+
+Foydalanuvchini o'chirib yuborish:
+
+```
+$ deluser Bob
+```
+
+### Foydalanuvchilarni almashtirish
+
+`su` (switch-user) buyrugi yordamida siz istalgan foydalanuvchiga otishingiz mumkin. E'tibor bering, agar siz root foydalanuvchisiga o'tayotgan bo'lsangiz, sudo qo'shishingiz kerak.
+
+```
+$ sudo su root
+```
+
+Enter bosilgach, sizdan "root" foydalanuvchisining paroli so'raladi.
+### /etc/passwd
+
+**/etc/passwd** fayli tizimga kirishda zarur bo'lgan muhim ma'lumotlarni saqlaydi. Boshqacha qilib aytganda, u foydalanuvchi hisobi ma'lumotlarini saqlaydi. **/etc/passwd** oddiy matnli fayldir. Unda tizim hisoblari ro'yxati mavjud bo'lib, har bir hisob uchun foydalanuvchi identifikatori, guruh identifikatori, uy katalogi, qobiq va boshqalar kabi foydali ma'lumotlarni taqdim etadi. Batafsil [bu yerda](https://www.cyberciti.biz/faq/understanding-etcpasswd-file-format/)
+### /etc/shadow
+
+**/etc/shadow** faylida barcha parollaringiz shifrlangan formatda saqlanadi. Hashcat va JohnTheRipper yordamida xeshlangan parollarni buzish oson. Ushbu faylni faqat "root" foydalanuvchisi ko'rishi mumkin.
+
+### /var/log/auth.log
+
+Ushbu fayl tizimga kirgan va chiqayotgan foydalanuvchilarni kuzatib boradi. Quyidagi kod har soniyada auth.log faylining kontentini chiqaradi.
+
+```
+$ watch "cat /var/log/auth.log | grep 'khumoyun'"
+```
+
+###  Sizning ikkinchi eng yaxshi do'stingiz...
+
+Siz ba'zi buyruqlar yoki optsiyalarni unutishingiz mumkin, ammo `man` buyrug'i deyarli barcha buyruqlarni yetarlicha tavsifini chiqarib beradi. Bu Google'dan keyingi ikkinchi eng yaxshi do'stingiz. Sintaksi quyidagicha:
+
+```
+$ man kerakli_kommanda_shu_yerda
+```
+
+**Q** tugmasini bosish orqali "man" sahifasidan chiqish mumkin.
+
+### Juda foydali
+
+1. **CTRL + L** - terminalni tezkor tozalaydi
+2. **CTRL + U** - kursordan chapga tozalaydi
+3. **CTRL + K** - kursordan o'ngga tozalaydi
+4. **CTRL + A** - kursorni satr boshiga qo'yadi
+5. **CTRL + E** - kursorni satr oxiriga qo'yadi
+6. **CTRL + ALT + T** - yangi terminal oyna ochish 
+7. **SUPER + TAB** - oynalarni tezkorlik bilan alishtirish
+8. **CTRL + ALT + ARROW_KEYS** 
+
+### Linux buyruqlari - cheatsheet
+
+Siz ushbu kodni `.bashrc` fayl ichiga qo'shishingiz va uni terminalda buyruq sifatida ishlatishingiz mumkin:
+
+```
+alias cheatsheet="$(xdg-open '/path/to/image.png')"
+```
+
+![linux-commands-cheatsheet.png](images/linux-commands-cheatsheet.png)
+
