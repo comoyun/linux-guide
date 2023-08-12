@@ -129,7 +129,7 @@ $ locate hi2.txt
 dr-xr-x---
 ```
 
-![permissions.png](permissions.png)
+![permissions.png](images/permissions.png)
 
 ## Ruxsatlarni o'zgartirish 
 
@@ -225,6 +225,6 @@ Siz ushbu kodni `.bashrc` fayl ichiga qo'shishingiz va uni terminalda buyruq sif
 alias cheatsheet="$(xdg-open '/path/to/image.png')"
 ```
 
-![linux-commands-cheatsheet.png](linux-commands-cheatsheet.png)
+![linux-commands-cheatsheet.png](images/linux-commands-cheatsheet.png)
 
 [\> 02-kun](02-kun.md)
