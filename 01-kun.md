@@ -1,6 +1,6 @@
 ## Salom, dunyo!
 
-Keling, an'anaga rioya qilgan holda "Salom Dunyo" dasturini yozamiz. Kompyuteringizda terminal oynasini ochib quyida ko'rsatilgan buyruqni kiriting. (`CTRL` + `ALT` + `T`)
+Keling, an'anaga rioya qilgan holda "Salom Dunyo" dasturini yozamiz. Kompyuteringizda terminal oynasini ochib quyidagi ko'rsatilgan buyruqni kiriting. (`CTRL` + `ALT` + `T`)
 
 ```bash
 $ echo "Salom, dunyo!"
@@ -9,7 +9,7 @@ Salom, dunyo!
 
 ## Foydalanuvchi parolini o'zgartirish
 
-Linux'da parolingizni o'zgartirish `passwd` buyrug'i yordamida amalga oshiriladi. U birinchi navbatda sizning avvalgi parolingizni so'raydi; to'g'ri kiritsangiz, joriy foydalanuvchi uchun yangi parol o'rnatishga imkon beradi. Agar buyruq **"root"** foydalanuvchi tomonidan berilsa,  u holda **"root"** foydalanuvchi paroli o'zgartiriladi. 
+Linux'da parolingizni o'zgartirish `passwd` buyrug'i yordamida amalga oshiriladi. U birinchi navbatda avvalgi parolingizni so'raydi; to'g'ri kiritsangiz, joriy foydalanuvchi uchun yangi parol o'rnatishga imkon beradi. Agar buyruq **"root"** foydalanuvchi tomonidan berilsa,  u holda **"root"** foydalanuvchisining paroli o'zgartiriladi. 
 
 ~~~bash
 $ passwd
@@ -18,7 +18,7 @@ Enter your new password: ****
 Password set successfully!
 ~~~
 
-## Joriy katalogini chop etish
+## Joriy katalogni chop etish
 
 `pwd` (print-working-directory) terminaldagi joriy ishchi manzilini chop etadi. 
 
