@@ -2,7 +2,7 @@
 
 Keling, an'anaga rioya qilgan holda "Salom Dunyo" dasturini yozamiz. Kompyuteringizda terminal oynasini ochib quyida ko'rsatilgan buyruqni kiriting. (`CTRL` + `ALT` + `T`)
 
-```
+```bash
 $ echo "Salom, dunyo!"
 Salom, dunyo!
 ```
@@ -11,7 +11,7 @@ Salom, dunyo!
 
 Linux'da parolingizni o'zgartirish `passwd` buyrug'i yordamida amalga oshiriladi. U birinchi navbatda sizning avvalgi parolingizni so'raydi; to'g'ri kiritsangiz, joriy foydalanuvchi uchun yangi parol o'rnatishga imkon beradi. Agar buyruq **"root"** foydalanuvchi nomi ostida berilsa,  u holda **"root"** foydalanuvchi paroli o'zgartiriladi. 
 
-~~~
+~~~bash
 $ passwd
 Enter your first password: ****
 Enter your new password: ****
@@ -22,7 +22,7 @@ Password set successfully!
 
 `pwd` (print-working-directory) terminaldagi joriy ishchi manzilini chop etadi. 
 
-~~~
+~~~bash
 $ pwd
 /root
 ~~~
@@ -31,25 +31,25 @@ $ pwd
 
 `mkdir` (remove-directory) buyrug'i yordamida bir nechta bo'sh papka yaratishingiz mumkin.
 
-```
-$ mkdir papka1 papka2 papka3
+```bash
+mkdir papka1 papka2 papka3
 ```
 
 Bo'sh papkani o'chirish uchun `rmdir` buyrug'idan foydalaning. Agar papka bo'sh bo'lmasa, buruq bekor qilinadi - papka o'chirilmaydi.
 
-```
-$ rmdir papka1 papka2 papka3
+```bash
+rmdir papka1 papka2 papka3
 ```
 
 ### Fayl & papkalarni ro'yxatini olish
 
-```
-$ ls
+```bash
+ls
 ```
 
 agar siz `-l`  (long-list) optsiyasini qo'shsangiz, u permissions (ruxsatlar), o'zgartirilgan sana, fayl yoki papkaga egalik qiluvchi foydalanuvchilar va boshqa foydali ma'lumotlarni o'z ichiga oladi.
 
-```
+```bash
 $ ls -l
 total 36
 drwxr-xr-x  4 khumoyun khumoyun 4096 Aug  7 19:10 Desktop
@@ -64,19 +64,19 @@ Odatda, `ls` buyrug'i yashirin fayllarni ko'rsatmaydi. Yashirin fayllarni ham ko
 
 Quyidagi buruq `new_file.txt` nomli fayl ichiga **"this is string"** matnini kiritadi. Diqqat, agar joriy katalogda ushbu fayl mavjud bo'lmasa, u yangi yaratiladi. Agar fayl kontentga ega bo'lsa, fayl ustiga yoziladi (eski kontent o'chirilib tashlanadi).
 
-```
+```bash
 $ echo "this is string" > new_file.txt
 ```
 
 Faylga qo'shish quyidagi buyruq yordamida amalga oshirilishi mumkin:
 
-```
+```bash
 $ echo "this is string" >> new_file.txt
 ```
 
-Natija (new_file.txt):
+Natija:
 
-```
+```new_file.txt
 this is string
 this is string
 ```
@@ -85,13 +85,13 @@ this is string
 
 Faylni nusxalash:
 
-```
+```bash
 $ cp file ../destination/path/file
 ```
 
 Bo'sh bo'lmagan papkani nusxalash:
 
-```
+```bash
 $ cp folder ../destination/path/folder
 ```
 
@@ -99,7 +99,7 @@ $ cp folder ../destination/path/folder
 
 Biz ko'rib chiqmoqchi bo'lgan buyruq ba'zi Linux distro'larida mavjud bo'lmasligi mumkin:
 
-```
+```bash
 $ sudo apt install plocate
 $ locate hi.txt
 /root/hello/hi.txt
@@ -107,7 +107,7 @@ $ locate hi.txt
 
 Agar u siz qidirayotgan narsani topa olmasa, ma'lumotlar bazasini yangilang.
 
-```
+```bash
 $ updatedb
 $ locate hi2.txt
 /root/hello/hi2.txt
@@ -127,13 +127,13 @@ dr-xr-x---
 
 Yuqoridagi tablitsaga qarab, faylni boshqa foydalanuvchilar tomonidan bajarilish yoki o'qilmasligini belgilashingiz mumkin. Faylni bajariladigan qilish quyidagicha:
 
-```
+```bash
 $ chmod +x file_name.sh
 ```
 
 Siz boshqa foydalanuvchilarning shaxsiy malumotlaringizni o'qishini oldini olishingiz mumkin:
 
-```
+```bash
 $ chmod 600 shaxsiy.txt
 ```
 
@@ -141,7 +141,7 @@ $ chmod 600 shaxsiy.txt
 
 Hech kimga o'qish+yozish+bajarish ruxsatini bermang, bu juda katta xato.
 
-```
+```bash
 $ chmod 777 file.txt 
 $ chmod guo+rwx file.txt
 ```
@@ -150,13 +150,13 @@ $ chmod guo+rwx file.txt
 
 Foydalanuvchi qo'shish juda oddiy. Quyidagi buyruqni kiriting so'ngra siz foydalanuvchi uchun yangi parol o'rnatishingiz va bir nechta ixtiyoriy savollarga javob berishingiz kerak bo'ladi. Quyida Bob ismli foydlanuvchi yaratiladi:
 
-```
+```bash
 $ adduser Bob
 ```
 
 Foydalanuvchini o'chirib yuborish:
 
-```
+```bash
 $ deluser Bob
 ```
 
@@ -164,7 +164,7 @@ $ deluser Bob
 
 `su` (switch-user) buyrugi yordamida siz istalgan foydalanuvchiga otishingiz mumkin. E'tibor bering, agar siz root foydalanuvchisiga o'tayotgan bo'lsangiz, sudo qo'shishingiz kerak.
 
-```
+```bash
 $ sudo su root
 ```
 
@@ -180,7 +180,7 @@ Enter bosilgach, sizdan "root" foydalanuvchisining paroli so'raladi.
 
 Ushbu fayl tizimga kirgan va chiqayotgan foydalanuvchilarni kuzatib boradi. Quyidagi kod har soniyada auth.log faylining kontentini chiqaradi.
 
-```
+```bash
 $ watch "cat /var/log/auth.log | grep 'khumoyun'"
 ```
 
@@ -188,13 +188,13 @@ $ watch "cat /var/log/auth.log | grep 'khumoyun'"
 
 Siz ba'zi buyruqlar yoki optsiyalarni unutishingiz mumkin, ammo `man` buyrug'i deyarli barcha buyruqlarni yetarlicha tavsifini chiqarib beradi. Bu Google'dan keyingi ikkinchi eng yaxshi do'stingiz. Sintaksi quyidagicha:
 
-```
+```bash
 $ man kerakli_kommanda_shu_yerda
 ```
 
 **Q** tugmasini bosish orqali "man" sahifasidan chiqish mumkin.
 
-### Juda foydali
+### Foydali
 
 1. **CTRL + L** - terminalni tezkor tozalaydi
 2. **CTRL + U** - kursordan chapga tozalaydi
@@ -209,7 +209,7 @@ $ man kerakli_kommanda_shu_yerda
 
 Siz ushbu kodni `.bashrc` fayl ichiga qo'shishingiz va uni terminalda buyruq sifatida ishlatishingiz mumkin:
 
-```
+```bash
 alias cheatsheet="$(xdg-open '/path/to/image.png')"
 ```
 
