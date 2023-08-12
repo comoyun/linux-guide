@@ -1,4 +1,4 @@
-### Salom, dunyo!
+## Salom, dunyo!
 
 Keling, an'anaga rioya qilgan holda "Salom Dunyo" dasturini yozamiz. Kompyuteringizda terminal oynasini ochib quyida ko'rsatilgan buyruqni kiriting. (`CTRL` + `ALT` + `T`)
 
@@ -7,7 +7,8 @@ $ echo "Salom, dunyo!"
 Salom, dunyo!
 ```
 
-### Foydalanuvchi parolini o'zgartirish
+
+## Foydalanuvchi parolini o'zgartirish
 
 Linux'da parolingizni o'zgartirish `passwd` buyrug'i yordamida amalga oshiriladi. U birinchi navbatda sizning avvalgi parolingizni so'raydi; to'g'ri kiritsangiz, joriy foydalanuvchi uchun yangi parol o'rnatishga imkon beradi. Agar buyruq **"root"** foydalanuvchi nomi ostida berilsa,  u holda **"root"** foydalanuvchi paroli o'zgartiriladi. 
 
@@ -18,7 +19,8 @@ Enter your new password: ****
 Password set successfully!
 ~~~
 
-### Joriy ishchi katalogini chop etish
+
+## Joriy ishchi katalogini chop etish
 
 `pwd` (print-working-directory) terminaldagi joriy ishchi manzilini chop etadi. 
 
@@ -27,7 +29,8 @@ $ pwd
 /root
 ~~~
 
-### Papka yaratish & o'chirish
+
+## Papka yaratish & o'chirish
 
 `mkdir` (remove-directory) buyrug'i yordamida bir nechta bo'sh papka yaratishingiz mumkin.
 
@@ -41,7 +44,8 @@ Bo'sh papkani o'chirish uchun `rmdir` buyrug'idan foydalaning. Agar papka bo'sh 
 rmdir papka1 papka2 papka3
 ```
 
-### Fayl & papkalarni ro'yxatini olish
+
+## Fayl & papkalarni ro'yxatini olish
 
 ```bash
 ls
@@ -60,7 +64,8 @@ drwxr-xr-x  2 khumoyun khumoyun 4096 Aug  7 01:32 Downloads
 
 Odatda, `ls` buyrug'i yashirin fayllarni ko'rsatmaydi. Yashirin fayllarni ham ko'rish uchun `-a` (all) opsiyasini qo'shishingiz kerak.
 
-### stdout'ni faylga yo'naltirish
+
+## stdout'ni faylga yo'naltirish
 
 Quyidagi buruq `new_file.txt` nomli fayl ichiga **"this is string"** matnini kiritadi. Diqqat, agar joriy katalogda ushbu fayl mavjud bo'lmasa, u yangi yaratiladi. Agar fayl kontentga ega bo'lsa, fayl ustiga yoziladi (eski kontent o'chirilib tashlanadi).
 
@@ -81,7 +86,8 @@ this is string
 this is string
 ```
 
-### Fayl & papkalarni nusxalash
+
+## Fayl & papkalarni nusxalash
 
 Faylni nusxalash:
 
@@ -95,7 +101,8 @@ Bo'sh bo'lmagan papkani nusxalash:
 $ cp folder ../destination/path/folder
 ```
 
-### Fayl yoki papkani qidirish
+
+## Fayl yoki papkani qidirish
 
 Biz ko'rib chiqmoqchi bo'lgan buyruq ba'zi Linux distro'larida mavjud bo'lmasligi mumkin:
 
@@ -113,7 +120,8 @@ $ locate hi2.txt
 /root/hello/hi2.txt
 ```
 
-### Fayl/papka permissions (ruxsatlar)
+
+## Fayl/papka permissions (ruxsatlar)
 
 FILE TYPE + USER PERMISSION + GROUP PERMISSION + OTHERS
 
@@ -123,7 +131,8 @@ dr-xr-x---
 
 ![permissions.png](images/permissions.png)
 
-### Ruxsatlarni o'zgartirish 
+
+## Ruxsatlarni o'zgartirish 
 
 Yuqoridagi tablitsaga qarab, faylni boshqa foydalanuvchilar tomonidan bajarilish yoki o'qilmasligini belgilashingiz mumkin. Faylni bajariladigan qilish quyidagicha:
 
@@ -137,7 +146,8 @@ Siz boshqa foydalanuvchilarning shaxsiy malumotlaringizni o'qishini oldini olish
 $ chmod 600 shaxsiy.txt
 ```
 
-### Eng xavfli buyruq
+
+## Eng xavfli buyruq
 
 Hech kimga o'qish+yozish+bajarish ruxsatini bermang, bu juda katta xato.
 
@@ -146,7 +156,8 @@ $ chmod 777 file.txt
 $ chmod guo+rwx file.txt
 ```
 
-### Foydalanuvchi qo'shish/o'chirish
+
+## Foydalanuvchi qo'shish/o'chirish
 
 Foydalanuvchi qo'shish juda oddiy. Quyidagi buyruqni kiriting so'ngra siz foydalanuvchi uchun yangi parol o'rnatishingiz va bir nechta ixtiyoriy savollarga javob berishingiz kerak bo'ladi. Quyida Bob ismli foydlanuvchi yaratiladi:
 
@@ -160,7 +171,8 @@ Foydalanuvchini o'chirib yuborish:
 $ deluser Bob
 ```
 
-### Foydalanuvchilarni almashtirish
+
+## Foydalanuvchilarni almashtirish
 
 `su` (switch-user) buyrugi yordamida siz istalgan foydalanuvchiga otishingiz mumkin. E'tibor bering, agar siz root foydalanuvchisiga o'tayotgan bo'lsangiz, sudo qo'shishingiz kerak.
 
@@ -169,14 +181,19 @@ $ sudo su root
 ```
 
 Enter bosilgach, sizdan "root" foydalanuvchisining paroli so'raladi.
-### /etc/passwd
+
+
+## /etc/passwd
 
 **/etc/passwd** fayli tizimga kirishda zarur bo'lgan muhim ma'lumotlarni saqlaydi. Boshqacha qilib aytganda, u foydalanuvchi hisobi ma'lumotlarini saqlaydi. **/etc/passwd** oddiy matnli fayldir. Unda tizim hisoblari ro'yxati mavjud bo'lib, har bir hisob uchun foydalanuvchi identifikatori, guruh identifikatori, uy katalogi, qobiq va boshqalar kabi foydali ma'lumotlarni taqdim etadi. Batafsil [bu yerda](https://www.cyberciti.biz/faq/understanding-etcpasswd-file-format/)
-### /etc/shadow
+
+
+## /etc/shadow
 
 **/etc/shadow** faylida barcha parollaringiz shifrlangan formatda saqlanadi. Hashcat va JohnTheRipper yordamida xeshlangan parollarni buzish oson. Ushbu faylni faqat "root" foydalanuvchisi ko'rishi mumkin.
 
-### /var/log/auth.log
+
+## /var/log/auth.log
 
 Ushbu fayl tizimga kirgan va chiqayotgan foydalanuvchilarni kuzatib boradi. Quyidagi kod har soniyada auth.log faylining kontentini chiqaradi.
 
@@ -184,7 +201,8 @@ Ushbu fayl tizimga kirgan va chiqayotgan foydalanuvchilarni kuzatib boradi. Quyi
 $ watch "cat /var/log/auth.log | grep 'khumoyun'"
 ```
 
-###  Sizning ikkinchi eng yaxshi do'stingiz...
+
+## Sizning ikkinchi eng yaxshi do'stingiz...
 
 Siz ba'zi buyruqlar yoki optsiyalarni unutishingiz mumkin, ammo `man` buyrug'i deyarli barcha buyruqlarni yetarlicha tavsifini chiqarib beradi. Bu Google'dan keyingi ikkinchi eng yaxshi do'stingiz. Sintaksi quyidagicha:
 
@@ -194,7 +212,8 @@ $ man kerakli_kommanda_shu_yerda
 
 **Q** tugmasini bosish orqali "man" sahifasidan chiqish mumkin.
 
-### Foydali
+
+## Foydali
 
 1. **CTRL + L** - terminalni tezkor tozalaydi
 2. **CTRL + U** - kursordan chapga tozalaydi
@@ -205,7 +224,8 @@ $ man kerakli_kommanda_shu_yerda
 7. **SUPER + TAB** - oynalarni tezkorlik bilan alishtirish
 8. **CTRL + ALT + ARROW_KEYS** 
 
-### Linux buyruqlari - cheatsheet
+
+## Linux buyruqlari - cheatsheet
 
 Siz ushbu kodni `.bashrc` fayl ichiga qo'shishingiz va uni terminalda buyruq sifatida ishlatishingiz mumkin:
 

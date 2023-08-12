@@ -1,4 +1,4 @@
-### Tarmoq haqidagi ma'lumotlarni ko'rsatish
+## Tarmoq haqidagi ma'lumotlarni ko'rsatish
 
 Siz o'zingizning ichki IP manzilingizni Windows'dagi ipconfig'ga o'xshab ko'rishingiz mumkin:
 
@@ -12,7 +12,8 @@ Muayyan wlan adapteri haqida malumot olish:
 $ ifconfig wlan0 
 ```
 
-### Xost tirik yoki yo'qligini tekshirish
+
+## Xost tirik yoki yo'qligini tekshirish
 
 ```bash
 $ ping localhost
@@ -30,7 +31,8 @@ localhost **127.0.0.1** bilan barobar. Ba'zilar `ping` buyrug'ini xostning IP ma
 
 > ping'dan chiqish uchun **CTRL + C** tugmalarini bosing yoki `ping -c 3 localhost` kommandasini bering va dastur serverga 3 marta so'rov yuboradi va tamomlagach dastudan avtomatik chiqib ketadi. 
 
-### IP manzillarni MAC manzillari bilan bog'lash
+
+## IP manzillarni MAC manzillari bilan bog'lash
 
 MAC manzillar arp keshda saqlangan bo'ladi, ko'rish uchun ushbu buyruqni kiriting:
 
@@ -52,7 +54,8 @@ $ netstat -tul
 - "**-u**" : UDP bog'lanishlarni ichiga oladi.
 - "**-l**" : ochiq portlarni ichiga oladi.
 
-### Buyruqlar tarixini qanday ko'rish mumkin?
+
+## Buyruqlar tarixini qanday ko'rish mumkin?
 
 ```bash
 $ history
@@ -69,7 +72,8 @@ $ history
   1  history
 ```
 
-### Uyga qaytish
+
+## Uyga qaytish
 
 `cd` (change-directory) buyrug'i orqali terminalni istalgan manzilga yo'naltirishingiz mumkin. Uyga ya'ni agar "root" foydalanuvchi bo'lsa `/root` oddiy foydalanuvchi uchun esa `/home/username` o'zgartiradi.
 
@@ -87,7 +91,8 @@ $ pwd
 /home/khumoyun
 ```
 
-### Fayl kontentini ko'rish
+
+## Fayl kontentini ko'rish
 
 ```
 $ echo "Linux ajoyib!" > linux.txt
@@ -95,7 +100,8 @@ $ cat linux.txt
 Linux ajoyib!
 ```
 
-### Bo'sh bo'lmagan papkalarni o'chirish
+
+## Bo'sh bo'lmagan papkalarni o'chirish
 
 ```bash
 $ rm papka papka2 papka3 -rf
@@ -110,7 +116,7 @@ Bu yerda:
         -f opsiyasi "majbur" degan ma'noni anglatadi va `rm` bilan foydalanilganda u ko'pgina ogohlantirish xabarlari va takliflarni e'tibordan qoldiradi. Agar yozishdan himoyalangan yoki mavjud bo'lmagan fayllarni o'chirishga harakat qilsangiz ham, rm buyrug'ini tasdiqlashni so'ramasdan davom ettirishga imkon beradi.
 
 
-### Linux - touch
+## Linux - touch
 
 Touch burug'i ko'pincha fayl yaratish uchun ishlatiladi. Lekin, uning asosiy maqsadi fayllarning oxirgi o'zgartirilgan sanasini (last-modified-date) yangilashdir.
 
@@ -122,7 +128,8 @@ $ ls -l grass
 -rw-rw-r-- 1 khumoyun khumoyun 1044 Aug 12 05:16 grass
 ```
 
-### Linux - nano 
+
+## Linux - nano 
 
 nano - bu terminaldagi kod muharriri. U turli kengaytmadagi fayllar bilan ishlaydi: py, js, html, c, sh va h.k 
 
@@ -140,7 +147,8 @@ sudo apt upgrade
 sudo apt install nano
 ```
 
-### Foydali
+
+## Foydali
 
 - **CTRL + SHIFT + T** (terminalda) -   terminalda yangi "tab" ochish
 - **ALT + F4** - aktiv oynani yopish 

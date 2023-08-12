@@ -8,7 +8,8 @@ Linux'ni o'rganar ekansiz, sizga IP manzillar, TCP/UDP protokollar, tunel, port,
 
 Muhimi, dangasa bo'lmang. Siz buni uddalaysiz! ;)
 
-### Bir nechta fayllar yaratish/o'chirish
+
+## Bir nechta fayllar yaratish/o'chirish
 
 ```bash
 $ touch fayl-1 fayl-2 fayl-3 fayl-4 fayl-5
@@ -24,7 +25,8 @@ $ ls
 
 ```
 
-### Publichniy IP manzilni aniqlash
+
+## Publichniy IP manzilni aniqlash
 
 ```
 $ curl ifconfig.me
@@ -35,7 +37,8 @@ Muqobil ravishda, [ifconfig.me](https://ifconfig.me) saytiga broveringizda tashr
 
 ![ifconfig-me-page.png](images/ifconfig-me-page.png)
 
-### Veb-serverni ishga tushirish
+
+## Veb-serverni ishga tushirish
 
 Veb-server yaratish uchun `apache2` dasturini ustanovka qilishimiz zarur.
 
@@ -74,7 +77,8 @@ Endi esa brovzeringizni ochib, "[localhost](http://localhost)" yoki [127.0.0.1](
 
 Veb-serverni o'chirib qo'yish uchun esa `service apache2 stop` burug'idan foydalanasiz!
 
-### SSH serverni ishga tushirish
+
+## SSH serverni ishga tushirish
 
 Avval `openssh-server` dasturini o'rnatishimiz zarur.
 
@@ -121,7 +125,7 @@ SSH haqida ko'proq ma'lumot olish uchun, quyidagi resurslar bilan tanishib chiqi
  - [Ubuntu'da SSH server o'rnatish](https://uz.termotools.com/8299-installing-ssh-server-in-ubuntu.html)
 
 
-### Linux - service vs systemctl
+## Linux - service vs systemctl
 
 `service` va `systemctl` ikkalasi ham Linux'da tizim xizmatlarini boshqarish uchun foydalaniladigan vositalardir. Ular xizmatlarni yoqish, o'chirish, qayta ishga tushirish usullarini taqdim etadi. Farqi, `systemctl` yanada keng xususiyatlarga ega va u xizmatlarni boshqarishning standart usuliga aylanib bormoqda. 
 
@@ -129,7 +133,7 @@ SSH haqida ko'proq ma'lumot olish uchun, quyidagi resurslar bilan tanishib chiqi
 >service = old 
 
 
-### Sintaks - systemctl
+## Sintaks - systemctl
 
 ```
 $ systemctl <verb> <service>
@@ -138,25 +142,26 @@ $ systemctl <verb> <service>
 <service> = ssh/apache2/nginx/...
 ```
 
-#### Servisni yoqish
+### Servisni yoqish
 
 ```bash
 systemctl enable ssh
 ```
 
-#### Servisni o'chirish
+### Servisni o'chirish
 
 ```bash
 systemctl stop ssh
 ```
 
-#### Servisni qayta ishga tushirish
+### Servisni qayta ishga tushirish
 
 ```bash
 systemctl restart ssh
 ```
 
-### Foydali
+
+## Foydali
  
  - **CTRL + C**  - script'dan yoki terminaldagi dasturdan chiqish uchun qo'llaniladi.
  - **CTRL + D** - terminaldan yoki dastudan chiqib ketadi
