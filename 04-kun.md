@@ -31,7 +31,7 @@ Berilgan matnni " " (bo'shliqga) bo'lib, 4-nchi maydonni ekranga chiqaradi.
 $ cut -d " " -f 4
 ```
 
-## Dasturlarni ishga tushirish
+## Skriptni ishga tushirish
 
 Dasturni ishga tushirishdan avval "executable" huquqi borligiga ishonch hosil qiling. 
 
