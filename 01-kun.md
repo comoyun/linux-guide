@@ -60,7 +60,7 @@ drwxr-xr-x  2 khumoyun khumoyun 4096 Aug  7 01:32 Downloads
 
 Odatda, `ls` buyrug'i yashirin fayllarni ko'rsatmaydi. Yashirin fayllarni ham ko'rish uchun `-a` (all) opsiyasini qo'shishingiz kerak.
 
-## stdout'ni faylga yo'naltirish
+## StdOut'ni faylga yo'naltirish
 
 Quyidagi buruq `new_file.txt` nomli fayl ichiga **"this is string"** matnini kiritadi. Diqqat, agar joriy katalogda ushbu fayl mavjud bo'lmasa, u yangi yaratiladi. Agar fayl ichi bo'sh **bo'lmasa**, fayl qaytadan yoziladi (eski kontent o'chirilib tashlanadi).
 
@@ -81,7 +81,7 @@ this is string
 this is string
 ```
 
-## Fayl & papkalarni nusxalash
+## Fayl/papkalarni nusxalash
 
 Faylni nusxalash:
 
@@ -95,7 +95,7 @@ Bo'sh bo'lmagan papkani nusxalash:
 $ cp folder ../destination/path/folder
 ```
 
-## Fayl yoki papkani qidirish
+## Fayl/papkani qidirish
 
 Biz ko'rib chiqmoqchi bo'lgan buyruq ba'zi Linux distro'larida mavjud bo'lmasligi mumkin:
 
@@ -227,4 +227,4 @@ alias cheatsheet="$(xdg-open '/path/to/image.png')"
 
 ![linux-commands-cheatsheet.png](images/linux-commands-cheatsheet.png)
 
-[\> 02-kun](02-kun.md)
+[02-kun >](02-kun.md)

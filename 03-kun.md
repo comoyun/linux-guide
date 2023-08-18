@@ -8,7 +8,7 @@ Linux'ni o'rganar ekansiz, sizga IP manzillar, subnet, OSI Model,  TCP/UDP proto
 - Network administration course
 - Network penetration testing course
 
-## Bir nechta fayllar yaratish/o'chirish
+## Bir nechta fayl yaratish & o'chirish
 
 ```bash
 $ touch fayl-1 fayl-2 fayl-3 fayl-4 fayl-5
@@ -35,7 +35,7 @@ Muqobil ravishda, [ifconfig.me](https://ifconfig.me) saytiga tashrif buyursangiz
 
 ![ifconfig-me-page.png](images/ifconfig-me-page.png)
 
-## Veb-serverni ishga tushirish
+## Veb-server yaratish
 
 Veb-server yaratish uchun `apache2` dasturini ustanovka qilishimiz zarur.
 
@@ -49,7 +49,7 @@ So'ngra, quyidagi buyruq orqali veb-serverni ishga tushiramiz, 80-portda.
 service apache2 start
 ```
 
-Veb-server muvaffaqiyatli ishga tushganligiga ishonch hosil qilish uchun quyidagi komandani kiriting, va natijani solishtiring:
+Veb-server muvaffaqiyatli ishga tushganini bilish uchun `service apache2 status` buyrug'ini kiritasiz va u quyidagidek xabarni ekranga chiqarishi kerak:
 
 ```bash
 $ service apache2 status
@@ -68,11 +68,11 @@ $ service apache2 status
              └─962 /usr/sbin/apache2 -k start
 ```
 
-Endi esa brovzeringizni ochib, "[localhost](http://localhost)" yoki [127.0.0.1](http://127.0.0.1) manzilini qidiruv paneliga kiriting.
+Endi esa brovzeringizni ochib, "[localhost](http://localhost)" yoki [127.0.0.1](http://127.0.0.1) manzilini qidiruv paneliga yozing.
 
 ![apache2-web-server.png](images/apache2-web-server.png)
 
-Veb-serverni o'chirib qo'yish uchun esa `service apache2 stop` burug'idan foydalanasiz!
+Veb-serverimiz tayyor. Veb-sahifani to'liq o'zgartirish uchun fayl-menejeringizni `/var/www/html/` joylashuvida oching va o'zingizni veb sahifalaringizni o'sha yerda joylasangiz bo'ladi (`index.html`  - saytning bosh sahifasi). Veb-serverni o'chirib qo'yish uchun esa `service apache2 stop` burug'idan foydalanasiz!
 
 ## SSH serverni ishga tushirish
 
@@ -120,7 +120,7 @@ SSH haqida ko'proq ma'lumot olish uchun, quyidagi resurslar bilan tanishib chiqi
  - [SSH nima?](https://www.websiterating.com/uz/web-hosting/glossary/what-is-ssh/)
  - [Ubuntu'da SSH server o'rnatish](https://uz.termotools.com/8299-installing-ssh-server-in-ubuntu.html)
 
-## Linux - service vs systemctl
+## Linux - service va systemctl
 
 `service` va `systemctl` ikkalasi ham tizim xizmatlarini boshqarish uchun foydalaniladigan vositalardir. Ular xizmatlarni yoqish, o'chirish, qayta ishga tushirish usullarini taqdim etadi. Farqi, `systemctl` yanada keng xususiyatlarga ega va u xizmatlarni boshqarishning standart usuliga aylanib bormoqda. 
 
@@ -161,4 +161,4 @@ systemctl restart ssh
  - **CTRL + SHIFT + C** - belgilangan matnni nusxalaydi
  - **CTRL + SHIFT + V** - nusxalangan matnni maydonga qo'yadi
 
-[> 04-kun.md](04-kun.md)
+[< 02-kun](02-kun.md) | [04-kun >](04-kun.md)

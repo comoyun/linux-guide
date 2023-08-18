@@ -61,6 +61,7 @@ $ history
   1  sudo apt update
   2  sudo apt upgrade
   3  clear
+  4  history
 ```
 
 Tarixini tozalash uchun `-c` (clear) optsiyasi qo'shiladi. Misol:
@@ -149,4 +150,4 @@ sudo apt install nano
 - **CTRL + Pg Up** (brovzer + terminal) - tablarni almashtirish chapga/o'ngga
 - **ALT + 1..9** (brovzer + terminal) - tablarni indeks bo'ylab almashtirish
 
-[\> 03-kun](03-kun.md)
+[< 01-kun](01-kun.md) | [03-kun >](03-kun.md)

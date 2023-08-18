@@ -6,3 +6,6 @@ Shebang dasturni qanday turkumdaligini aniqlash uchun kodning boshiga qo'yiladi.
 #!/bin/bash
 ```
 
+
+
+[< 03-kun](03-kun.md) | [05-kun >](05-kun.md)
