@@ -24,7 +24,7 @@ $ ls
 
 ```
 
-## Publichniy IP manzilni aniqlash
+## Ommaviy IP (Internet Protocol) manzilni aniqlash
 
 ```
 $ curl ifconfig.me
