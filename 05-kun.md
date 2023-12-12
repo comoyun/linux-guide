@@ -1,6 +1,6 @@
 ## Google Cloud Shell
 
-Siz https://cloud.google.com platformasida Linux terminalini kompyuteringizga o'rnatmasdan bemalol ishlatishingiz mumkin:
+Siz https://cloud.google.com platformasida Linuksni kompyuteringizga o'rnatmasdan bemalol ishlatishingiz mumkin:
 
 ```bash
 khumoyun@cloud:~$ uname -a 
