@@ -29,7 +29,7 @@ $ pwd
 
 ## Papka yaratish & o'chirish
 
-`mkdir` (remove-directory) buyrug'i yordamida bir nechta bo'sh papka yaratishingiz mumkin.
+`mkdir` (make-directory) buyrug'i yordamida bir nechta bo'sh papka yaratishingiz mumkin.
 
 ```bash
 mkdir papka1 papka2 papka3
