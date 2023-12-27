@@ -42,7 +42,7 @@ $ ./script.sh
 
 ## Nmap dasturi orqali IP manzilda veb-server ishlayotganini aniqlash
 
-Quyidagi buyruq 80 (http) va 443 (https) portlarda veb-server'ni aniqlaydi.
+Quyidagi buyruq 80 (http) va 443 (https) portlarda veb-serverni mavjudligini aniqlaydi.
 
 ```bash
 $ nmap -p 80,443 70.70.70.70
