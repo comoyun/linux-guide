@@ -24,7 +24,7 @@ Password set successfully!
 
 ~~~bash
 $ pwd
-/root
+/home/khumoyun
 ~~~
 
 ## Papka yaratish & o'chirish
@@ -32,19 +32,19 @@ $ pwd
 `mkdir` (make-directory) buyrug'i yordamida bir nechta bo'sh papka yaratishingiz mumkin.
 
 ```bash
-mkdir papka1 papka2 papka3
+$ mkdir papka1 papka2 papka3
 ```
 
 Bo'sh papkani o'chirish uchun `rmdir` buyrug'idan foydalaning. Agar papka bo'sh bo'lmasa, buyruq bekor qilinadi - papka o'chirilmaydi.
 
 ```bash
-rmdir papka1 papka2 papka3
+$ rmdir papka1 papka2 papka3
 ```
 
 ## Fayl & papkalarni ro'yxatini olish
 
 ```bash
-ls
+$ ls
 ```
 
 Agar siz `-l`  (long-listing) optsiyasini qo'shsangiz, u ruxsatlar (permissions), o'zgartirilgan sana (last-modified-date), fayl yoki papkaga egalik qiluvchi foydalanuvchilar (owners) va boshqa foydali ma'lumotlarni o'z ichiga oladi.
