@@ -6,7 +6,7 @@ Siz o'zingizning ichki IP manzilingizni Windows'dagi ipconfig'ga o'xshab ko'rish
 $ ifconfig 
 ```
 
-Muayyan wlan adapteri haqida malumot olish:
+Muayyan adapter haqida malumot olish:
 
 ```bash
 $ ifconfig wlan0 
