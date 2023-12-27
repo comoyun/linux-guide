@@ -224,10 +224,10 @@ $ man kerakli_kommanda_shu_yerda
 
 ## Linux buyruqlari - cheatsheet
 
-Siz ushbu kodni `.bashrc` fayl ichiga qo'shishingiz va uni terminalda buyruq sifatida ishlatishingiz mumkin:
+Siz ushbu kodni `.bashrc` fayl ichiga qo'shib, uni terminalda buyruq sifatida ishlatishingiz mumkin (asosan uzunroq buyruqlarga mo'ljallangan, qisqartirish uchun):
 
 ```bash
-alias cheatsheet="$(xdg-open '/path/to/image.png')"
+$ alias cheatsheet="$(xdg-open '/path/to/image.png')"
 ```
 
 ![linux-commands-cheatsheet.png](images/linux-commands-cheatsheet.png)
