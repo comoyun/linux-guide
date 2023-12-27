@@ -1,6 +1,6 @@
 ## Salom, dunyo!
 
-Keling, an'anaga rioya qilgan holda "Salom Dunyo" dasturini yozamiz. Kompyuteringizda terminal oynasini ochib quyidagi ko'rsatilgan buyruqni kiriting. (`CTRL` + `ALT` + `T`)
+Keling, an'anaga rioya qilgan holda "Salom Dunyo" dasturini yozamiz. Kompyuteringizda terminal oynasini ochib quyidagi buyruqni kiriting. (`CTRL` + `ALT` + `T`)
 
 ```bash
 $ echo "Salom, dunyo!"
