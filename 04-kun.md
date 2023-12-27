@@ -23,7 +23,7 @@ $ ping -c 1 192.168.43.2 > ip.txt
 $ cat ip.txt | grep "64 bytes"
 ```
 
-## Linux - cut
+## Linuks - cut
 
 Berilgan matnni " " (bo'shliqga) bo'lib, 4-nchi maydonni ekranga chiqaradi.
 
@@ -40,7 +40,7 @@ $ chmod +x script.sh
 $ ./script.sh
 ```
 
-## Nmap orqali IP manzilda veb-server mavjudligini aniqlash
+## Nmap dasturi orqali IP manzilda veb-server ishlayotganini aniqlash
 
 Quyidagi buyruq 80 (http) va 443 (https) portlarda veb-server'ni aniqlaydi.
 
