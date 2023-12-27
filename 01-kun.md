@@ -59,6 +59,11 @@ drwxr-xr-x  2 khumoyun khumoyun 4096 Aug  7 01:32 Downloads
 ```
 
 Odatda, `ls` buyrug'i yashirin fayllarni ko'rsatmaydi. Yashirin fayllarni ham ko'rish uchun `-a` (all) opsiyasini qo'shishingiz kerak.
+Ba'zan siz fayl nomlarini (ortiqcha ma'lumotlarsiz) ekranga chiqarishni hoxlaysiz. Va bu juda oddiy:
+
+```bash
+$ ls -1
+```
 
 ## StdOut'ni faylga yo'naltirish
 
