@@ -119,7 +119,7 @@ Bu yerda:
    `-f` (force) optsiyasi:
         -f opsiyasi "majbur" degan ma'noni anglatadi va `rm` bilan foydalanilganda u ko'pgina ogohlantirish xabarlari va takliflarni e'tibordan qoldiradi. Agar yozishdan himoyalangan yoki mavjud bo'lmagan fayllarni o'chirishga harakat qilsangiz ham, rm buyrug'ini tasdiqlashni so'ramasdan davom ettirishga imkon beradi.
 
-## Linux - touch
+## Linuks - touch
 
 Touch burug'i ko'pincha fayl yaratish uchun ishlatiladi. Lekin, uning asosiy maqsadi fayllarning oxirgi o'zgartirilgan sanasini (last-modified-date) yangilashdir.
 
@@ -131,7 +131,7 @@ $ ls -l grass
 -rw-rw-r-- 1 khumoyun khumoyun 1044 Aug 12 05:16 grass
 ```
 
-## Linux - nano 
+## Linuks - nano 
 
 nano - bu terminaldagi kod muharriri. U turli kengaytmadagi fayllarni qo'llab quvvatlaydi: py, js, html, c, sh va h.k 
 
