@@ -63,7 +63,11 @@ $ history
   3  clear
   4  history
 ```
-
+Yoki...
+```
+$ cd ~
+$ cat .bash_history
+```
 Tarixini tozalash uchun `-c` (clear) optsiyasi qo'shiladi. Misol:
 
 ```bash
