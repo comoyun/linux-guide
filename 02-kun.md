@@ -95,7 +95,7 @@ $ pwd
 ```
 
 ## Fayl kontentini ko'rish
-
+`cat` (concatinate) asosan 2 yoki undan ortiq fayllarni bir-biriga bog'lash uchun ishlatiladi, lekin siz bu buyruq orqali kichik fayllar ichidagi kontentni terminal ichida ko'rish uchun ham ishlatishingiz mumkin:
 ```
 $ echo "Linux ajoyib!" > linux.txt
 $ cat linux.txt
