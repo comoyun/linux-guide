@@ -102,7 +102,7 @@ $ cp folder ../destination/path/folder
 
 ## Fayl/papkani qidirish
 
-Biz ko'rib chiqmoqchi bo'lgan buyruq ba'zi Linux distro'larida mavjud bo'lmasligi mumkin:
+Bizga kerakli buyruq ba'zi Linuks distributlarida mavjud emas va shu sababli 'apt' yoki o'zingiz foydalanayotgan Linuksda mavjud bo'lgan package-manager'dan 'plocate' dasturini o'rnatishni maslahat beraman:
 
 ```bash
 $ sudo apt install plocate
