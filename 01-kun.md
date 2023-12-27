@@ -35,7 +35,7 @@ $ pwd
 $ mkdir papka1 papka2 papka3
 ```
 
-Bo'sh papkani o'chirish uchun `rmdir` buyrug'idan foydalaning. Agar papka bo'sh bo'lmasa, buyruq bekor qilinadi - papka o'chirilmaydi.
+Bo'sh papkani o'chirish uchun `rmdir` (remove-directory) buyrug'idan foydalaning. Agar papka bo'sh bo'lmasa, buyruq bekor qilinadi - papka o'chirilmaydi.
 
 ```bash
 $ rmdir papka1 papka2 papka3
