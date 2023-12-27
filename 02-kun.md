@@ -34,7 +34,7 @@ localhost **127.0.0.1** bilan barobar. Ba'zilar `ping` buyrug'ini xostning IP ma
 
 ## IP manzillarni MAC manzillari bilan bog'lash
 
-MAC manzillar arp keshda saqlangan bo'ladi, ko'rish uchun ushbu buyruqni kiriting:
+MAC manzillar ARP kesh ichida saqlangan bo'ladi. Ko'rish uchun quyidagi buyruqni kiriting:
 
 ```bash
 $ arp -a
