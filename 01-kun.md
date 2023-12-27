@@ -9,7 +9,7 @@ Salom, dunyo!
 
 ## Foydalanuvchi parolini o'zgartirish
 
-Linux'da parolingizni o'zgartirish `passwd` buyrug'i yordamida amalga oshiriladi. U birinchi navbatda avvalgi parolingizni so'raydi; to'g'ri kiritsangiz, joriy foydalanuvchi uchun yangi parol o'rnatishga imkon beradi. Agar buyruq **"root"** foydalanuvchi tomonidan berilsa,  u holda **"root"** foydalanuvchisining paroli o'zgartiriladi. 
+Linuks'da joriy foydalanuvchi parolini o'zgartirish `passwd` buyrug'i yordamida amalga oshiriladi. U birinchi navbatda avvalgi parolingizni so'raydi; to'g'ri kiritsangiz, parol yangilanadi. Agar buyruq **"root"** foydalanuvchi tomonidan berilsa,  u holda **"root"** foydalanuvchisining paroli o'zgartiriladi. 
 
 ~~~bash
 $ passwd
