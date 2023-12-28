@@ -15,7 +15,7 @@ $ sudo apt-get dist-upgrade
 ```bash
 $ sudo apt install dastur-nomi -y
 ```
-`-y` (yes) optsiyasi dastur o'rnatilayotgan paytda beriladigan savollarga "ha" deb javob beradi, huddi Windows'da ilova o'rnatayotganda "next, next, next" qilganimizdek. Masalan, VLC Media Player-ni Ubuntu-ga o'rnatish uchun quyidagilarni bajaring:
+`-y` (yes) optsiyasi dastur o'rnatilayotgan paytda beriladigan savollarga "ha" deb javob beradi, huddi Windows'da ilova o'rnatayotganda "next, next, next" qilganimizdek. Masalan, VLC Media Player-ni Ubuntu-ga o'rnatish uchun quyidagini bajaring:
 ```bash
 $ sudo apt install vlc
 ```
