@@ -139,7 +139,7 @@ $ ls -l grass
 
 ## Linuks - nano 
 
-![[./images/nano-meme.png]]
+![nano meme](./images/nano-meme.png)
 
 `nano` - bu terminaldagi kod muharriri. U turli kengaytmadagi fayllarni qo'llab quvvatlaydi: py, js, html, c, sh va h.k.
 

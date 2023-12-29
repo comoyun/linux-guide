@@ -3,8 +3,10 @@
 Siz https://cloud.google.com platformasida Linuksni kompyuteringizga o'rnatmasdan bemalol ishlatishingiz mumkin:
 
 ```bash
-khumoyun@cloud:~$ uname -a 
+khumoyun@cloud:~$ neofetch 
 ```
+
+![Google Cloud Server](./images/google-cloud-server.png)
 
 ## Ochiq dasturlar
 

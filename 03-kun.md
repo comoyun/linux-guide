@@ -27,7 +27,7 @@ $ ls
 
 >Ba'zan internetda `sudo rm -rf /` buyrug'i bilan "meme"larga duch kelasiz. Bu buyruq **sistemadagi barcha fayllarni o'chirib tashlaydi**, va bu qaytarib bo'lmas jarayon. 
 
-![[./images/rm-meme.jpg]]
+![rm meme](./images/rm-meme.jpg)
 
 ## Ommaviy IP (Internet Protocol) manzilni aniqlash
 
@@ -38,7 +38,7 @@ xxx.xx.xx.xxx
 
 Muqobil ravishda, [ifconfig.me](https://ifconfig.me) saytiga tashrif buyursangiz ham bo'ladi (aytgancha, men proxy'dan foydalanyapman :) ).
 
-![ifconfig-me-page.png](./images/ifconfig-me-page.png)
+![ifconfig-me-page](./images/ifconfig-me-page.png)
 
 ## `service` va `systemctl`
 
@@ -83,7 +83,7 @@ $ service apache2 status
 
 Endi esa brovzeringizni ochib, "[localhost](http://localhost)" yoki [127.0.0.1](http://127.0.0.1) manzilini qidiruv paneliga yozing.
 
-![apache2-web-server.png](linux-guide/images/apache2-web-server.png)
+![apache2-web-server.png](./images/apache2-web-server.png)
 
 Veb-serverimiz tayyor. Veb-sahifani to'liq o'zgartirish uchun fayl-menejeringizni `/var/www/html/` joylashuvida oching va o'zingizni veb sahifalaringizni o'sha yerga joylasangiz bo'ladi (`index.html`  - saytning bosh sahifasi). Veb-serverni o'chirib qo'yish uchun esa `service apache2 stop` burug'idan foydalanasiz!
 

@@ -30,7 +30,7 @@ $ sudo apt install dastur-nomi -y
 $ sudo apt install vlc -y
 ```
 
-![[./images/apt-install-meme.jpg]]
+![APT install meme](./images/apt-install-meme.jpg)
 
 ### 3. Ilovalarni APT yordamida o'chirib tashlash
 
@@ -82,7 +82,7 @@ $ cat /etc/os-release
 
 Natija:
 
-![[./images/linux-info.png]]
+![Linux info](./images/linux-info.png)
 
 ### 2-usul
 
@@ -120,6 +120,6 @@ $ neofetch
 
 Natija: 
 
-![[./images/neofetch.png]]
+![neofetch](./images/neofetch.png)
 
 [< 05-kun](linux-guide/04-kun.md) | [07-kun >](linux-guide/07-kun.md)

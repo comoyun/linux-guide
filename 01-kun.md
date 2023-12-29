@@ -4,7 +4,7 @@ Bu yerda, Linuks va unga oid turli-xil dasturlar haqida ma'lumot ulashaman. Ushb
 
 ## Salom, dunyo!
 
-![[./images/salom-dunyo.jpg]]
+![Salom Dunyo](./images/salom-dunyo.jpg)
 
 Keling, an'anaga rioya qilgan holda "Salom Dunyo" dasturini yozamiz. Terminal oynasini ochib quyidagi buyruqni kiriting. 
 
