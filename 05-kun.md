@@ -28,14 +28,6 @@ $ top
 $ sudo apt install htop -y
 ```
 
-## Favicon nima?
-
-Favicon saytning brendini aks ettiradigan rasm (odatda ..ico yoki png formatlarda).
-
-## If it is free, then you're the product
-
-Agar biror narsa bepul bo'lsa, unda siz maxsulotsiz. Shu sababli ayrim bepul dasturlarni (VPN) ustanovka qilayotganda ehtiyot choralarini ko'rishingizni maslahat beraman.
-
 ## Dastur joylashuvini topish
 
 Sintaks: 
@@ -50,5 +42,9 @@ Misol:
 $ whereis aircrack-ng
 aircrack-ng: /usr/bin/aircrack-ng /usr/include/aircrack-ng /usr/share/man/man1/aircrack-ng.1.gz
 ```
+
+
+> #Offtop **If it is free, then you're the product** - ya'ni agar biror narsa bepul bo'lsa, unda siz maxsulotsiz. Shu sababli, ayrim bepul dasturlarni ayniqsa VPN ustanovka qilayotganda ehtiyot choralarini ko'rishingizni maslahat beraman.
+
 
 [< 04-kun](linux-guide/04-kun.md) | [06-kun >](linux-guide/06-kun.md)

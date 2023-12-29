@@ -23,10 +23,11 @@ Barcha fayllarni o'chirish uchun "\*" belgisidan foydalanasiz.
 ```bash
 $ rm *
 $ ls
-
 ```
 
->Ba'zan internetda `rm -rf /` buyrug'i bilan "meme"larga duch kelasiz. Bu buyruq **sistemadagi barcha fayllarni o'chirib tashlaydi**, va bu qaytarib bo'lmas jarayon. 
+>Ba'zan internetda `sudo rm -rf /` buyrug'i bilan "meme"larga duch kelasiz. Bu buyruq **sistemadagi barcha fayllarni o'chirib tashlaydi**, va bu qaytarib bo'lmas jarayon. 
+
+![[./images/rm-meme.jpg]]
 
 ## Ommaviy IP (Internet Protocol) manzilni aniqlash
 
@@ -118,7 +119,7 @@ $ service ssh status
              └─931 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
 ```
 
-Ko'rib turganingizdek, ssh-servis muvaffaqiyatli ishga tushirildi. Endi siz istalgan qurilma orqali kompyuteringizga bog'lanishingiz mumkin (agar ular bir xil tarmoqda bo'lsalar albatta yoki qurilmangizga ommaviy IP ulangan bo'lsa va u port-forwarding xususiyatiga ega - ba'zi routerlarda bunday funksiya mavjud va uni gateway IP adresga brovzer orqali kirib sozlash mumkin). Misol:
+Ko'rib turganingizdek, ssh-servis muvaffaqiyatli ishga tushdi. Endi siz istalgan qurilma orqali kompyuteringizga bog'lanishingiz mumkin (albatta ular bir xil tarmoqda bo'lsa yoki qurilmangizga ommaviy IP ulangan bo'lsa va u port-forwarding xususiyatiga ega bo'lsa - ba'zi routerlarda bunday funksiya mavjud va uni gateway IP adresga brovzer orqali kirib sozlash mumkin). Misol:
 
 ```bash
 $ ssh root@192.168.43.5

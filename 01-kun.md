@@ -1,4 +1,10 @@
+Bu yerda, Linuks va unga oid turli-xil dasturlar haqida ma'lumot ulashaman. Ushbu eslatmalarni tartib bo'yicha yozishga harakat qildim (va qilyapman), lekin o'zimning o'rganish tartibim bunday bo'lmagan. Shunday ekan, bu nafaqat yangi Linuks foydalanuvchilari uchun: hatto tajribali Tizim Administratorlari ham yangi narsalarni o'rganish mumkin deb o'ylayman. Umid qilamanki, bu o'quv qo'llanma sizga foydasi tegadi (albatta menga ham)! 
+
+>Darvoqe, agarda sizda fikr-mulohaza yoki yangi malumot qo'shish/xatoliklarni to'g'irlash istagi bo'lsa, repo'ni **"fork**" qilishingiz mumkin.
+
 ## Salom, dunyo!
+
+![[./images/salom-dunyo.jpg]]
 
 Keling, an'anaga rioya qilgan holda "Salom Dunyo" dasturini yozamiz. Terminal oynasini ochib quyidagi buyruqni kiriting. 
 
@@ -82,7 +88,7 @@ $ ls -1
 
 ### Qiziq xolat
 
-`ls / > list.txt` buyrug'i "list.txt" fayl ichiga quyidagicha malumot yozishini kutamiz:
+Qiziq, biz `ls / > list.txt` buyrug'i "list.txt" fayl ichiga quyidagicha malumot yozishini kutamiz:
 
 ```
 bin   dev  home  lib32  libx32      media  opt   root  sbin  srv       sys  usr
@@ -107,7 +113,7 @@ mnt
 ...
 ```
 
-Yuqoridagi variant dasturchilarga qulayroq bo'lgani sababli, faylga huddi shunday tartibda yoziladi. Agar fayl nomlari bir qatorda bo'lsa, ularni manipulatsiya qilish ancha osson.
+Yuqoridagi variant dasturchilarga qulayroq bo'lgani sababli, faylga huddi shunday tartibda yoziladi. O'ylab ko'ring, agar fayl nomlari qatorma-qator yozilsa, ularni manipulatsiya qilish ancha ossonroq bo'ladi. Ko'rinib turibdiki, ba'zi buyruqlarning natijalari faylga siz kutgandek yo'naltirilmaydi va buning ortida "yaxshiroq" sabab bor.
 
 ## StdOut'ni faylga yo'naltirish
 
@@ -130,24 +136,38 @@ this is string
 this is string
 ```
 
-## Fayl/papkalarni nusxalash
+Tushunarli, lekin natijani qanday qilib bir nechta fayllarga bir vaqtning o'zida yozish mumkin deyishingiz mumkin, va bu juda ham oddiy:
+
+```bash
+$ dastur | tee file1.txt file2.txt
+```
+
+> `tee` buyrug'i dastur natijasini bir yoki bir nechta manzillarga yozadi. Pipe operatori (|) haqida esa keyinroq to'xtalib o'taman.
+
+## Fayllarni nusxalash
 
 Faylni nusxalash:
 
 ```bash
-$ cp file ../destination/path/file
+$ cp fayl ../masofa/fayl
+```
+
+Bir nechta fayllarni nusxalash:
+
+```bash
+$ cp fayl1 fayl2 fayl3 fayl4 joy/
 ```
 
 Bo'sh papkani nusxalash:
 
 ```bash
-$ cp folder ../destination/path/folder
+$ cp papka ../masofa/papka
 ```
 
-Bo'sh bo'lmagan papkani nusxalash `-r` (recursive) optsiyasi bilan:
+Bo'sh bo'lmagan papkani nusxalash, `-r` (recursive) optsiyasi bilan:
 
 ```bash
-$ cp -r source_folder destination_folder
+$ cp -r papka masofa_joy/
 ```
 
 ## Fayl/papkani qidirish
@@ -170,8 +190,7 @@ $ locate hi2.txt
 
 ## Fayl/papka permissions (ruxsatlar)
 
-**Sintaks:**
-	*FAYL TIPI + FOYDALANUVCHI RUXSATLARI + GURUX RUXSATLARI + BOSHQALAR*
+**Sintaks:** *FAYL_TIPI + FOYDALANUVCHI_RUXSATLARI + GURUX_RUXSATLARI + BOSHQALAR*
 
 **Fayl tiplari:** 
 - **D**: directory (papka)
@@ -188,13 +207,13 @@ dr-xr-x---
 
 ## Ruxsatlarni o'zgartirish 
 
-Yuqoridagi tablitsaga qarab, faylni boshqa foydalanuvchilar tomonidan bajarilish yoki o'qilmasligini belgilashingiz mumkin. Faylni bajariladigan qilish quyidagicha:
+Yuqoridagi tablitsaga qarab, faylni boshqa foydalanuvchilar tomonidan bajarilishi yoki o'qilishini mumkinligini belgilashingiz mumkin. Faylni bajariladigan qilish quyidagicha:
 
 ```bash
 $ chmod +x file_name.sh
 ```
 
-Siz boshqa foydalanuvchilarning shaxsiy malumotlaringizni o'qishini oldini olishingiz mumkin:
+Boshqa foydalanuvchilar shaxsiy malumotlaringizni o'qishini oldini olish uchun:
 
 ```bash
 $ chmod 600 shaxsiy.txt
@@ -202,10 +221,13 @@ $ chmod 600 shaxsiy.txt
 
 ## Eng xavfli buyruq
 
-Hech kimga o'qish+yozish+bajarish ruxsatini bermang, bu juda katta xato.
+Hech kimga **o'qish+yozish+bajarish** ruxsatini bermang - bu juda katta xato.
 
 ```bash
 $ chmod 777 file.txt 
+
+yoki
+
 $ chmod guo+rwx file.txt
 ```
 

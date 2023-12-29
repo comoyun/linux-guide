@@ -28,9 +28,7 @@ rtt min/avg/max/mdev = 0.030/0.036/0.040/0.004 ms
 
 localhost **127.0.0.1** bilan barobar. Ba'zilar `ping` buyrug'ini xostning IP manzilini bilish uchun ishlatadilar.
 
-> 
 > ping'dan chiqish uchun **CTRL + C** tugmalarini bosing yoki `ping -c 3 localhost` kommandasini bering va dastur serverga 3 marta so'rov yuboradi va tamomlagach dastudan avtomatik chiqib ketadi. 
-> 
 
 ## IP manzillarni MAC manzillari bilan bog'lash
 
@@ -71,7 +69,7 @@ $ cd ~
 $ cat .bash_history
 ```
 
-Tarixini tozalash uchun `-c` (clear) optsiyasi qo'shiladi. Misol:
+Tarixini tozalash uchun `-c` (clear). Misol:
 
 ```bash
 $ history -c
@@ -112,6 +110,7 @@ Fayllarni bir-biriga bog'lash:
 ```bash
 $ cat file.txt file-2.txt file-3.txt > file-4.txt
 ```
+
 ## Bo'sh bo'lmagan papkalarni o'chirish
 
 ```bash
@@ -124,7 +123,7 @@ Bu yerda:
         -r opsiyasi kataloglar va ularning tarkibi bo'lgan fayllarni o'chirish imkonini beradi. Ushbu parametr ifodalanmasa, `rm` kataloglarni emas, balki faqat individual fayllarni o'chiradi.
         
    `-f` (force) optsiyasi:
-        -f opsiyasi "majbur" degan ma'noni anglatadi va `rm` bilan foydalanilganda u ko'pgina ogohlantirish xabarlari va takliflarni e'tibordan qoldiradi. Agar yozishdan himoyalangan yoki mavjud bo'lmagan fayllarni o'chirishga harakat qilsangiz ham, rm buyrug'ini tasdiqlashni so'ramasdan davom ettirishga imkon beradi.
+        -f opsiyasi "majbur" ma'nosini bildiradi va agar `rm` kommandasi bilan birga qo'llanilganda, u ko'pgina ogohlantirish xabarlarni e'tibordan qoldiradi. Agar yozishdan himoyalangan yoki mavjud bo'lmagan fayllarni o'chirishga harakat qilsangiz, tasdiqlashni so'ramasdan davom ettirishga imkon beradi.
 
 ## Linuks - touch
 
@@ -140,7 +139,9 @@ $ ls -l grass
 
 ## Linuks - nano 
 
-nano - bu terminaldagi kod muharriri. U turli kengaytmadagi fayllarni qo'llab quvvatlaydi: py, js, html, c, sh va h.k 
+![[./images/nano-meme.png]]
+
+`nano` - bu terminaldagi kod muharriri. U turli kengaytmadagi fayllarni qo'llab quvvatlaydi: py, js, html, c, sh va h.k.
 
 ```bash
 $ nano hello-world.py
