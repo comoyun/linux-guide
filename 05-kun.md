@@ -36,17 +36,17 @@ Favicon saytning brendini aks ettiradigan rasm (odatda ..ico yoki png formatlard
 
 Agar biror narsa bepul bo'lsa, unda siz maxsulotsiz. Shu sababli ayrim bepul dasturlarni (VPN) ustanovka qilayotganda ehtiyot choralarini ko'rishingizni maslahat beraman.
 
-## Dasturning "binary" joylashuvini topish
+## Dastur joylashuvini topish
 
 Sintaks: 
 
-```
-$ whereis command
+```bash
+$ whereis buyruq
 ```
 
 Misol:
 
-```
+```bash
 $ whereis aircrack-ng
 aircrack-ng: /usr/bin/aircrack-ng /usr/include/aircrack-ng /usr/share/man/man1/aircrack-ng.1.gz
 ```

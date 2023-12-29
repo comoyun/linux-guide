@@ -184,7 +184,7 @@ $ locate hi2.txt
 dr-xr-x---
 ```
 
-![permissions.png](linux-guide/images/permissions.png)
+![permissions.png](./images/permissions.png)
 
 ## Ruxsatlarni o'zgartirish 
 

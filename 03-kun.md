@@ -33,7 +33,7 @@ xxx.xx.xx.xxx
 
 Muqobil ravishda, [ifconfig.me](https://ifconfig.me) saytiga tashrif buyursangiz ham bo'ladi (aytgancha, men proxy'dan foydalanyapman :) ).
 
-![ifconfig-me-page.png](linux-guide/images/ifconfig-me-page.png)
+![ifconfig-me-page.png](./images/ifconfig-me-page.png)
 
 ## Veb-server yaratish
 
@@ -120,7 +120,7 @@ SSH haqida ko'proq ma'lumot olish uchun, quyidagi resurslar bilan tanishib chiqi
  - [SSH nima?](https://www.websiterating.com/uz/web-hosting/glossary/what-is-ssh/)
  - [Ubuntu'da SSH server o'rnatish](https://uz.termotools.com/8299-installing-ssh-server-in-ubuntu.html)
 
-## Linux - service va systemctl
+## `service` va `systemctl`
 
 `service` va `systemctl` ikkalasi ham tizim xizmatlarini boshqarish uchun foydalaniladigan vositalardir. Ular xizmatlarni yoqish, o'chirish, qayta ishga tushirish usullarini taqdim etadi. Farqi, `systemctl` yanada keng xususiyatlarga ega va u xizmatlarni boshqarishning standart usuliga aylanib bormoqda. 
 
