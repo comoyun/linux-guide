@@ -56,4 +56,4 @@ $ sudo apt install nmap -y
 
 P.S. `-y` (yes) optsiyasi har qanday so'rovlarga "ha" javobini beradi.
 
-[< 03-kun](03-kun.md) | [05-kun >](05-kun.md)
+[< 03-kun](linux-guide/03-kun.md) | [05-kun >](linux-guide/05-kun.md)

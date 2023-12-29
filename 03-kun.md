@@ -33,7 +33,7 @@ xxx.xx.xx.xxx
 
 Muqobil ravishda, [ifconfig.me](https://ifconfig.me) saytiga tashrif buyursangiz ham bo'ladi (aytgancha, men proxy'dan foydalanyapman :) ).
 
-![ifconfig-me-page.png](images/ifconfig-me-page.png)
+![ifconfig-me-page.png](linux-guide/images/ifconfig-me-page.png)
 
 ## Veb-server yaratish
 
@@ -70,7 +70,7 @@ $ service apache2 status
 
 Endi esa brovzeringizni ochib, "[localhost](http://localhost)" yoki [127.0.0.1](http://127.0.0.1) manzilini qidiruv paneliga yozing.
 
-![apache2-web-server.png](images/apache2-web-server.png)
+![apache2-web-server.png](linux-guide/images/apache2-web-server.png)
 
 Veb-serverimiz tayyor. Veb-sahifani to'liq o'zgartirish uchun fayl-menejeringizni `/var/www/html/` joylashuvida oching va o'zingizni veb sahifalaringizni o'sha yerda joylasangiz bo'ladi (`index.html`  - saytning bosh sahifasi). Veb-serverni o'chirib qo'yish uchun esa `service apache2 stop` burug'idan foydalanasiz!
 
@@ -162,4 +162,4 @@ systemctl restart ssh
  - **CTRL + SHIFT + C** - belgilangan matnni nusxalaydi
  - **CTRL + SHIFT + V** - nusxalangan matnni maydonga qo'yadi
 
-[< 02-kun](02-kun.md) | [04-kun >](04-kun.md)
+[< 02-kun](linux-guide/02-kun.md) | [04-kun >](linux-guide/04-kun.md)

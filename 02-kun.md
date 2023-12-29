@@ -1,12 +1,12 @@
 ## Tarmoq haqidagi ma'lumotlarni ko'rsatish
 
-Siz o'zingizning ichki IP manzilingizni Windows'dagi ipconfig'ga o'xshab ko'rishingiz mumkin:
+Siz o'zingizning ichki IP manzilingizni Windows'dagi `ipconfig` buyrug'iga o'xshab ko'rishingiz mumkin:
 
 ```bash
 $ ifconfig 
 ```
 
-Muayyan adapter haqida malumot olish:
+Muayyan Wi-Fi adapteri haqida malumot olish:
 
 ```bash
 $ ifconfig wlan0 
@@ -63,11 +63,14 @@ $ history
   3  clear
   4  history
 ```
+
 Yoki...
+
 ```
 $ cd ~
 $ cat .bash_history
 ```
+
 Tarixini tozalash uchun `-c` (clear) optsiyasi qo'shiladi. Misol:
 
 ```bash
@@ -76,7 +79,7 @@ $ history
   1  history
 ```
 
-## Uyga qaytish
+## "Uy"ga qaytish
 
 `cd` (change-directory) buyrug'i orqali terminalni istalgan manzilga yo'naltirishingiz mumkin. Uyga ya'ni agar "root" foydalanuvchi bo'lsa `/root` oddiy foydalanuvchi uchun esa `/home/username` o'zgartiradi.
 
@@ -157,4 +160,4 @@ sudo apt install nano
 - **CTRL + Pg Up** (brovzer + terminal) - tablarni almashtirish chapga/o'ngga
 - **ALT + 1..9** (brovzer + terminal) - tablarni indeks bo'ylab almashtirish
 
-[< 01-kun](01-kun.md) | [03-kun >](03-kun.md)
+[< 01-kun](linux-guide/01-kun.md) | [03-kun >](linux-guide/03-kun.md)

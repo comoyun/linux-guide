@@ -1,15 +1,17 @@
 ## Salom, dunyo!
 
-Keling, an'anaga rioya qilgan holda "Salom Dunyo" dasturini yozamiz. Kompyuteringizda terminal oynasini ochib quyidagi buyruqni kiriting. (`CTRL` + `ALT` + `T`)
+Keling, an'anaga rioya qilgan holda "Salom Dunyo" dasturini yozamiz. Terminal oynasini ochib quyidagi buyruqni kiriting. 
 
 ```bash
 $ echo "Salom, dunyo!"
 Salom, dunyo!
 ```
 
-## Foydalanuvchi parolini o'zgartirish
+>Terminal oynasini tezkor ochish - `CTRL` + `ALT` + `T`
 
-Linuks'da joriy foydalanuvchi parolini o'zgartirish `passwd` buyrug'i yordamida amalga oshiriladi. U birinchi navbatda avvalgi parolingizni so'raydi; to'g'ri kiritsangiz, parol yangilanadi. Agar buyruq **"root"** foydalanuvchi tomonidan berilsa,  u holda **"root"** foydalanuvchisining paroli o'zgartiriladi. 
+## Parolni o'zgartirish
+
+Linuks'da joriy foydalanuvchi parolini o'zgartirish `passwd` (password) buyrug'i yordamida amalga oshiriladi. U birinchi navbatda avvalgi parolingizni so'raydi; to'g'ri kiritsangiz, parol yangilanadi. Agar buyruq **"root"** tomonidan berilsa,  u holda **"root"** foydalanuvchisining paroli o'zgartiriladi. 
 
 ~~~bash
 $ passwd
@@ -41,6 +43,14 @@ Bo'sh papkani o'chirish uchun `rmdir` (remove-directory) buyrug'idan foydalaning
 $ rmdir papka1 papka2 papka3
 ```
 
+Agar papka ichida fayllar mavjud bo'lsa, quyidagi buyruqdan foydalaning:
+
+```bash
+$ rm -r bosh-bolmagan-papka
+```
+
+Ya'ni bu yerda `-r` (recursive) optsiyasi papka ichidagi kontentlarni hammasiga `rm` buyrug'ini beradi.
+
 ## Fayl & papkalarni ro'yxatini olish
 
 ```bash
@@ -58,25 +68,59 @@ drwxr-xr-x  2 khumoyun khumoyun 4096 Aug  7 01:32 Downloads
 ...
 ```
 
-Odatda, `ls` buyrug'i yashirin fayllarni ko'rsatmaydi. Yashirin fayllarni ham ko'rish uchun `-a` (all) opsiyasini qo'shishingiz kerak.
+Odatda, `ls` buyrug'i yashirin fayllarni ko'rsatmaydi, chunki ular ko'pincha keraksiz va ekranda ortiqcha joyni egallaydi. Yashirin fayllarni ko'rish uchun `-a` (all) opsiyasini qo'shish kifoya.
+
+```bash
+$ ls -a
+```
+
 Ba'zan siz fayl nomlarini qatorma-qator (ortiqcha ma'lumotlarsiz) ekranga chiqarishni hoxlaysiz:
 
 ```bash
 $ ls -1
 ```
 
+### Qiziq xolat
+
+`ls / > list.txt` buyrug'i "list.txt" fayl ichiga quyidagicha malumot yozishini kutamiz:
+
+```
+bin   dev  home  lib32  libx32      media  opt   root  sbin  srv       sys  usr
+boot  etc  lib   lib64  lost+found  mnt    proc  run   snap  swap.img  tmp  var
+```
+
+Lekin aslida:
+
+```
+bin
+boot
+dev
+etc
+home
+lib
+lib32
+lib64
+libx32
+lost+found
+media
+mnt
+...
+```
+
+Yuqoridagi variant dasturchilarga qulayroq bo'lgani sababli, faylga huddi shunday tartibda yoziladi. Agar fayl nomlari bir qatorda bo'lsa, ularni manipulatsiya qilish ancha osson.
+
 ## StdOut'ni faylga yo'naltirish
 
-Quyidagi buruq `new_file.txt` nomli fayl ichiga **"this is string"** matnini kiritadi. Diqqat, agar joriy katalogda ushbu fayl mavjud bo'lmasa, u yangi yaratiladi. Agar fayl ichi bo'sh **bo'lmasa**, fayl qaytadan yoziladi (eski kontent o'chirilib tashlanadi).
+Quyidagi buruq `new_file.txt` nomli fayl ichiga **"this is string"** matnini kiritadi. Diqqat, agar fayl mavjud bo'lmasa, u **yangi yaratiladi**. Agar fayl ichi bo'sh **bo'lmasa**, fayl **qaytadan yoziladi** ya'ni eski kontent o'chirilib yangisi yoziladi.
 
 ```bash
-$ echo "this is string" > new_file.txt
+$ echo "bu oddiy satr" > new_file.txt
 ```
 
 Faylga qo'shish quyidagi buyruq yordamida amalga oshiriladi:
 
 ```bash
-$ echo "this is string" >> new_file.txt
+$ echo "bu oddiy satr" >> new_file.txt
 ```
 
 Natija:
@@ -94,10 +138,16 @@ Faylni nusxalash:
 $ cp file ../destination/path/file
 ```
 
-Bo'sh bo'lmagan papkani nusxalash:
+Bo'sh papkani nusxalash:
 
 ```bash
 $ cp folder ../destination/path/folder
+```
+
+Bo'sh bo'lmagan papkani nusxalash `-r` (recursive) optsiyasi bilan:
+
+```bash
+$ cp -r source_folder destination_folder
 ```
 
 ## Fayl/papkani qidirish
@@ -110,7 +160,7 @@ $ locate hi.txt
 /root/hello/hi.txt
 ```
 
-Agar u siz qidirayotgan narsani topib berolmasa, ma'lumotlar bazasini yangilang.
+Agar u siz qidirayotgan narsani topolmasa, ma'lumotlar bazasini yangilang.
 
 ```bash
 $ updatedb
@@ -134,7 +184,7 @@ $ locate hi2.txt
 dr-xr-x---
 ```
 
-![permissions.png](images/permissions.png)
+![permissions.png](linux-guide/images/permissions.png)
 
 ## Ruxsatlarni o'zgartirish 
 
@@ -222,14 +272,17 @@ $ man kerakli_kommanda_shu_yerda
 7. **SUPER + TAB** - oynalarni tezkorlik bilan alishtirish
 8. **CTRL + ALT + ARROW_KEYS** 
 
-## Linux buyruqlari - cheatsheet
+## Linuks buyruqlari - cheatsheet
 
-Siz ushbu kodni `.bashrc` fayl ichiga qo'shib, uni terminalda buyruq sifatida ishlatishingiz mumkin (asosan uzunroq buyruqlarga mo'ljallangan, qisqartirish uchun):
+Ba'zi buyruqlar esingizdan chiqishi mumkin hattoki men ham ba'zan yozgan maqolalarimni o'qib turaman. Ushbu kodni `.bashrc` fayl ichiga qo'shib, `cheatsheet` buyrug'ini terminalda ishlatishingiz mumkin:
 
 ```bash
 $ alias cheatsheet="$(xdg-open '/path/to/image.png')"
 ```
 
-![linux-commands-cheatsheet.png](images/linux-commands-cheatsheet.png)
+> `alias` - uzun buyruqlarni qisqartiradi. Misol uchun, ob-havoni ko'rsatadigan qisqa buyruq:
+> `alias wtr='curl https://wttr.in/Fergana' 
 
-[02-kun >](02-kun.md)
+#####  > ["cheatsheet" uchun xavola](./images/linux-commands-cheatsheet.png)
+
+[02-kun >](linux-guide/02-kun.md)
