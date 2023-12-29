@@ -24,7 +24,7 @@ $ ps aux
 $ top
 ```
 
-`htop`  keng qo'llanilgan buyruqlardan biri va bu standart dastur hisoblanmaydi. Shu sababli uni avval package-manager orqali o'rnatish kerak:
+`htop`  keng qo'llanilgan buyruqlardan biri, lekin bu standart dastur hisoblanmaydi. Shu sababli, uni avval dastur-menejeri orqali o'rnatish zarur:
 
 ```
 $ sudo apt install htop -y
@@ -46,7 +46,7 @@ aircrack-ng: /usr/bin/aircrack-ng /usr/include/aircrack-ng /usr/share/man/man1/a
 ```
 
 
-> #Offtop **If it is free, then you're the product** - ya'ni agar biror narsa bepul bo'lsa, unda siz maxsulotsiz. Shu sababli, ayrim bepul dasturlarni ayniqsa VPN ustanovka qilayotganda ehtiyot choralarini ko'rishingizni maslahat beraman.
+> **If it is free, then you're the product** - ya'ni agar biror narsa bepul bo'lsa, unda siz maxsulotsiz. Shu sababli, ayrim bepul dasturlarni ayniqsa VPN ustanovka qilayotganda ehtiyot choralarini ko'rishingizni maslahat beraman.
 
 
-[< 04-kun](linux-guide/04-kun.md) | [06-kun >](linux-guide/06-kun.md)
+[< 04-kun](./04-kun.md) | [06-kun >](./06-kun.md)

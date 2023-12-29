@@ -122,4 +122,4 @@ Natija:
 
 ![neofetch](./images/neofetch.png)
 
-[< 05-kun](linux-guide/04-kun.md) | [07-kun >](linux-guide/07-kun.md)
+[< 05-kun](./05-kun.md) | [07-kun >](./07-kun.md)

@@ -169,4 +169,4 @@ systemctl restart ssh
  - **CTRL + SHIFT + C** - belgilangan matnni nusxalaydi
  - **CTRL + SHIFT + V** - nusxalangan matnni belgilangan joyga qo'yadi
 
-[< 02-kun](linux-guide/02-kun.md) | [04-kun >](linux-guide/04-kun.md)
+[< 02-kun](./02-kun.md) | [04-kun >](./04-kun.md)

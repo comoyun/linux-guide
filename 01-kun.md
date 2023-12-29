@@ -1,8 +1,8 @@
+## Linux-guide / Linuks-qo'llanma
+
 Bu yerda, Linuks va unga oid turli-xil dasturlar haqida ma'lumot ulashaman. Ushbu eslatmalarni tartib bo'yicha yozishga harakat qildim (va qilyapman), lekin o'zimning o'rganish tartibim bunday bo'lmagan. Shunday ekan, bu nafaqat yangi Linuks foydalanuvchilari uchun: hatto tajribali Tizim Administratorlari ham yangi narsalarni o'rganish mumkin deb o'ylayman. Umid qilamanki, bu o'quv qo'llanma sizga foydasi tegadi (albatta menga ham)! 
 
->Darvoqe, agarda sizda fikr-mulohaza yoki yangi malumot qo'shish/xatoliklarni to'g'irlash istagi bo'lsa, repo'ni **"fork**" qilishingiz mumkin.
-
-## Salom, dunyo!
+## Salom Dunyo!
 
 ![Salom Dunyo](./images/salom-dunyo.jpg)
 
@@ -303,8 +303,8 @@ $ alias cheatsheet="$(xdg-open '/path/to/image.png')"
 ```
 
 > `alias` - uzun buyruqlarni qisqartiradi. Misol uchun, ob-havoni ko'rsatadigan qisqa buyruq:
-> `alias wtr='curl https://wttr.in/Fergana' 
+> `alias wtr='curl https://wttr.in/Fergana'`
 
-#####  > ["cheatsheet" uchun xavola](./images/linux-commands-cheatsheet.png)
+**["cheatsheet" uchun xavola](./images/linux-commands-cheatsheet.png)**
 
-[02-kun >](linux-guide/02-kun.md)
+[02-kun >](./02-kun.md)
