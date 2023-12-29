@@ -51,3 +51,4 @@ $ whereis aircrack-ng
 aircrack-ng: /usr/bin/aircrack-ng /usr/include/aircrack-ng /usr/share/man/man1/aircrack-ng.1.gz
 ```
 
+[< 04-kun](linux-guide/04-kun.md) | [06-kun >](linux-guide/06-kun.md)

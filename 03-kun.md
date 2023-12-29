@@ -1,6 +1,6 @@
 ## Zarur!
 
-Linux'ni o'rganar ekansiz, sizga IP manzillar, subnet, OSI Model,  TCP/UDP protokollar, tunel, port, xost kabi turli-xil tarmoqga oid terminlarga duch kelasiz. Shu sababli, ular haqida Internet'da yetarlicha "research" qilishingizni maslahat beraman. Muhimi, dangasa bo'lmang. Siz buni uddalaysiz! ;). Ba'zi keyvordlar:
+Linuks'ni o'rganar ekansiz, sizga IP manzillar, subnet, OSI Model,  TCP/UDP protokollar, tunel, port, xost kabi turli-xil tarmoqga oid terminlarga duch kelasiz. Shu sababli, ular haqida Internet'da yetarlicha "research" qilishingizni maslahat beraman. Muhimi, dangasa bo'lmang. Siz buni uddalaysiz! ;). Ba'zi keyvordlar:
 
 - Networking Fundamentals
 - CCNA course 
@@ -9,6 +9,8 @@ Linux'ni o'rganar ekansiz, sizga IP manzillar, subnet, OSI Model,  TCP/UDP proto
 - Network penetration testing course
 
 ## Bir nechta fayl yaratish & o'chirish
+
+`touch` buyrug'i nafaqat fayllarni o'zgartirilgan sanasini yangilaydi, balki u yangi fayllarni yaratishga ham qodir:
 
 ```bash
 $ touch fayl-1 fayl-2 fayl-3 fayl-4 fayl-5
@@ -24,6 +26,8 @@ $ ls
 
 ```
 
+>Ba'zan internetda `rm -rf /` buyrug'i bilan "meme"larga duch kelasiz. Bu buyruq **sistemadagi barcha fayllarni o'chirib tashlaydi**, va bu qaytarib bo'lmas jarayon. 
+
 ## Ommaviy IP (Internet Protocol) manzilni aniqlash
 
 ```
@@ -34,6 +38,14 @@ xxx.xx.xx.xxx
 Muqobil ravishda, [ifconfig.me](https://ifconfig.me) saytiga tashrif buyursangiz ham bo'ladi (aytgancha, men proxy'dan foydalanyapman :) ).
 
 ![ifconfig-me-page.png](./images/ifconfig-me-page.png)
+
+## `service` va `systemctl`
+
+`service` va `systemctl` ikkalasi ham tizim xizmatlarini boshqarish uchun foydalaniladigan vositalardir. Ular xizmatlarni yoqish, o'chirish, qayta ishga tushirish usullarini taqdim etadi. Farqi, `systemctl` yanada keng xususiyatlarga ega va u xizmatlarni boshqarishning standart usuliga aylanib bormoqda. 
+
+>systemctl = new
+>
+>service = old 
 
 ## Veb-server yaratish
 
@@ -72,23 +84,23 @@ Endi esa brovzeringizni ochib, "[localhost](http://localhost)" yoki [127.0.0.1](
 
 ![apache2-web-server.png](linux-guide/images/apache2-web-server.png)
 
-Veb-serverimiz tayyor. Veb-sahifani to'liq o'zgartirish uchun fayl-menejeringizni `/var/www/html/` joylashuvida oching va o'zingizni veb sahifalaringizni o'sha yerda joylasangiz bo'ladi (`index.html`  - saytning bosh sahifasi). Veb-serverni o'chirib qo'yish uchun esa `service apache2 stop` burug'idan foydalanasiz!
+Veb-serverimiz tayyor. Veb-sahifani to'liq o'zgartirish uchun fayl-menejeringizni `/var/www/html/` joylashuvida oching va o'zingizni veb sahifalaringizni o'sha yerga joylasangiz bo'ladi (`index.html`  - saytning bosh sahifasi). Veb-serverni o'chirib qo'yish uchun esa `service apache2 stop` burug'idan foydalanasiz!
 
 ## SSH serverni ishga tushirish
 
-Avval `openssh-server` dasturini o'rnatishimiz zarur.
+Avval `openssh-server` dasturini o'rnatishimiz zarur (bu kompyuterda tashqi qurilmalar ulanishi mumkin bo'lgan ssh port yaratadi).
 
 ```bash
 sudo apt install openssh-server
 ```
 
-So'ng, ssh-servisni yoqishimiz mumkin.
+So'ng, ssh xizmatini yoqishimiz mumkin (bilaman, `service` kommandasi eski, lekin bu barcha Linuks distrolarida ishlaydi.):
 
 ```bash
 service ssh start
 ```
 
-status'ni bilish uchun:
+status ya'ni holatni ni aniqlash uchun:
 
 ```
 $ service ssh status
@@ -106,7 +118,7 @@ $ service ssh status
              └─931 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
 ```
 
-Ko'rib turganingizdek, ssh-servis muvaffaqiyatli ishga tushirildi. Endi siz istalgan qurilma orqali kompyuteringizga bog'lanishingiz mumkin (agar ular bir xil tarmoqga ulangan bo'lsalar). Misol:
+Ko'rib turganingizdek, ssh-servis muvaffaqiyatli ishga tushirildi. Endi siz istalgan qurilma orqali kompyuteringizga bog'lanishingiz mumkin (agar ular bir xil tarmoqda bo'lsalar albatta yoki qurilmangizga ommaviy IP ulangan bo'lsa va u port-forwarding xususiyatiga ega - ba'zi routerlarda bunday funksiya mavjud va uni gateway IP adresga brovzer orqali kirib sozlash mumkin). Misol:
 
 ```bash
 $ ssh root@192.168.43.5
@@ -120,15 +132,7 @@ SSH haqida ko'proq ma'lumot olish uchun, quyidagi resurslar bilan tanishib chiqi
  - [SSH nima?](https://www.websiterating.com/uz/web-hosting/glossary/what-is-ssh/)
  - [Ubuntu'da SSH server o'rnatish](https://uz.termotools.com/8299-installing-ssh-server-in-ubuntu.html)
 
-## `service` va `systemctl`
-
-`service` va `systemctl` ikkalasi ham tizim xizmatlarini boshqarish uchun foydalaniladigan vositalardir. Ular xizmatlarni yoqish, o'chirish, qayta ishga tushirish usullarini taqdim etadi. Farqi, `systemctl` yanada keng xususiyatlarga ega va u xizmatlarni boshqarishning standart usuliga aylanib bormoqda. 
-
->systemctl = new
->
->service = old 
-
-## Sintaks - systemctl
+## Xizmatlar boshqaruvi - systemctl
 
 ```
 $ systemctl <verb> <service>
@@ -136,6 +140,8 @@ $ systemctl <verb> <service>
 <verb> = start/restart/stop
 <service> = ssh/apache2/nginx/...
 ```
+
+> Bundan buyog'iga xizmatlarni servislar deb atayman.
 
 ### Servisni yoqish
 
@@ -157,9 +163,9 @@ systemctl restart ssh
 
 ## Foydali
  
- - **CTRL + C**  - script'dan yoki terminaldagi dasturdan chiqish uchun qo'llaniladi.
+ - **CTRL + C**  - ko'pincha script yoki terminaldagi dasturdan chiqish uchun qo'llaniladi.
  - **CTRL + D** - terminal yoki dasturdan chiqish uchun qo'llaniladi
  - **CTRL + SHIFT + C** - belgilangan matnni nusxalaydi
- - **CTRL + SHIFT + V** - nusxalangan matnni maydonga qo'yadi
+ - **CTRL + SHIFT + V** - nusxalangan matnni belgilangan joyga qo'yadi
 
 [< 02-kun](linux-guide/02-kun.md) | [04-kun >](linux-guide/04-kun.md)

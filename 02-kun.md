@@ -98,13 +98,17 @@ $ pwd
 ```
 
 ## Fayl kontentini ko'rish
+
 `cat` (concatinate) asosan 2 yoki undan ortiq fayllarni bir-biriga bog'lash uchun ishlatiladi, lekin siz bu buyruq orqali kichik fayllar ichidagi kontentni terminal ichida ko'rish uchun ham ishlatishingiz mumkin:
+
 ```bash
 $ echo "Linux ajoyib!" > linux.txt
 $ cat linux.txt
 Linux ajoyib!
 ```
+
 Fayllarni bir-biriga bog'lash:
+
 ```bash
 $ cat file.txt file-2.txt file-3.txt > file-4.txt
 ```
@@ -142,9 +146,10 @@ nano - bu terminaldagi kod muharriri. U turli kengaytmadagi fayllarni qo'llab qu
 $ nano hello-world.py
 ```
 
-**P.S.** nano'dan chiqish uchun: **CTRL + X** 
-**P.S.** nano haqida ko'proq malumot olish uchun: `man nano`
-**P.S.** Agar nano dasturi kompyuteringizda o'rnatilmagan bo'lsa:
+ - `nano` dasturidan chiqish uchun: **CTRL + X** 
+ - `nano` haqida ko'proq malumot olish uchun: `man nano`
+
+Agar `nano` kompyuteringizda o'rnatilmagan bo'lsa:
 
 ```bash
 sudo apt update 
