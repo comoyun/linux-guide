@@ -205,7 +205,7 @@ dr-xr-x---
 
 Tablitsani yodlab olishni maslahat beraman - juda kerakli:
 
-![permissions.png](./images/permissions.png)
+![permissions](./images/permissions.png)
 
 ## Ruxsatlarni o'zgartirish 
 

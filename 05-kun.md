@@ -47,6 +47,6 @@ aircrack-ng: /usr/bin/aircrack-ng /usr/include/aircrack-ng /usr/share/man/man1/a
 
 > **If it is free, then you're the product** - ya'ni agar biror narsa bepul bo'lsa, unda siz maxsulotsiz. Shu sababli, ayrim bepul dasturlarni ayniqsa VPN ustanovka qilayotganda ehtiyot choralarini ko'rishingizni maslahat beraman.
 
-![[images/free-product-meme.jpg]]
+![free-product-meme](images/free-product-meme.jpg)
 
 [< 04-kun](./04-kun.md) | [06-kun >](./06-kun.md)

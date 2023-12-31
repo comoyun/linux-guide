@@ -30,7 +30,7 @@ $ sudo apt install dastur-nomi -y
 $ sudo apt install vlc -y
 ```
 
-![APT install meme](./images/apt-install-meme.jpg)
+![APT install meme](images/apt-install-meme.jpg)
 
 #### 2.5 Ilovalarni `dpkg` orqali o'rnatish
 
@@ -44,7 +44,7 @@ $ sudo dpkg -i ilova.deb
 
 Agar sizda pastdagiga o'xshash muommo paydo bo'lsa, dastur uchun kerakli fayllar o'rnatilmaganini bildiradi:
 
-![[images/dependency-missing.png]]
+![missing dependency](images/dependency-missing.png)
 
 Muommoni hal qilish uchun `apt` yordamida qaram dasturlarni birma-bir o'rnatish zarur. 
 
@@ -98,7 +98,7 @@ $ cat /etc/os-release
 
 Natija:
 
-![Linux info](./images/linux-info.png)
+![Linux info](images/linux-info.png)
 
 ### 2-usul
 
@@ -136,6 +136,6 @@ $ neofetch
 
 Natija: 
 
-![neofetch](./images/neofetch.png)
+![neofetch](images/neofetch.png)
 
 [< 05-kun](./05-kun.md) | [07-kun >](./07-kun.md)

@@ -1,6 +1,6 @@
 ## Linux fayl tizimi
 
-![[images/linux-file-system.jpg]]
+![linux-file-system](images/linux-file-system.jpg)
 
 Linux fayl tizimi haqiqatan ham ajoyib, chunki barcha tarmoq tizimlari, disklar va usb drayvlar hammasi fayl ko'rinishida. Misol uchun, Windows'dagi **C** drayver, **D** drayver va h.k. Linux'ning `/dev/` (devices) katalogida oddiygina fayl sifatida ko'rinadi.
 
@@ -55,7 +55,7 @@ $ cd ..
 ```
 
 >**P.S.** o'sha nuqtalar aslida yashirin papka hisoblanadi. Buni `ls -a` buyrug'idan aniqlash mumkin.)
->![[images/cd-huh.png]]
+>![cd-huh](images/cd-huh.png)
 
 
 [< 06-kun](./06-kun.md) | [08-kun >](./08-kun.md)

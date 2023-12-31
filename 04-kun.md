@@ -8,6 +8,8 @@ Shebang dasturni qanday turkumdaligini aniqlash uchun kodning boshiga qo'yiladi.
 
 ## Serverga "ping" so'rov yuborish
 
+![ping-request](ping-request.png)
+
 `ping` host tirik yoki yo'qligini bilish uchun ishlatiladigan asosiy buyruqlardan biridir. Bu buyruq deyarli barcha Linux operatsion sistemalarida, jumladan Windows'da ham mavjud. 
 
 ```bash
