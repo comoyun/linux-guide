@@ -1,6 +1,6 @@
 ## Zarur!
 
-Linuks'ni o'rganar ekansiz, sizga IP manzillar, subnet, OSI Model,  TCP/UDP protokollar, tunel, port, xost kabi turli-xil tarmoqga oid terminlarga duch kelasiz. Shu sababli, ular haqida Internet'da yetarlicha "research" qilishingizni maslahat beraman. Muhimi, dangasa bo'lmang. Siz buni uddalaysiz! ;). Ba'zi keyvordlar:
+Linux'ni o'rganar ekansiz, sizga IP manzillar, subnet, OSI Model,  TCP/UDP protokollar, tunel, port, xost kabi turli-xil tarmoqga oid terminlarga duch kelasiz. Shu sababli, ular haqida Internet'da yetarlicha "research" qilishingizni maslahat beraman. Muhimi, dangasa bo'lmang. Siz buni uddalaysiz! ;). Ba'zi keyvordlar:
 
 - Networking Fundamentals
 - CCNA course 
@@ -95,7 +95,7 @@ Avval `openssh-server` dasturini o'rnatishimiz zarur (bu kompyuterda tashqi quri
 sudo apt install openssh-server
 ```
 
-So'ng, ssh xizmatini yoqishimiz mumkin (bilaman, `service` kommandasi eski, lekin bu barcha Linuks distrolarida ishlaydi.):
+So'ng, ssh xizmatini yoqishimiz mumkin (bilaman, `service` kommandasi eski, lekin bu barcha Linux distrolarida ishlaydi.):
 
 ```bash
 service ssh start

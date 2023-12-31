@@ -64,7 +64,7 @@ $ history
 
 Yoki...
 
-```
+```bash
 $ cd ~
 $ cat .bash_history
 ```
@@ -125,7 +125,7 @@ Bu yerda:
    `-f` (force) optsiyasi:
         -f opsiyasi "majbur" ma'nosini bildiradi va agar `rm` kommandasi bilan birga qo'llanilganda, u ko'pgina ogohlantirish xabarlarni e'tibordan qoldiradi. Agar yozishdan himoyalangan yoki mavjud bo'lmagan fayllarni o'chirishga harakat qilsangiz, tasdiqlashni so'ramasdan davom ettirishga imkon beradi.
 
-## Linuks - touch
+## Linux - touch
 
 Touch burug'i ko'pincha fayl yaratish uchun ishlatiladi. Lekin, uning asosiy maqsadi fayllarning oxirgi o'zgartirilgan sanasini (last-modified-date) yangilashdir.
 
@@ -137,7 +137,7 @@ $ ls -l grass
 -rw-rw-r-- 1 khumoyun khumoyun 1044 Aug 12 05:16 grass
 ```
 
-## Linuks - nano 
+## Linux - nano 
 
 ![nano meme](./images/nano-meme.png)
 

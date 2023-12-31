@@ -8,22 +8,29 @@ Shebang dasturni qanday turkumdaligini aniqlash uchun kodning boshiga qo'yiladi.
 
 ## Serverga "ping" so'rov yuborish
 
-Ping server tirik yoki yo'qligini bilish uchun ishlatiladigan asosiy buyruqlardan biridir. Bu buyruq deyarli barcha Linux operatsion sistemalarida va Windows'da ham uchrab turadi. 
+`ping` host tirik yoki yo'qligini bilish uchun ishlatiladigan asosiy buyruqlardan biridir. Bu buyruq deyarli barcha Linux operatsion sistemalarida, jumladan Windows'da ham mavjud. 
 
 ```bash
 $ ping -c 5 google.com 
 ```
 
-bu yerda `-c` (count) ya'ni necha marta so'rov yuborish kerakligini bildiradi. 
+bu yerda `-c` (count) ya'ni necha marta so'rov yuborish kerakligini belgilaydi aks holda `ping` serverga to'xtovsiz so'rov yuborib turadi .
 
 ## Ma'lumotlarni grep orqali filterlash
 
 ```bash
-$ ping -c 1 192.168.43.2 > ip.txt
+$ ping -c 5 192.168.43.2 > ip.txt
 $ cat ip.txt | grep "64 bytes"
 ```
 
-## Linuks - cut
+Bu yerda:
+- `ping` orqali "192.168.43.2" lokal IP manzilga 1 marta so'rov yuborib, natijani `ip.txt` fayl ichiga yo'naltirdik.
+- `cat` (concatinate) ya'ni bir nechta fayllarni ulash uchun xizmat qiladi, lekin ko'p odamlar shunchaki fayl ichidagi kontentga bir nazar solish uchun ishlatishadi.
+- `grep qidiruv_termin` ping so'rovidan kelgan javoblarni "qidiruv_termin" bo'yicha filterlaydi va faqat topilgan satrni ekranga chiqaradi.
+
+Agar server 64 bayt malumot qaytarsa, uni ishlayotganini bilish mumkin.  Oddiydek tuyuladi, lekin bu jarayonni avtomatlashtirish orqali turli-xil amallarni bajarish mumkin, misol uchun, router'ga ulangan qurilmalarni filterlash va topilgan IP manzillar ustida zaifliklarni skanerlash. 
+
+## Linux - cut
 
 Berilgan matnni " " (bo'shliqga) bo'lib, 4-nchi maydonni ekranga chiqaradi.
 

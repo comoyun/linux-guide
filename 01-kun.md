@@ -1,6 +1,6 @@
-## Linux-guide / Linuks-qo'llanma
+## Linux-guide / Linux-qo'llanma
 
-Bu yerda, Linuks va unga oid turli-xil dasturlar haqida ma'lumot ulashaman. Ushbu eslatmalarni tartib bo'yicha yozishga harakat qildim (va qilyapman), lekin o'zimning o'rganish tartibim bunday bo'lmagan. Shunday ekan, bu nafaqat yangi Linuks foydalanuvchilari uchun: hatto tajribali Tizim Administratorlari ham yangi narsalarni o'rganish mumkin deb o'ylayman. Umid qilamanki, bu o'quv qo'llanma sizga foydasi tegadi (albatta menga ham)! 
+Bu yerda, Linux va unga oid turli-xil dasturlar haqida ma'lumot ulashaman. Malumotlarni tartib bo'yicha yozishga harakat qilaman, lekin o'zimning yo'l xaritam mutlaqo tartibsiz. Qachondir yangi narsa o'rgansam, shu yerga qo'shib qo'yaman. Bu qo'llanma nafaqat yangi Linux foydalanuvchilari uchun, balki tajribali Tizim Administratorlari ham oz'lariga kerakli biror malumot topishlari mumkin deb o'ylayman. Umid qilamanki, qo'llanma sizga foydasi tegadi (albatta menga ham)! 
 
 ## Salom Dunyo!
 
@@ -17,7 +17,7 @@ Salom, dunyo!
 
 ## Parolni o'zgartirish
 
-Linuks'da joriy foydalanuvchi parolini o'zgartirish `passwd` (password) buyrug'i yordamida amalga oshiriladi. U birinchi navbatda avvalgi parolingizni so'raydi; to'g'ri kiritsangiz, parol yangilanadi. Agar buyruq **"root"** tomonidan berilsa,  u holda **"root"** foydalanuvchisining paroli o'zgartiriladi. 
+Linux'da joriy foydalanuvchi parolini o'zgartirish `passwd` (password) buyrug'i yordamida amalga oshiriladi. U birinchi navbatda avvalgi parolingizni so'raydi; to'g'ri kiritsangiz, parol yangilanadi. Agar buyruq **"root"** tomonidan berilsa,  u holda **"root"** foydalanuvchisining paroli o'zgartiriladi. 
 
 ~~~bash
 $ passwd
@@ -88,7 +88,7 @@ $ ls -1
 
 ### Qiziq xolat
 
-Qiziq, biz `ls / > list.txt` buyrug'i "list.txt" fayl ichiga quyidagicha malumot yozishini kutamiz:
+Hmm, biz `ls / > list.txt` buyrug'i "list.txt" ichiga quyidagi tekstni kiritishini kutamiz:
 
 ```
 bin   dev  home  lib32  libx32      media  opt   root  sbin  srv       sys  usr
@@ -113,7 +113,7 @@ mnt
 ...
 ```
 
-Yuqoridagi variant dasturchilarga qulayroq bo'lgani sababli, faylga huddi shunday tartibda yoziladi. O'ylab ko'ring, agar fayl nomlari qatorma-qator yozilsa, ularni manipulatsiya qilish ancha ossonroq bo'ladi. Ko'rinib turibdiki, ba'zi buyruqlarning natijalari faylga siz kutgandek yo'naltirilmaydi va buning ortida "yaxshiroq" sabab bor.
+Yuqoridagi variant dasturchilarga qulayroq bo'lgani sababli, faylga huddi shunday tartibda yoziladi. O'ylab ko'ring, agar fayl nomlari qatorma-qator yozilsa, ularni manipulatsiya qilish ancha ossonroq bo'ladi. Ko'rinib turibdiki, ba'zi buyruqlarning natijalari faylga siz kutgandek yo'naltirilmaydi va buning ortida "yaxshiroq" sabab bor. 
 
 ## StdOut'ni faylga yo'naltirish
 
@@ -132,11 +132,11 @@ $ echo "bu oddiy satr" >> new_file.txt
 Natija:
 
 ```new_file.txt
-this is string
-this is string
+bu oddiy satr
+bu oddiy satr
 ```
 
-Tushunarli, lekin natijani qanday qilib bir nechta fayllarga bir vaqtning o'zida yozish mumkin deyishingiz mumkin, va bu juda ham oddiy:
+Tushunarli, lekin natijani qanday qilib bir nechta fayllarga bir vaqtning o'zida yuborish mumkin deyishingiz mumkin, va bu juda ham oddiy:
 
 ```bash
 $ dastur | tee file1.txt file2.txt
@@ -172,7 +172,7 @@ $ cp -r papka masofa_joy/
 
 ## Fayl/papkani qidirish
 
-Bizga kerakli buyruq ba'zi Linuks distributlarida mavjud emas va shu sababli 'apt' yoki o'zingiz foydalanayotgan Linuksda mavjud bo'lgan package-manager'dan 'plocate' dasturini o'rnatishni maslahat beraman:
+Bizga kerakli buyruq ba'zi Linux distributlarida mavjud emas va shu sababli 'apt' yoki o'zingiz foydalanayotgan Linuxda mavjud bo'lgan package-manager'dan 'plocate' dasturini o'rnatishni maslahat beraman:
 
 ```bash
 $ sudo apt install plocate
@@ -192,7 +192,7 @@ $ locate hi2.txt
 
 **Sintaks:** *FAYL_TIPI + FOYDALANUVCHI_RUXSATLARI + GURUX_RUXSATLARI + BOSHQALAR*
 
-**Fayl tiplari:** 
+**Tiplar:** 
 - **D**: directory (papka)
 - **L**: link (havola)
 - **F**: file (fayl)
@@ -202,6 +202,8 @@ $ locate hi2.txt
 ```
 dr-xr-x---
 ```
+
+Tablitsani yodlab olishni maslahat beraman - juda kerakli:
 
 ![permissions.png](./images/permissions.png)
 
@@ -255,19 +257,19 @@ $ sudo su root
 
 Enter bosilgach, sizdan "root" foydalanuvchisining paroli so'raladi.
 
-## /etc/passwd
+## `/etc/passwd`
 
 **/etc/passwd** fayli tizimga kirishda zarur bo'lgan ma'lumotlarni saqlaydi. Boshqacha qilib aytganda, u foydalanuvchilarning hisob ma'lumotlarini saqlaydi. **/etc/passwd** oddiy matnli fayldir.  U har bir hisob uchun foydalanuvchi identifikatori, guruh identifikatori, uy katalogi, qobiq va boshqalar kabi foydali ma'lumotlarni taqdim etadi. Batafsil [bu yerda](https://www.cyberciti.biz/faq/understanding-etcpasswd-file-format/)
 
-## /etc/shadow
+## `/etc/shadow`
 
 **/etc/shadow** faylida barcha parollaringiz shifrlangan formatda saqlanadi. Faylni faqat "root" foydalanuvchisi ko'rishi mumkin.
 
 **P.S.** Hashcat va JohnTheRipper kabi dasturlar xeshlangan parollarni buzish uchun qo'llaniladi. Parol qanchalik kuchli bo'lsa, shuncha yaxshi.
 
-## /var/log/auth.log
+## `/var/log/auth.log`
 
-Ushbu fayl tizimga kirgan va chiqayotgan foydalanuvchilarni kuzatib boradi. Quyidagi kod har soniyada auth.log faylining kontentini chiqaradi.
+Ushbu fayl tizimga kirgan va chiqayotgan foydalanuvchilarni kuzatib boradi. Quyidagi kod har soniyada `auth.log` kontentini chiqaradi.
 
 ```bash
 $ watch "cat /var/log/auth.log | grep 'khumoyun'"
@@ -275,13 +277,15 @@ $ watch "cat /var/log/auth.log | grep 'khumoyun'"
 
 ## Sizning ikkinchi eng yaxshi do'stingiz...
 
-Siz ba'zi buyruqlar yoki optsiyalarni unutishingiz mumkin, ammo `man` buyrug'i deyarli barcha buyruqlarni yetarlicha tavsifini chiqarib beradi. Bu Google'dan keyingi ikkinchi eng yaxshi do'stingiz. Sintaksi quyidagicha:
+Siz ba'zi buyruqlar yoki optsiyalarni tariflarini unutishingiz mumkin, ammo `man` deyarli barcha buyruqlarni yetarlicha tavsifini offline tarzda chiqarib beradi. Bu Google'dan keyingi ikkinchi eng yaxshi do'stingiz. Sintaksi quyidagicha:
 
 ```bash
-$ man kerakli_kommanda_shu_yerda
+$ man kerakli_buyruq
 ```
 
-**Q** tugmasini bosish orqali "man" sahifasidan chiqish mumkin.
+>**Q** tugmasini bosish orqali `man` sahifasidan chiqish mumkin.
+
+Shuni yodda tutish kerakki, `man` ba'zi buyruqlar tavsifini chiqarmaydi, masalan `cd`, `exit`, `source`, `type`, `export` va hokazo.
 
 ## Foydali
 
@@ -294,7 +298,7 @@ $ man kerakli_kommanda_shu_yerda
 7. **SUPER + TAB** - oynalarni tezkorlik bilan alishtirish
 8. **CTRL + ALT + ARROW_KEYS** 
 
-## Linuks buyruqlari - cheatsheet
+## Linux buyruqlari - cheatsheet
 
 Ba'zi buyruqlar esingizdan chiqishi mumkin hattoki men ham ba'zan yozgan maqolalarimni o'qib turaman. Ushbu kodni `.bashrc` fayl ichiga qo'shib, `cheatsheet` buyrug'ini terminalda ishlatishingiz mumkin:
 

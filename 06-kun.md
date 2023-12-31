@@ -1,8 +1,8 @@
 ## Ilova-Menejeri buyruqlari
 
-Paket menejeri (package-manager) internetdan turli dasturlarni o'rnatish, kompyuterdagi mavjud dasturlarni o'chirish/yangilash kabi xizmatlarni taqdim etadi. Paket menejeri barcha Linuks distributlarida xar hil bo'lishi mumkin. Ubuntu va Debian'ga asoslangan distributlarda `apt`, Arch'ga asoslangan distributlarda `pacman` kommandasi ishlatiladi. Quyida `apt` yordamida turli-xil buyruqlarni ko'rib chiqamiz.
+Paket menejeri (package-manager) internetdan turli dasturlarni o'rnatish, kompyuterdagi mavjud dasturlarni o'chirish/yangilash kabi xizmatlarni taqdim etadi. Paket menejeri barcha Linux distributlarida xar hil bo'lishi mumkin. Ubuntu va Debian'ga asoslangan distributlarda `apt`, Arch'ga asoslangan distributlarda `pacman` kommandasi ishlatiladi. Quyida `apt` yordamida turli-xil buyruqlarni ko'rib chiqamiz.
 
-**P.S.** `apt-get` va `apt` kommandalari deyarli bir xil vazifani bajaradi
+**P.S.** `apt-get`, `aptitude` va `apt` kommandalari bir xil vazifani bajaradi, ammo men `apt` buyrug'idan foydalanishni maslahat beraman chunki u yangi, osson va sayqallangan.
 
 ### 1. Kompyuterdagi barcha ilovalarni yangilash
 
@@ -32,13 +32,29 @@ $ sudo apt install vlc -y
 
 ![APT install meme](./images/apt-install-meme.jpg)
 
+#### 2.5 Ilovalarni `dpkg` orqali o'rnatish
+
+Xuddi Windows'dagi "exe" fayllarni ustanovka qilgan singari ilovalarni `dpkg` yordamida o'rnatish mumkin. Linux dasturlari "deb" kengaytmasiga ega va ularni o'rnatish quyidagicha:
+
+```bash
+$ sudo dpkg -i ilova.deb
+```
+
+ - `-i` (install) o'rnatish manosini bildiradi. 
+
+Agar sizda pastdagiga o'xshash muommo paydo bo'lsa, dastur uchun kerakli fayllar o'rnatilmaganini bildiradi:
+
+![[images/dependency-missing.png]]
+
+Muommoni hal qilish uchun `apt` yordamida qaram dasturlarni birma-bir o'rnatish zarur. 
+
 ### 3. Ilovalarni APT yordamida o'chirib tashlash
 
 ```bash
 $ sudo apt remove dastur-nomi
 ```
 
-Masalan, avval o'rnatilgan VLC-ni o'chirish uchun:
+Masalan, avval o'rnatilgan VLC dasturini o'chirish uchun:
 
 ```bash
 $ sudo apt remove vlc
@@ -68,7 +84,7 @@ $ sudo lsof -i:80
 
 >Ko'pchilik `netstat -tulpn | grep :port_raqami` buyrug'idan foydalanadi, lekin bu ayrim dasturlar uchun samarasiz.
 
-## Linuks haqida malumot olish
+## Linux haqida malumot olish
 
 Cloud serverlardan, yoki masofaviy kompyuterlarni boshqarayotganda sizga kompyuter nomi va versiya to'g'risidagi axborotlar kerak bo'ladi. Host kompyuter haqida malumot olishning ko'plab usullari bor, lekin biz faqat ayrimlarini ko'rib chiqamiz.
 
