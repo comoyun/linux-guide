@@ -1,4 +1,12 @@
+---
 
+tags: zararli-buyruqlar
+
+description: Ayrim zararli buyruqlar
+
+title: Zararli Buyruqlar
+
+---
 💻 **Ushbu Linux buyruqlarini hech qachon ishga tushirmang!!**
 
 > Men Linuxni moslashuvchanligi va cheksiz imkoniyatlari uchun yaxshi ko'raman)
