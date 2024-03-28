@@ -3,7 +3,7 @@ title: 18 - Grafiksiz Tizim
 sort: 18
 tags:
   - no-gui
-description:
+description: Linux-ni faqat terminal interfeysida ishlatish orqali tizim resurslarini optimallashtirish, xavfsizlik va buglarsiz server muhitini o'rganish imkoniyatini qo'lga kiritasiz. Ba'zilar GUI-ni o'z ichiga olmaydigan minimalistik tizimni afzal ko'rishadi. Ushbu maqolada bu jarayonni qanday amalga oshirish to'g'risida gaplashamiz.
 ---
 Linux-ni faqat terminal interfeysida ishlatish orqali tizim resurslarini optimallashtirish, xavfsizlik va buglarsiz server muhitini o'rganish imkoniyatini qo'lga kiritasiz. Ba'zilar GUI-ni o'z ichiga olmaydigan minimalistik tizimni afzal ko'rishadi. Ushbu maqolada bu jarayonni qanday amalga oshirish to'g'risida gaplashamiz.
 
