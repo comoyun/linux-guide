@@ -1,6 +1,6 @@
 ---
 sort: 19
-title: find Buyrug'i
+title: 19 - find Buyrug'i
 tags:
   - find
 description: find buyrug'i haqida batafsil; xayotiy misollar va foydali buyruqlar.
@@ -78,7 +78,7 @@ Juda soz, endi huddi shu amalni `ls` buyrug'i bilan bajaramiz:
 - **d** - faqat kataloglarni chiqaradi
 - **a** - yashirin kataloglarni ham hisobga oladi
 
-```
+```bash
 $ ls -1da */
 katalog1/
 katalog2/
