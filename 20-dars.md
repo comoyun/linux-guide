@@ -74,7 +74,7 @@ Bu yerda agar `COLS` qiymati berilsa fayllarni shunga mos ravishda ekranga chiqa
 	assume screen width instead of current value
 ```
 
-![linux-xumoyun-uz-terminal](linux-xumoyun-uz-terminal.png)
+![linux-xumoyun-uz-terminal](images/linux-xumoyun-uz-terminal.png)
 
 ## Sarlavha va bo'limlar
 
@@ -117,7 +117,7 @@ Agar siz, aytaylik, `ftp` bilan bog'liq sahifalarni ko'rishni istasangiz, ushbu 
 $ man -k ftp	
 ```
 
-![man-k-option](man-k-option.png)
+![man-k-option](images/man-k-option.png)
 
 >`whatis` buyrug'i ham guruhlarni aniqlash borasida juda foydali usul
 
