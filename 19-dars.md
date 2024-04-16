@@ -1,6 +1,6 @@
 ---
 sort: 19
-title: 19 - find Buyrug'i
+title: 19 - "Find" Buyrug'i
 tags:
   - find
 description: find buyrug'i haqida batafsil; xayotiy misollar va foydali buyruqlar.
