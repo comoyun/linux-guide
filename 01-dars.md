@@ -15,7 +15,7 @@ sort: 1
 Keling, an'anaga rioya qilgan holda "Salom Dunyo" kodini yozamiz. Terminal oynasini ochib quyidagi buyruqni kiriting.
 
 ```bash
-$ echo "Salom, dunyo!"
+$ echo "Salom, dunyo!" 
 Salom, dunyo!
 ```
 
@@ -26,9 +26,9 @@ Salom, dunyo!
 Linux'da joriy foydalanuvchining parolini o'zgartirish `passwd` (password) buyrug'i yordamida amalga oshiriladi. U birinchi navbatda avvalgi parolingizni so'raydi, to'g'ri kiritsangiz, parol yangilanadi. Agar buyruq **"root"** tomonidan berilsa,  u holda faqatgina **"root"** foydalanuvchisining paroli o'zgaradi.
 
 ~~~bash
-$ passwd
-Enter your first password: ****
-Enter your new password: ****
+$ passwd 
+Enter your first password: **** 
+Enter your new password: **** 
 Password set successfully!
 ~~~
 
@@ -308,8 +308,6 @@ $ alias cheatsheet="$(xdg-open '/.../cheatsheet.png')"
 >
 >  Agar buyruqni bir nechta terminal seanslarida ishlashini istasangiz, kodni uy manzilda joylashgan `.bashrc` faylining ichiga qo'shib yozing. Darvoqe, `.bashrc` fayli terminal oynasi ochilganda birgalikda ishga tushadigan dastur hisoblanadi.
 
-[[02-dars]] da tarmoqga oid buyruqlar bilan tanishamiz. Ungacha esa olgan bilimlaringizni mustahkamlashni unutmang.
-
 ## Samaradorlikni oshiring
 
 1. **CTRL + L** - terminal oynasini tezkor tozalaydi
@@ -321,4 +319,20 @@ $ alias cheatsheet="$(xdg-open '/.../cheatsheet.png')"
 7. **SUPER + TAB** - oynalarni tezkorlik bilan alishtiradi
 8. **CTRL + ALT + STRELKA** - boshqa ish maydoniga olib o'tadi
 
+---
 
+## Topshiriq
+
+1. **Terminalda Navigatsiya**  
+   Linux muhitida terminal yordamida navigatsiya qilishni mashq qiling. Kataloglarga o'tish, joriy katalogni tekshirish kabilar.
+
+2. **Fayllar Yaratish**  
+   Quyidagi fayllarni yarating va har bir faylga `echo` buyrug'i yordamida ixtiyoriy matn qo'shing:
+   - `main.py`
+   - `utils.py`
+   - `config.py`
+
+3. **Fayllarni O'chirish**  
+   Yaratilgan papkalar va fayllarni o'chiring. 
+
+[[02-dars]]da tarmoqga oid buyruqlar bilan tanishamiz. Ungacha esa olgan bilimlaringizni mustahkamlashni unutmang.

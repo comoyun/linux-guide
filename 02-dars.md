@@ -8,21 +8,29 @@ sort: 2
 ---
 ## Tarmoq ma'lumotlarini ko'rsatish
 
-Mahalliy IP manzilingizni Windows'dagi `ipconfig` buyrug'iga o'xshab ko'rishingiz mumkin:
+Mahalliy IP manzilingizni Windows'dagi `ipconfig` buyrug'iga o'xshash tarzda ko'rsatish uchun Linux tizimida quyidagi buyruqlardan foydalanishingiz mumkin:
 
 ```bash
 $ ifconfig
 ```
 
-Muayyan Wi-Fi adapteri haqida malumot olish:
+Yoki, yanada zamonaviy va ko'proq tarqatmalarda mavjud bo'lgan buyruq:
+
+```bash
+$ ip a
+```
+
+Muayyan Wi-Fi adapteri haqida ma'lumot olish uchun:
 
 ```bash
 $ ifconfig wlan0
 ```
 
-> Agar `ifconfig` o'rnatilmagan bo'lsa, o'rniga  `ip a` buyrug'idan foydalansangiz ham bo'ladi yoki `sudo apt install net-tools` buyrug'i orqali `ifconfig` dasturini o'rnatib olishingiz mumkin.
+Agar `ifconfig` o'rnatilmagan bo'lsa, `ip` buyrug'idan foydalanishingiz mumkin yoki `sudo apt install net-tools` buyrug'i orqali `ifconfig` dasturini o'rnatishingiz mumkin.
 
 ## Xost tirik yoki yo'qligini tekshirish
+
+Xostning tirik yoki yo'qligini tekshirish uchun `ping` buyrug'ini ishlating:
 
 ```bash
 $ ping localhost
@@ -36,9 +44,9 @@ PING localhost (127.0.0.1) 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.030/0.036/0.040/0.004 ms
 ```
 
-localhost **127.0.0.1** bilan barobar. Ba'zilar `ping` buyrug'ini xostning IP manzilini aniqlash uchun ishlatadilar.
+`localhost` **127.0.0.1** bilan barobar. Ba'zilar `ping` buyrug'ini xostning IP manzilini aniqlash uchun ishlatadilar.
 
-> ping'dan chiqish uchun **CTRL + C** tugmalarini bosing yoki `ping -c 3 localhost` buyrug'ini bering va dastur serverga 3 marta so'rov yuboradi va tamomlagach dastudan avtomatik chiqib ketadi.
+> `ping` dasturidan chiqish uchun **CTRL + C** tugmalarini bosing yoki `ping -c 3 localhost` buyrug'ini bering, shunda dastur 3 marta so'rov yuboradi va tamomlagach avtomatik chiqadi.
 
 ### Bilarmidingiz?
 
@@ -50,10 +58,9 @@ Linux-da `ping` buyrug'i yordamida shlyuz IP manzilini osongina topish mumkin:
 $ ping _gateway
 ```
 
-
 ## IP manzillarni MAC manzillari bilan bog'lash
 
-MAC manzillar ARP kesh ichida saqlangan bo'ladi. Ko'rish uchun quyidagi buyruqni kiriting:
+MAC manzillar ARP keshida saqlanadi. Ko'rish uchun quyidagi buyruqni kiriting:
 
 ```bash
 $ arp -a
@@ -63,17 +70,19 @@ Internet Address       Physical Address       Type
 192.168.1.20           20-33-44-55-66-77     dynamic
 ```
 
-Kompyuterdagi ochiq portlar va ular bilan bog'langan dasturlarni bilish uchun `netstat` buyrug'idan foydalaning.
+Kompyuterdagi ochiq portlar va ular bilan bog'langan dasturlarni bilish uchun `netstat` buyrug'idan foydalaning:
 
 ```bash
 $ netstat -tul
 ```
 
-- "**-t**" : TCP bog'lanishlarni ichiga oladi.
-- "**-u**" : UDP bog'lanishlarni ichiga oladi.
-- "**-l**" : ochiq portlarni ichiga oladi.
+- **-t**: TCP bog'lanishlarini ko'rsatadi.
+- **-u**: UDP bog'lanishlarini ko'rsatadi.
+- **-l**: Faqat ochiq portlarni ko'rsatadi.
 
 ## Buyruqlar tarixini qanday ko'rish mumkin?
+
+Buyruqlar tarixini ko'rish uchun:
 
 ```bash
 $ history
@@ -83,24 +92,25 @@ $ history
   4  history
 ```
 
-Yoki...
+Yoki `.bash_history` faylini ko'rish orqali:
 
 ```bash
 $ cd ~
 $ cat .bash_history
 ```
 
-Tarixni tozalash uchun `-c` (clear). Misol:
+Tarixni tozalash uchun:
 
 ```bash
 $ history -c
 $ history
-  1  history
 ```
+
+**Eslatma**: Tarixni tozalashdan so'ng, `history` buyrug'i hech qanday tarix ko'rsatmaydi.
 
 ## "Uy"ga qaytish
 
-`cd` (change-directory) buyrug'i orqali terminalni istalgan manzilga yo'naltirishingiz mumkin. Uyga ya'ni agar "root" foydalanuvchi bo'lsa `/root` oddiy foydalanuvchi uchun esa `/home/username` o'zgartiradi.
+`cd` (change-directory) buyrug'i orqali terminalni istalgan manzilga yo'naltirishingiz mumkin. Uyga qaytish uchun:
 
 ```bash
 $ cd ~
@@ -118,7 +128,7 @@ $ pwd
 
 ## Fayl kontentini ko'rish
 
-`cat` (concatinate) asosan 2 yoki undan ortiq fayllarni bir-biriga bog'lash uchun ishlatiladi, lekin siz bu buyruq orqali kichik fayllar ichidagi kontentni terminal ichida ko'rish uchun ham ishlatishingiz mumkin:
+`cat` (concatenate) asosan fayllarni bir-biriga bog'lash uchun ishlatiladi, lekin kichik fayllar ichidagi kontentni ko'rish uchun ham ishlatishingiz mumkin:
 
 ```bash
 $ echo "Linux ajoyib!" > linux.txt
@@ -132,23 +142,24 @@ Fayllarni bir-biriga bog'lash (natija `file-4.txt` bo'ladi):
 $ cat file.txt file-2.txt file-3.txt > file-4.txt
 ```
 
+**Eslatma**: Katta fayllar uchun `less` yoki `more` buyruqlarini ishlatish tavsiya etiladi.
+
 ## Bo'sh bo'lmagan papkalarni o'chirish
 
+Bo'sh bo'lmagan papkalarni o'chirish uchun:
+
 ```bash
-$ rm papka papka2 papka3 -rf
+$ rm -rf papka papka2 papka3
 ```
 
 Bu yerda:
 
-   `-r` (recursive) optsiyasi:
-        kataloglar va ularning tarkibidagi fayllarni o'chirish imkonini beradi. Ushbu parametr ifodalanmasa, `rm` kataloglarni emas, balki faqat individual fayllarni o'chiradi.
-
-   `-f` (force) optsiyasi:
-        "majbur" ma'nosini bildiradi va agar `rm` kommandasi bilan birga qo'llanilganda, u ko'pgina ogohlantirish xabarlarni e'tibordan qoldiradi. Agar yozishdan himoyalangan yoki mavjud bo'lmagan fayllarni o'chirishga harakat qilsangiz, tasdiqlashni so'ramasdan davom ettirishga imkon beradi.
+- **-r** (recursive) optsiyasi: Kataloglar va ularning tarkibidagi fayllarni o'chirish imkonini beradi.
+- **-f** (force) optsiyasi: Majburiy o'chirishni bildiradi va ogohlantirishlarsiz davom etadi.
 
 ## Linux - `touch`
 
-Touch burug'i ko'pincha fayl yaratish uchun ishlatiladi. Lekin, uning asosiy maqsadi fayllarning oxirgi o'zgartirilgan sanasini (last-modified-date) yangilashdir.
+`touch` buyrug'i fayl yaratishdan tashqari, mavjud faylning oxirgi o'zgartirilgan sanasini yangilash uchun ishlatiladi:
 
 ```bash
 $ ls -l grass
@@ -162,29 +173,41 @@ $ ls -l grass
 
 ![nano meme](./images/nano-meme.png)
 
-`nano` - bu terminaldagi kod muharriri. U turli kengaytmadagi fayllarni qo'llab quvvatlaydi: py, js, html, c, sh va h.k.
+`nano` - bu terminaldagi kod muharriri. U turli kengaytmadagi fayllarni qo'llab-quvvatlaydi: `.py`, `.js`, `.html`, `.c`, `.sh` va boshqalar.
 
 ```bash
 $ nano hello-world.py
 ```
 
- - `nano` dasturidan chiqish uchun: **CTRL + X**
- - `nano` haqida ko'proq malumot olish uchun: `man nano`
+- `nano` dasturidan chiqish uchun: **CTRL + X**
+- `nano` haqida ko'proq ma'lumot olish uchun: `man nano`
 
-Agar `nano` kompyuteringizda o'rnatilmagan bo'lsa:
+Agar `nano` kompyuteringizda o'rnatilmagan bo'lsa, quyidagi buyruqlarni bajarishingiz mumkin:
 
 ```bash
-sudo apt update
-sudo apt upgrade
-sudo apt install nano
+$ sudo apt update
+$ sudo apt upgrade
+$ sudo apt install nano
 ```
 
-## Samaradorlikni oshiring
+## Samaradorlikni oshirish
 
-- **CTRL + SHIFT + T** (terminalda) -   terminalda yangi "tab" ochish
-- **ALT + F4** - aktiv oynani yopish
-- **CTRL + TAB** (brovzerda) - tabni almashtirish
-- **CTRL + Pg Up** (brovzer + terminal) - tablarni almashtirish chapga/o'ngga
-- **ALT + 1..9** (brovzer + terminal) - tablarni indeks bo'ylab almashtirish
+- **CTRL + SHIFT + T** (terminalda) - Yangi terminal "tab" ochish
+- **ALT + F4** - Aktiv oynani yopish
+- **CTRL + TAB** (brauzerda) - Tablarni almashtirish
+- **CTRL + Pg Up** (brauzer + terminal) - Tablarni chapga/o'ngga almashtirish
+- **ALT + 1..9** (brauzer + terminal) - Tablarni indeks bo'yicha almashtirish
+
+---
+
+## Topshiriq
+
+1. **Tarmoq Ma'lumotlari**  
+   - Kompyuteringizning tarmoq interfeyslarining ma'lumotlarini olish uchun ishlatishingiz mumkin bo'lgan buyruqlarni aniqlang va ularning qanday natijalarni ko'rsatishini tushuntiring.
+   
+2. **xumoyun.uz serverini `ping` qiling**  
+
+3. **ARP Keshini Tekshirish**  
+   - IP manzillar va MAC manzillar orasidagi farqlarni aniqlang. ARP keshini qanday ko'rish mumkin?
 
 **Keyingi dars:** [[03-dars]]

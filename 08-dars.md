@@ -19,7 +19,7 @@ Global o'zgaruvchilarni yodlash maqsadga muvofiq bo'ladi:
 | `$PS1` | [$PS1 variable](https://www.warp.dev/blog/whats-so-special-about-ps1) |
 | `$PS2` | - |
 
-O'zgaruvchilarni ekranga chiqarish (*Google cloud shell*):
+O'zgaruvchilarni ekranga chiqarish (*Google Cloud Shell*):
 
 ```bash
 $ echo $PATH
@@ -32,7 +32,7 @@ Har bir buyruq **chiqish kodini** qaytaradi. Muvaffaqiyatli buyruq har doim "0" 
 
 Skript yozishda foydalanishimiz mumkin bo'lgan yana bir qulay buyruq - `exit`. Hech qanday argumentlarsiz `exit` kodini ishga tushirish ishlayotgan skriptni tugatadi va `exit` oldidan bajarilgan oxirgi buyruqning chiqish kodini qaytaradi.
 
-Dastur tugagach, **chiqish kodi** `$?`  o'zgaruvchisiga yoziladi. Dastur muvaffaqiyatli bajarilganini aniqlash uchun: `echo $?` buyrug'ini berasiz.
+Dastur tugagach, **chiqish kodi** `$?` o'zgaruvchisiga yoziladi. Dastur muvaffaqiyatli bajarilganini aniqlash uchun: `echo $?` buyrug'ini berasiz.
 
 ## Kommentlar / Izohlar
 
@@ -47,42 +47,41 @@ Siz kommentlarni uzunroq buyruqlarning vazifalarini tushuntirish uchun ishlatish
 
 ```bash
 $ ls -lht ~ | head -n 5 # Uy katalogidagi fayllarni o'zgartirish vaqti bo'yicha filterlash - yuqoridagi 5tasini ko'rsatadi
-
 ```
 
 ## Linux - `read`
 
 Bu buyruq stdin dan o'zgaruvchilarga kiritilgan ma'lumotlarni o'qiydi va sintaksi quyidagicha:
 
-``` bash
+```bash
 read [-ers] [-a massiv] [-d chegaralovchi] [-i matn] [-n nchars] [-N nchars]
      [-p prompt] [-t vaqt] [-u fd] [ozgaruvchi1 ...] [ozgaruvchi2 ...]
 ```
 
 Agar oʻzgaruvchi nomlari koʻrsatilmagan boʻlsa, kiritilgan maʼlumotlar `$REPLY` oʻzgaruvchisida saqlanadi.
 
-``` bash
+```bash
 #!/bin/bash
 
 read # malumot kiritilishini kutadi
 echo $REPLY # kiritilgan malumotni chop etadi
 ```
 
-| Optsiya | To'liq Nomi | Tavsifi |  |
-| :--: | :--- | :--- | ---- |
-| `-a` | array/massiv | So'zlarni indekslangan massivda saqlaydi |  |
-| `-e` |  | ["-e" optsiyasi ](https://www.baeldung.com/linux/read-command) |  |
-| `-d` | delimiter/chegaralovchi | Chegaralovchi o'rnatadi |  |
-| `-n` | nchars | **n** ta belgilar o‘qilgandan so'ng o‘qishni to‘xtatadi |  |
-| `-N` | nchars | **n** belgilar yoki EOF o‘qilgandagina o‘qishni to‘xtatadi, chegarani e’tiborsiz qoldiradi. |  |
-| `-p` | prompt | Konsolda prompt satrini chop etadi |  |
-| `-i` | interactive | Foydalanuvchi o'zgartirishi mumkin bo'lgan to'ldiruvchi matnni chop etadi. `-e` bilan birgalikda ishlatiladi |  |
-| `-r` | raw input | $ va * kabi maxsus belgilarning talqinini o'chirib qo'yadi |  |
-| `-s` | silent/sokin | ["-s" optsiyasi ](https://www.baeldung.com/linux/read-command) |  |
-| `-t` | timeout/turib-turish | Chiqishdan oldin ma'lum vaqt kutadi |  |
-| `-u` | file descriptor | ["-u" optsiyasi ](https://www.baeldung.com/linux/read-command) |  |
+| Optsiya | To'liq Nomi | Tavsifi |
+| :--: | :--- | :--- |
+| `-a` | array/massiv | So'zlarni indekslangan massivda saqlaydi |
+| `-e` |  | ["-e" optsiyasi ](https://www.baeldung.com/linux/read-command) |
+| `-d` | delimiter/chegaralovchi | Chegaralovchi o'rnatadi |
+| `-n` | nchars | **n** ta belgilar o‘qilgandan so‘ng o‘qishni to‘xtatadi |
+| `-N` | nchars | **n** belgilar yoki EOF o‘qilgandagina o‘qishni to‘xtatadi, chegarani e’tiborsiz qoldiradi |
+| `-p` | prompt | Konsolda prompt satrini chop etadi |
+| `-i` | interactive | Foydalanuvchi o'zgartirishi mumkin bo'lgan to'ldiruvchi matnni chop etadi. `-e` bilan birgalikda ishlatiladi |
+| `-r` | raw input | $ va * kabi maxsus belgilarning talqinini o'chirib qo'yadi |
+| `-s` | silent/sokin | ["-s" optsiyasi ](https://www.baeldung.com/linux/read-command) |
+| `-t` | timeout/turib-turish | Chiqishdan oldin ma'lum vaqt kutadi |
+| `-u` | file descriptor | ["-u" optsiyasi ](https://www.baeldung.com/linux/read-command) |
 
-``` bash
+```bash
 #!/bin/bash
 
 read -p 'Ismingni kirit: ' name
@@ -115,7 +114,6 @@ read -p "Raqam kirit: " -a array
 
 echo "unda bunda boyni qizi mana shunda:"
 echo ${array[2]}
-
 ```
 
 Natija:
@@ -130,12 +128,12 @@ unda bunda boyni qizi mana shunda:
 
 Ikkita va bitta qo'shtirnoq o'rtasida muhim farq bor. Ikkita qo'shtirnoq ichidagi o'zgaruvchilarning ahamiyati bor. Bitta qo'shtirnoq ichida esa aksincha. Masalan:
 
-``` bash
+```bash
 echo "Sizning uyingiz: $HOME" # Sizning uyingiz: /home/<foydalanuvchi nomi>
 echo 'Uyingiz: $HOME' # Sizning uyingiz: $HOME
 ```
 
-``` bash
+```bash
 INPUT="G'alati    bo'shliqqa     ega qator.    "
 echo $INPUT # Gʻalati boʻshliqqa ega qator.
 echo "$INPUT" # G'alati    bo'shliqqa     ega qator.    .
@@ -150,7 +148,7 @@ $ echo '  Galati   boshliqqa   ega      qator'
 
 Endi jiddiyroq misolni ko'rib chiqing:
 
-``` bash
+```bash
 FILE="Sevimli narsalar.txt"
 cat $FILE # 2 ta faylni chop etishga urinmoqda: Sevimli va narsalar.txt
 cat "$FILE" # 1 faylni chop etadi: `Sevimli narsalar.txt`
@@ -172,5 +170,15 @@ Butun kommandani qaytadan yozib chiqish o'rniga siz `!!` argumentidan foydalanis
 $ sudo !! # bundan oldingi buyruqni '!!' o'rniga qo'yish kerakligini bildiradi
 $ sudo apt install nodejs
 ```
+
+---
+
+## Topshiriq
+
+1. Berilgan `$PATH` o'zgaruvchisi qiymatidagi barcha direktoriyalarni qanday qilib alohida qatorlarda chop etishingiz mumkin? Skript yozing.
+
+2. `read` buyruq funksiyasidan foydalanib, foydalanuvchidan ikkita ma'lumotni oling va bu ma'lumotlar bilan mos ravishda xabar chiqarish uchun skript yozing. Misol uchun, agar foydalanuvchi "Khumoyun" va "18" deb kiritsa, "Salom, Khumoyun. Sen 18 yoshdasan!" xabarini chiqarilsin.
+
+3. Foydalanuvchidan ma'lumot olish uchun `read` buyrug'ining `-t` (timeout) opsiyasidan foydalaning. Skript yozing, u foydalanuvchidan 10 soniya ichida ma'lumot olishi kerak. Agar ma'lumot 10 soniya ichida kiritilmasa, "Vaqt tugadi" xabarini chiqaring.
 
 **Keyingi dars:** [[09-dars]]

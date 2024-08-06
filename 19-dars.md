@@ -244,3 +244,4 @@ $ find -type f -regex '.*\.\(png\|txt\)'
 3. *Barcha bo'sh kataloglarni toping va ularni o'chiring.*
 4. *Tarkibida "Boshqa" so'zi bor fayllarni qidiring va ularni "boshqalar" nomli katalogga o'tkazing.*
 
+**Keyingi dars:** [20-dars](20-dars)

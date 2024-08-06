@@ -91,6 +91,6 @@ Manabuni terminal desa bo'ladi! 🔥
 
 ![terminal-result](images/terminal-result.png)
 
-Uddalagan bo'lsangiz hursandman 
+Uddalagan bo'lsangiz, hursandman :) 
 
 **Keyingi dars:** [[13-dars]]

@@ -8,53 +8,55 @@ sort: 6
 ---
 ## Ilova menejeri buyruqlari
 
-Ilova menejeri (package-manager) internetdan turli dasturlarni o'rnatish, kompyuterdagi mavjud dasturlarni o'chirish/yangilash kabi xizmatlarni taqdim etadi. Ilova menejeri barcha Linux distributivlarida xar hil nomda bo'lishi mumkin. Ubuntu va Debian'ga asoslangan distributivlarda `apt`, Arch'ga asoslangan distributivlarda `pacman` buyrug'i ishlatiladi. Quyida `apt` yordamida turli-xil buyruqlarni ko'rib chiqamiz.
+Ilova menejeri (package-manager) internetdan dasturlarni o'rnatish, mavjud dasturlarni yangilash yoki o'chirish kabi xizmatlarni taqdim etadi. Har bir Linux distributivida ilova menejeri turlicha nomlanadi. Masalan, Ubuntu va Debian'ga asoslangan distributivlarda `apt`, Arch'ga asoslangan distributivlarda `pacman` ishlatiladi. Bu darsda `apt` yordamida turli buyruqlarni ko'rib chiqamiz.
 
-**P.S.** `apt-get`, `aptitude` va `apt` kommandalari bir xil vazifani bajaradi, ammo men `apt` buyrug'idan foydalanishni maslahat beraman chunki u yangi, osson va sayqallangan.
+**P.S.** `apt-get`, `aptitude` va `apt` buyruqlari bir xil vazifani bajaradi, ammo `apt` buyrug'idan foydalanish tavsiya etiladi, chunki u yangi, qulay va intuitiv interfeysga ega.
 
 ### 1. Kompyuterdagi barcha ilovalarni yangilash
 
-Tizim optimal ishlashi uchun mavjud dasturlarni dars-ora yangilab turish maqsadga muvofiq. Buyruq:
+Tizimning optimal ishlashini ta'minlash uchun dasturlarni muntazam ravishda yangilab turish kerak. Buning uchun quyidagi buyruqlarni ishlatamiz:
 
-```bash
-$ sudo apt update && sudo apt upgrade
-```
+- **`sudo apt update`**: Tizimdagi paket ro'yxatini yangilaydi. Bu buyruq yangilanishlar haqida ma'lumot olish uchun kerak.
+  
+  ```bash
+  $ sudo apt update
+  ```
 
-Bir-biriga qarama-qarshi bo'lgan dasturlarni eng yangi versiyaga yangilashga va eski foydalanilmagan (bog'liqlik mavjud bo'lmagan) dasturlarni olib tashlaydigan buyruq:
+- **`sudo apt upgrade`**: Mavjud dasturlarni yangilaydi.
 
-```bash
-$ sudo apt dist-upgrade
-```
+  ```bash
+  $ sudo apt upgrade
+  ```
+
+- **`sudo apt dist-upgrade`**: Yangilanish jarayonida muammolarni hal qilish va eski dasturlarni olib tashlash orqali tizimni yaxshilaydi. Bu buyruq tizimni eng yangi versiyaga yangilaydi va kerakli bo'lmagan paketlarni olib tashlaydi.
+
+  ```bash
+  $ sudo apt dist-upgrade
+  ```
 
 ### 2. Ilovalarni APT bilan o'rnatish
 
-```bash
-$ sudo apt install dastur-nomi -y
-```
-
-`-y` (yes) optsiyasi dastur o'rnatilayotgan paytda beriladigan savollarga "ha" deb javob beradi, huddi Windows'da ilova o'rnatayotganda "next, next, next" qilganimizdek. Masalan, VLC Media Player-ni Ubuntu-da o'rnatish jarayoni quyidagicha:
+APT yordamida dasturlarni o'rnatish juda oson. Misol uchun, VLC Media Player-ni o'rnatish jarayoni:
 
 ```bash
 $ sudo apt install vlc -y
 ```
 
+`-y` optsiyasi dastur o'rnatish jarayonida avtomatik ravishda "ha" deb javob beradi. Bu Windows'da ilova o'rnatayotganda "next" tugmasini bosish kabi ishlaydi.
+
 ![APT install meme](images/apt-install-meme.jpg)
 
 #### 2.5 Ilovalarni `dpkg` orqali o'rnatish
 
-Xuddi Windows'dagi "exe" fayllarni ustanovka qilgan singari ilovalarni `dpkg` yordamida o'rnatish mumkin. Linux dasturlari "deb" kengaytmasiga ega va ularni o'rnatish quyidagicha:
+Agar siz `deb` kengaytmali faylni o'rnatmoqchi bo'lsangiz, `dpkg` buyrug'idan foydalanishingiz mumkin. Bu Windows’dagi “.exe” fayllarni o'rnatish kabi ishlaydi:
 
 ```bash
 $ sudo dpkg -i ilova.deb
 ```
 
- - `-i` (install) o'rnatish manosini bildiradi.
+- `-i` (install) optsiyasi faylni o'rnatishni bildiradi.
 
-Agar sizda pastdagiga o'xshash muommo paydo bo'lsa, dastur uchun kerakli fayllar o'rnatilmaganini bildiradi:
-
-![missing dependency](images/dependency-missing.png)
-
-Muommoni hal qilish uchun `apt` yordamida qaram dasturlarni birma-bir o'rnatish zarur.. Vaqtingizni va asablaringizni asrab qolish uchun:
+Agar qaram dasturlar yetishmayotganligi haqida xatolik yuzaga kelsa, kerakli fayllarni o'rnatish uchun:
 
 ```bash
 $ sudo apt install -f
@@ -62,11 +64,13 @@ $ sudo apt install -f
 
 ### 3. Ilovalarni APT yordamida o'chirib tashlash
 
+Agar siz dasturdan voz kechmoqchi bo'lsangiz, uni o'chirish uchun quyidagi buyruqni ishlating:
+
 ```bash
 $ sudo apt remove dastur-nomi
 ```
 
-Masalan, avval o'rnatilgan VLC dasturini o'chirish uchun:
+Masalan, VLC dasturini o'chirish uchun:
 
 ```bash
 $ sudo apt remove vlc
@@ -74,17 +78,19 @@ $ sudo apt remove vlc
 
 ### 4. O'rnatish mumkin bo'lgan ilovalarni qidirish
 
+Agar siz tizimda mavjud bo'lmagan dasturlarni qidirmoqchi bo'lsangiz, quyidagi buyruqni ishlatishingiz mumkin:
+
 ```bash
 $ sudo apt search dastur-nomi
 ```
 
 ### 5. `autoremove` / `autoclean`
 
-Nomlari bir-xildek tuyulsada "autoremove" va "autoclean" ikkita alohida buyruqdir.
+`autoremove` va `autoclean` buyruqlari tizimni toza va samarali saqlash uchun ishlatiladi.
 
 #### `autoremove`
 
-Dasturlarni o'chirganingizda unga qaram bo'lgan paketlar qolib ketadi chunki ular kelajakda boshqa dastur uchun kerak bo'lib qolishi mumkin degan maqsadda tizim o'sha paketlarni saqlab qo'yadi. `autoremove` keraksiz paketlarni tozalaydi va diskda ancha bo'sh joy qoldiradi.
+O'chirilgan dasturlarga qaram bo'lgan paketlar tizimda qolib ketishi mumkin. `autoremove` bu kerak bo'lmagan paketlarni tozalaydi:
 
 ```bash
 $ sudo apt autoremove
@@ -92,13 +98,13 @@ $ sudo apt autoremove
 
 #### `autoclean`
 
-Dasturlarni o'rnatganingizda yoki yangilaganingizda, APT `.deb` fayllarini tizimingizga yuklab oladi. Vaqt o'tishi bilan o'sha fayllarning ba'zilari eskirishi mumkin. `autoclean` eskirgan dasturlarni keshdan tozalaydi va diskni bo'shatishga yordam beradi.
+APT tizimga o'rnatilgan va yangilangan dasturlar uchun `.deb` fayllarini yuklab oladi. `autoclean` eskirgan fayllarni tozalaydi va diskni bo'shatishga yordam beradi:
 
 ```bash
 $ sudo apt autoclean
 ```
 
-Xullas, ikkala buyruq ham tizimini toza va samarali saqlashga yordam beradi. Kompyuteringiz xotirasi to'lib borayotgan bo'lsa ikkala buyruqni terminalda ishga tushiring:
+Ikkala buyruqni birgalikda ishlatish tizimni toza va samarali saqlashga yordam beradi:
 
 ```bash
 $ sudo apt autoremove && sudo apt autoclean
@@ -106,74 +112,67 @@ $ sudo apt autoremove && sudo apt autoclean
 
 ## Qanday qilib ma'lum bir port bilan bog'langan dasturni topish mumkin?
 
-Buning uchun `lsof` (list-open-files) buyrug'ini "root" foydalanuvchi tomonidan beramiz. Mana bir misol:
+Port bilan bog'langan dasturlarni aniqlash uchun `lsof` (list-open-files) buyrug'idan foydalaniladi. Misol:
 
 ```bash
 $ sudo lsof -i:port_raqami
 ```
 
->`-i` optsiyasi internet so'zining qisqartmasi.
-
-Yana bir misol, agar 80-port (veb-server) bilan bog'langan dasturni qidirayotgan bo'lsangiz, quyidagi kommandani terminalga uloqtiring:
+Misol uchun, 80-port bilan bog'langan dastur uchun:
 
 ```bash
 $ sudo lsof -i:80
 ```
 
->Ko'pchilik `netstat -tulpn | grep :port_raqami` buyrug'idan foydalanadi, lekin bu ayrim dasturlar uchun samarasiz.
+Ko'pchilik `netstat -tulpn | grep :port_raqami` buyrug'idan foydalanadi, lekin bu ba'zi dasturlar uchun samarali bo'lmasligi mumkin.
 
-## Linux haqida malumot olish
+## Linux haqida ma'lumot olish
 
-Cloud serverlardan, yoki masofaviy kompyuterlarni boshqarayotganda sizga kompyuter nomi va versiya to'g'risidagi axborotlar kerak bo'ladi. Host kompyuter haqida malumot olishning ko'plab usullari bor, lekin biz faqat ayrimlarini ko'rib chiqamiz.
+Masofaviy kompyuterlarda yoki bulutli serverlarda kompyuter nomi va versiya to'g'risida ma'lumot olish uchun bir nechta usullar mavjud.
 
 ### 1-usul
 
-Unix'ga o'xshash operatsion tizimlardagi (jumladan, Linux) `/etc/` katalogi tizim va ilovalar uchun konfiguratsiya fayllarni va sozlamalarni ichiga oladi. `/etc` nomi "**et cetera**" ya'ni "**va hokazo**" degan ma'noni anglatadi. Katalog ichida kompyuterga bog'liq malumotlar ya'ni CPU, RAM, hosts, parollar va hokazolar fayl ko'rinishida saqlanadi. Operatsion sistema nomi va versiyalarini olish uchun `/etc/os-release` faylini o'qish kifoya.
+Unix'ga o'xshash tizimlarda `/etc/` katalogi tizim va ilovalar uchun konfiguratsiya fayllarni saqlaydi. `/etc/os-release` faylini o'qib, operatsion tizim haqida ma'lumot olish mumkin:
 
 ```bash
 $ cat /etc/os-release
 ```
 
-Natija:
-
 ![Linux info](images/linux-info.png)
 
 ### 2-usul
 
-`uname` buyrug'i tizim ma'lumotlarini, jumladan yadro versiyasini ko'rsatadi. `-a` optsiyasi "all" ya'ni barcha malumotni ko'rsatish degan ma'noni bildiradi.
+`uname` buyrug'i tizim ma'lumotlarini, jumladan yadro versiyasini ko'rsatadi. `-a` optsiyasi barcha ma'lumotlarni ko'rsatadi:
 
 ```bash
 $ uname -a
-Linux ubuntu 5.15.0-91-generic #101-Ubuntu SMP Tue Nov 14 13:30:08 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
 ### 3-usul
 
+`hostnamectl` buyrug'i tizimning nomi, virtualizatsiya turi va boshqa ma'lumotlarni ko'rsatadi:
+
 ```bash
 $ hostnamectl
- Static hostname: ubuntu
-       Icon name: computer-vm
-         Chassis: vm
-      Machine ID: e6cbca0afa744bbabaddf277c31812b0
-         Boot ID: 67a12f1b087147d7979e4e00699ff1de
-  Virtualization: oracle
-Operating System: Ubuntu 22.04.3 LTS
-          Kernel: Linux 5.15.0-91-generic
-    Architecture: x86-64
 ```
 
 ### 4-usul
 
-Bu usul `neofetch` dasturini o'rnatishni talab qiladi (taxminan `~130mb`, chunki `neofetch` ma'lumotlarni chiroyli tarzda ekranga chiqarish uchun turli kutubxonalardan foydalanadi.)
+`neofetch` dasturini o'rnatib, tizim haqida chiroyli tarzda ma'lumot olish mumkin:
 
-```
+```bash
 $ sudo apt install neofetch -y
-...
 $ neofetch
 ```
 
-Natija:
-
 ![neofetch](images/neofetch.png)
+
+---
+
+## Topshiriq
+
+1. APT yordamida tizimdagi barcha ilovalarni qanday qilib yangilash mumkin? `update`, `upgrade`, va `dist-upgrade` buyruqlarining vazifalarini tushuntiring.
+2. `dpkg` yordamida `.deb` faylini qanday o'rnatish mumkin? Agar o'rnatishda xatolik yuzaga kelsa, qanday choralar ko'rish kerak?
+3. `lsof` buyrug'idan foydalanib, 80-port bilan bog'langan dasturlarni qanday topsa bo'ladi?
 
 **Keyingi dars:** [[07-dars]]

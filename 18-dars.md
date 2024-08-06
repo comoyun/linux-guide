@@ -28,3 +28,5 @@ Displey menejerini to'xtatgandan so'ng, GUI-ni to'liq o'chirish uchun tizimni o'
 ![no-gui-example](images/no-gui-example.png)
 
 **Video ro'likni** afzal ko'ruvchilar uchun [xavola](https://youtu.be/mSYpy8QTxQI?si=cq0ueMUYmzXs6oTw).
+
+**Keyingi dars:** [19-dars](19-dars)

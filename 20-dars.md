@@ -134,4 +134,4 @@ $ man -k ftp
 1. [Itsfoss.com - linux man page guide](https://itsfoss.com/linux-man-page-guide/)
 2. [YouTube: Linux Training Academy - mastering linux man pages](https://youtu.be/RzAkjX_9B7E?si=YdkC7R64CWvTBQzR)
 
-
+**Keyingi dars:** [21-dars](21-dars)

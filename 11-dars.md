@@ -198,4 +198,13 @@ $ curl cheat.sh/gunzip
 ...
 ```
 
+
+---
+
+## Topshiriq
+
+1. `tar` yordamida `data` nomli katalogni arxivga aylantiring va `data_backup.tar` nomli fayl yarating.
+2. `gzip` yordamida `data_backup.tar` faylini siqing va `data_backup.tar.gz` nomli fayl yarating.
+3. `unzip` yordamida ZIP arxividan fayllarni chiqarib oling va `zip` yordamida yangi fayl qo'shish va arxiv tarkibini ko'rsatish amallarini bajarib ko'ring.
+
 **Keyingi dars:** [[12-dars]]

@@ -5,72 +5,71 @@ title: 09 - Xizmatlar Boshqaruvi
 description: Xizmatlar boshqaruvi va qanday qilib "service" yaratishni o'rganamiz.
 sort: 9
 ---
-## Avtomatik ishga tushuvchi xizmatlar
+## Avtomatik Ishga Tushuvchi Xizmatlar
 
-Apache2, OpenSSH va MySQL kabi dasturlarni yuklab olishingiz bilanoq, tizim qayta ishga tushirilganda o'sha xizmatlar avtomatik ravishda ishga tushadi. Misol uchun:
+Linux tizimida ba'zi dasturlar, masalan Apache2, OpenSSH va MySQL, kompyuter qayta ishga tushirilganda avtomatik ravishda ishga tushadi. Misol uchun, Apache2 dasturini o'rnatganingizda:
 
 ```bash
 $ sudo apt install apache2
 ```
 
-Endi, brovzeringizni `localhost` manziliga yo'naltiring:
+Bundan so'ng, brauzeringizda `localhost` manziliga kirsangiz, Apache2 veb-serverining sahifasini ko'rasiz.
 
-![apache-server](images/apache2-web-server.png)
+### Avtomatik Ishga Tushuvchi Xizmatlarni Aniqlash
 
-Siz dasturga avtomatik ravishda ishga tushish haqida aytmagan bo'lsangiz ham, u o'rnatish jarayonining bir qismi sifatida sozlangan bo'lishi mumkin.
-
-### Avtomatik ishga tushuvchi xizmatlarni aniqlash
+Avtomatik ishga tushadigan xizmatlarni aniqlash uchun quyidagi buyruqni ishlatamiz:
 
 ```bash
 $ sudo systemctl is-enabled apache2
-enabled
 ```
 
-Shundan so'ng, kompyuter avtomatik ravishda ishga tushadimi yoki yo'qligini aytadi.
+Agar bu buyruq `enabled` deb javob bersa, demak xizmat avtomatik ravishda ishga tushadi.
 
-### Avtomatik ishga tushuvchi xizmatlarni o'chirish
+### Avtomatik Ishga Tushuvchi Xizmatlarni O'chirish
 
-Quyidagi buyruq ko'zlangan natijani beradi:
-
-```bash
-$ sudo systemctl disable apache2.service
-```
-
-yoki
+Xizmatni avtomatik ishga tushishni o'chirish uchun quyidagi buyruqni ishlatamiz:
 
 ```bash
 $ sudo systemctl disable apache2
 ```
 
-## Xizmat konfiguratsiyasini qayta yuklash
+Yoki
 
-Ushbu buyruq ishlayotgan xizmatni o'chirmasdan konfiguratsiyasini qayta yuklaydi:
+```bash
+$ sudo systemctl disable apache2.service
+```
+
+### Xizmat Konfiguratsiyasini Qayta Yuklash
+
+Xizmatni o'chirmasdan konfiguratsiyasini qayta yuklash uchun quyidagi buyruqdan foydalanamiz:
 
 ```bash
 $ sudo systemctl reload <xizmat nomi>
 ```
 
-## Barcha yuklangan xizmatlar ro'yxatini olish
+### Barcha Yuklangan Xizmatlar Ro'yxatini Ko'rsatish
+
+Tizimdagi barcha xizmatlarni ko'rsatish uchun quyidagi buyruqni ishlatamiz:
 
 ```bash
 $ sudo systemctl list-units --type=service
 ```
 
-Biz `grep` orqali tizim yonganda avtomatik ishga tushadigan xizmatlarni saralay olamiz:
+Avtomatik ishga tushadigan xizmatlarni filtrlash uchun:
 
 ```bash
 $ sudo systemctl list-units --type=service | grep enabled
 ```
 
-## `service` yaratish
+### Yangi Xizmat Yaratish
 
-Keling, oddiy `service` ya'ni xizmat yaratish uchun umumiy qadamlar bilan tanishib chiqamiz. Avval  `/etc/systemd/system/` katalogida `.service` kengaytmali fayl yarating. Masalan: `myservice.service`
+Yangi xizmat yaratish uchun `/etc/systemd/system/` katalogida `.service` kengaytmali fayl yarating. Misol: `myservice.service`
 
 ```bash
 $ sudo nano /etc/systemd/system/myservice.service
 ```
 
-Endi esa fayl ichida ayrim zaruriy konfiguratsiyalarni yozishingiz kerak. Quyidagi shablonga nazar soling:
+Fayl ichiga quyidagi konfiguratsiyalarni yozing:
 
 ```
 [Unit]
@@ -86,57 +85,44 @@ WantedBy=default.target
 ```
 
 Bu yerda:
-1. **Description** -  xizmat tavsifi.
-2. **After** - Agar xizmat boshqa bir xizmatga bog'liq bo'lsa (masalan, `network.target`), `After` dan foydalanish belgilangan xizmatdan (bu holda `network.target`) oldin ishga tushirilishini ta'minlaydi. Bu faqat xizmatlarni ishga tushirish tartibini nazorat qilishning bir usuli.
-3. **ExecStart** - xizmatni ishga tushiradigan buyruq yoki skript.
-4. **Restart** - Qayta ishga tushirish harakatini belgilaydi.
+1. **Description** - Xizmat tavsifi.
+2. **After** - Agar xizmat boshqa bir xizmatga bog'liq bo'lsa.
+3. **ExecStart** - Xizmatni ishga tushiradigan buyruq yoki skript.
+4. **Restart** - Xizmatni qayta ishga tushirish harakati.
 
-Faylni saqlang va matn muharriridan chiqing. Keyingi qadam tizimga bu o'zgarishlar haqida xabar berish:
+Faylni saqlang va matn muharriridan chiqing. Keyin tizimga yangi xizmatlar haqida xabar berish uchun:
 
 ```bash
 $ sudo systemctl daemon-reload
 ```
 
-Endi bemalol o'zimiz yaratgan xizmatdan foydalana olamiz:
+Yangi xizmatni ishga tushiring:
 
 ```bash
 $ sudo systemctl start myservice
 ```
 
-Xizmatni tizim yonganda avtomatik ishga tushirishni yoqish:
+Xizmatni avtomatik ishga tushirishni yoqish:
 
 ```bash
 $ sudo systemctl enable myservice
 ```
 
-Xizmat ishlayotganiga ishonch hosil qilish uchun uning holatini tekshiring:
+Xizmat holatini tekshirish uchun:
 
-```
+```bash
 $ sudo systemctl status myservice
 ```
 
-## Mashqlar
-
-1. Tizimdagi `httpd` (Apache Web Server) serverining holatini tekshiring.
-2. Agar u ishlayotgan bo'lsa, uni to'xtating va yana tekshiring.
-3. Xizmatni yana ishga tushiring va holatini tekshiring.
-
->Shahar: `systemctl <status/start/stop> <xizmat>`
-
 ## Bonus
 
-Ushbu buyruq tizimni to'liq yonishi uchun qancha vaqt sarflaganligi haqida ma'lumot beradi.
+Tizimni to'liq yoqish vaqti haqida ma'lumot olish uchun:
 
 ```bash
 $ systemd-analyze
 ```
 
->Agar siz WSL foydalanuvchisi bo'lsangiz, quyidagi xatolikka duch kelasiz:
->
->`System has not been booted with systemd as init system (PID 1). Can't operate.`
->`Failed to connect to bus: Host is down`
->
->Bu holda, VirtualBox yoki VMWare bepul dasturlari orqali virtual Linux ishlatishni yoki butunlay Linux'ga o'tishingizni maslahat beraman.
+Agar siz WSL foydalanuvchisi bo'lsangiz, `systemd` muammosiga duch kelishingiz mumkin. Bunday holatda VirtualBox yoki VMWare dasturlaridan foydalanishni tavsiya qilaman.
 
 ![install-linux](images/install-linux-meme.png)
 

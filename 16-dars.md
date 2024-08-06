@@ -270,7 +270,7 @@ $ find ~/Documents -type f -name "*.txt" -mtime -3
 
 ## `less` - matnlarni qulay o'qish
 
-`cat` katta hajmdagi matnli fayllarni o'qish uchun biroz noqulay va fayl hajmiga qarab jud ko'p vaqt sarflaydi. `less` bu noqulayliklarni bartaraf etadi. Kommandani terganingizda `vim` (kod muharriri) oynasi ochilib fayl kontentini huddi matn muharriridek ochib ko'rsatadi. `vim`-dagi deyarli barcha funksiyalarni qo'llashingiz mumkin. Menga yoqadigani qidiruv xususiyatidir. Birorta faylni ochib `/termin` satrini yozing va dastur avtomatik ravishda topilgan natijalarni matn ichidan ko'rsatadi. Aytgancha, `less` oynasini yopish uchun shunchaki `q` klavishini bosing.
+`cat` katta hajmdagi matnli fayllarni o'qish uchun biroz noqulay va fayl hajmiga qarab juda ko'p vaqt sarflaydi. `less` bu noqulayliklarni bartaraf etadi. Kommandani terganingizda `vim` (kod muharriri) oynasi ochilib fayl kontentini huddi matn muharriridek ochib ko'rsatadi. `vim`-dagi deyarli barcha funksiyalarni qo'llashingiz mumkin. Menga yoqadigani qidiruv xususiyatidir. Birorta faylni ochib `/termin` satrini yozing va dastur avtomatik ravishda topilgan natijalarni matn ichidan ko'rsatadi. Aytgancha, `less` oynasini yopish uchun shunchaki `q` klavishini bosing.
 
 ```bash
 $ less matn.txt
