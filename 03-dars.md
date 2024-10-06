@@ -11,7 +11,7 @@ Agar Linux o‘rganayotgan bo‘lsangiz, IP manzillar, subnet, OSI modeli, TCP/U
 
 - **Networking Fundamentals** - Tarmoq asoslari
 - **CCNA Course** - Cisco tarmoq kursi
-- **[Networking for Dummies](https://edu.anarcho-copy.org/TCP%20IP%20-%20Network/Networking%20For%20Dummies.pdf)** (kitob) - Tarmoq haqida tushuncha
+- **[Networking for Dummies](https://edu.anarcho-copy.org/TCP%20IP%20-%20Network/Networking%20For%20Dummies.pdf)** (kitob) - Dumbullar uchun tarmoq darslari
 - **Network Administration Course** - Tarmoq ma'murlash kursi
 
 ## Fayllar yaratish va o'chirish

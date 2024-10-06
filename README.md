@@ -32,7 +32,7 @@ Bu yerda Linux va unga oid turli tuman dasturlar haqida ma’lumot ulashaman. Ma
 	Linux-ning tarixi, arxitekturasi, va umumiy tushunchalarni o'rganish uchun darslarni tartib bo'yicha o'qing. Bu sizga Linux tizimining qanday ishlashini va uning boshqa operatsion tizimlardan farqini tushunishga yordam beradi.
 
 - [ ] **Virtual mashinalar yoki WSL (Windows Subsystem for Linux) bilan tajriba o'tkazish**.
-	Linux-ni xavfsiz muhitda sinab ko'rish uchun virtual mashina (VMware, VirtualBox) yoki WSL yordamida o'rganing. Bu sizga Linux buyruqlarini o'rgatadi va distributivlarning farqlarini ossongina sinash imkonini beradi.
+	Linux-ni xavfsiz muhitda sinab ko'rish uchun virtual mashina (VMware, VirtualBox) yoki WSL yordamida o'rganing. Bu sizga Linux buyruqlarini mash qilish va distributivlarning farqlarini ossongina sinash imkonini beradi.
 
 - [ ] **O'zingizga mos Linux distributiv tanlash**.
 	Turli Linux distributivlarini (Ubuntu, Fedora, Arch, va h.k) o'rganib chiqing va o'z ehtiyojlaringizga mos keladigan birini tanlang. 

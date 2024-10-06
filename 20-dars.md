@@ -119,7 +119,7 @@ $ man -k ftp
 
 >`whatis` buyrug'i ham guruhlarni aniqlaydi
 
-## Hulosa
+## Xulosa
 
 - `man` Linux-da standart o'rnatilgan yordam tizimidir.
 - `man` manual so'zining qisqartmasi.
