@@ -24,7 +24,7 @@ Quyida eng ko‘p qo‘llaniladigan Linux distributivlari keltirilgan. Ulardan b
 
 Bu yerda Linux va unga oid turli tuman dasturlar haqida ma’lumot ulashaman. Ma’lumotlarni tartib bo‘yicha yozishga harakat qilaman, biroq o'z yo‘l xaritam butunlay tartibsiz. Yangi narsa o‘rganganim sayin, uni shu yerga qo‘shib boraman. Ushbu qo‘llanma nafaqat yangi Linux foydalanuvchilari uchun, balki tajribali tizim ma’murlari uchun ham foydali bo‘ladi deb o‘ylayman.
 
-**Agar siz butunlay yangi boshlovchi bo‘lsangiz, Linux murakkab tuyulishi mumkin. Men sizga yo‘l-yo‘riq ko‘rsatib, o‘zingizni qulay his qilishingiz va mavzularni to‘g‘ri o‘zlashtirishingiz uchun yetarli ma’lumotlar taqdim etaman. Ushbu platformaning maqsadi sizni shunday darajaga olib chiqishki, bundan keyin mustaqil ravishda o‘rganishni davom ettira olasiz.**
+Agar siz butunlay yangi boshlovchi bo‘lsangiz, Linux murakkab tuyulishi mumkin. Men sizga yo‘l-yo‘riq ko‘rsatib, o‘zingizni qulay his qilishingiz va mavzularni to‘g‘ri o‘zlashtirishingiz uchun yetarli ma’lumotlar taqdim etaman. Ushbu platformaning maqsadi sizni shunday darajaga olib chiqishki, bundan keyin mustaqil ravishda o‘rganishni davom ettira olasiz.
 
 ## Reja
 
