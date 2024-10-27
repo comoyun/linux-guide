@@ -4,24 +4,62 @@ tags:
   - signallar
   - kill
 ---
-Linux operatsion tizimida signallar bor. Ba'zan ularni bilib, ba'zan bilmay ishlatasiz. `Ctrl + D` ni bosib terminal dasturdan chiqasiz. `Ctrl + C` ni bosib dasturni interrupt qilasiz.
+Linux-da "signallar" degan tushuncha mavjud. Ularning ba'zilarini o'zimiz sezmasdan ishlatamiz. Masalan, terminalda, `Ctrl + D` tugmalarini bosib, dasturdan chiqishingiz mumkin. Yoki `Ctrl + C` bilan dasturni to'xtatishingiz mumkin. Dasturga signal yuborishning eng oddiy ko'rinishlaridan biri shular.
 
-UNIX-like tizim ishlatsangiz terminalingizni oching va `ps` buyrug'ini yuboring. U sizga hozir ishlab turgan protsesslar ro'yxatini beradi. Oddiyroq qilib aytsak, qachon kompyuteringizda dastur ishga tushirganingizda har bir dastur har xil protsessda ishlaydi. 
+## Protsesslar 
 
-PID, TTY, TIME, CMD kabi columnlar beradi. CMD - dastur, PID esa process ID degani. Istalgan PID raqamni tanlang. Endi esa uni to'xtatishni istasangiz, kill buyrug'idan foydalanasiz. Masalan mana bunday:
+Agar UNIX-like tizimdan foydalanayotgan bo'lsangiz, terminalni oching va quyidagi buyruqni kiriting:
 
-```
-kill -SIGNAL PID
-```
-
-Signal qismiga uni nima qilishni kiritasiz, misol uchun to'xtat demoqchi bo'lsangiz -3, yoki -9. 
-
-```
-kill -9 13488
+```bash
+$ ps
 ```
 
-Har bir signalni o'z [ma'nosi](https://www.tutorialspoint.com/unix/unix-signals-traps.htm) bor. Ba'zan dasturni to'xtatib qo'yishingiz ham mumkin. Va keyinroq kelgan joyidan davom ettirishni aytishingiz ham mumkin. Endi dasturlardan chiqish uchun X buttonni emas balkim terminal orqali `kill` buyrug'ini ishlatsangiz va o'zingizni hacker-dek tutsangiz bo'ladi :) 
+`ps` hozir tizimda ishlayotgan barcha protsesslarning ro'yxatini ko'rsatadi. Protsesslar - kompyuterda ishlayotgan dasturlar.
 
->Aslo maqola [@otabekswe](https://t.me/otabekswe) Telegram kanalidan olindi. 
+`ps` buyrug'i quyidagi ustunlarni ko'rsatadi: 
+- `PID` - bu protsessning identifikatsiya raqami (Process ID)
+- `TTY` - protsessning qaysi terminal orqali ishga tushirilganini bildiradi
+- `TIME` - protsess ishlayotgan vaqt
+- `CMD` - qaysi dastur yoki buyruq ishlayotganini ko'rsatadi
 
-Ingliz tilini biladiganlar uchun ushbu [signals - kill command](https://youtu.be/mIcdOWq4MME?si=2XwOlCoZU7h4evz5) rolikni ko'rishni maslahat beraman.
+Masalan:
+
+```bash
+  PID TTY          TIME CMD
+  1234 pts/0    00:00:03 bash
+  5678 pts/0    00:00:01 top
+  9101 pts/1    00:00:00 vim
+```
+
+Bu yerda `bash`, `top`, va `vim` dasturlari ishlayapti, ularning `PID` raqamlari esa 1234, 5678 va 9101.
+
+## `kill` buyrug'i
+
+Agar biror protsessni ya'ni dasturni to'xtatmoqchi bo'lsangiz, o'sha protsessning `PID` raqamini bilishingiz kerak. Masalan, yuqorida ko'rsatilgan `PID` raqamidan foydalanamiz:
+
+```bash
+$ kill -SIGNAL PID
+```
+
+Bu yerda `SIGNAL` qismiga siz qanday signal yuborishingizni belgilaysiz. Signal protsessga nima qilish kerakligini aytadi. Masalan, **majburiy** to'xtatish signali `-9` qiymati bilan ifodalanadi:
+
+```bash
+$ kill -9 1234
+```
+
+Ba'zi hollarda siz protsessni to'xtatib (pauza qilish) qo'yishingiz va keyinchalik uni davom ettirishingiz ham mumkin.
+
+## Signal turlari
+
+Linuxda har bir signalning o'z vazifasi bor. Eng ko'p ishlatiladigan signallar quyidagilar:
+- `-9` - protsessni majburan to'xtatadi
+- `-15` - protsessni muloyimlik bilan to'xtatadi
+- `-3` - protsessni pauzaga qo'yadi
+
+Har bir signalning to'liq ro'yxatini va nima vazifani bajarishini o'rganish uchun [bu yerga](https://www.tutorialspoint.com/unix/unix-signals-traps.htm) qarashingiz mumkin.
+
+---
+
+Dasturlardan chiqish uchun doimo o'ng yuqoridagi "X" tugmachasini bosish shart emas. Terminal orqali `kill` buyrug'idan foydalanib, o'zingizni xakerdek his qiling. 
+
+Agar ingliz tilini bilsangiz, ushbu [video darslikni](https://youtu.be/mIcdOWq4MME?si=2XwOlCoZU7h4evz5) ko'rishni tavsiya qilaman.

@@ -1,13 +1,13 @@
 ---
 sort: 19
-title: 19 - "Find" Buyrug'i
+title: 19 - "find" Buyrug'i
 tags:
   - find
-description: find buyrug'i haqida batafsil; xayotiy misollar va foydali buyruqlar.
+description: "\"find\" buyrug'i haqida batafsil; xayotiy misollar va foydali buyruqlar."
 ---
 ![find-grandma-meme](./images/find-grandma-meme.png)
 
-`Find` buyrug‘i yordamida papkalar va fayllarni qidirish hamda topilgan natijalar ustida turli amallarni bajarish juda oson. Uning qudrati fayllarni nom, hajm, o‘zgartirilgan sana yoki tarkib bo‘yicha izlash imkonini beradi. Bu yerda asosiy ma’lumotlarni yozishga harakat qildim.
+`find` buyrug‘i yordamida papkalar va fayllarni qidirish hamda topilgan natijalar ustida turli amallarni bajarish juda oson. Uning qudrati fayllarni nom, hajm, o‘zgartirilgan sana yoki tarkib bo‘yicha izlash imkonini beradi. Bu yerda asosiy ma’lumotlarni yozishga harakat qildim.
 
 ## Starter
 

@@ -3,8 +3,8 @@ tags:
   - head
   - tail
   - cat
-description: head va tail buyruqlari nima qiladi va ularning farqlari nima? Ushbu darsda bilib olasiz.
-title: 21 - head va tail
+description: '"head" va "tail" buyruqlari nima qiladi va ularning farqlari nima? Ushbu darsda bilib olasiz.'
+title: 21 - "head" va "tail"
 sort: 21
 ---
 ![head-tail-cat](images/head-tail-cat.png)

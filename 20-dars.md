@@ -1,8 +1,9 @@
 ---
 sort: 20
-title: 20 - "Man" Sahifalari
+title: 20 - "man" Sahifalari
 tags:
   - man
+  - yordam
 description: Har qanday Linux savollarga javobni qayerdan topishni bilmoqchimisiz? Xo‘p…
 ---
 ![man-meme](images/man-meme.png)
