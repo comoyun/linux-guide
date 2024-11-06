@@ -19,7 +19,7 @@ Global o'zgaruvchilarni yodlash maqsadga muvofiq bo'ladi:
 | `$PS1` | [$PS1 variable](https://www.warp.dev/blog/whats-so-special-about-ps1) |
 | `$PS2` | - |
 
-O'zgaruvchilarni ekranga chiqarish (*Google Cloud Shell*):
+O'zgaruvchilarni ekranga chiqarish (muhit - *Google Cloud Shell*):
 
 ```bash
 $ echo $PATH
@@ -51,7 +51,7 @@ $ ls -lht ~ | head -n 5 # Uy katalogidagi fayllarni o'zgartirish vaqti bo'yicha 
 
 ## Linux - `read`
 
-Bu buyruq stdin dan o'zgaruvchilarga kiritilgan ma'lumotlarni o'qiydi va sintaksi quyidagicha:
+Bu buyruq `stdin`dan o'zgaruvchilarga kiritilgan ma'lumotlarni o'qiydi. Qo'llanilishi bunday:
 
 ```bash
 read [-ers] [-a massiv] [-d chegaralovchi] [-i matn] [-n nchars] [-N nchars]
@@ -179,6 +179,6 @@ $ sudo apt install nodejs
 
 2. `read` buyruq funksiyasidan foydalanib, foydalanuvchidan ikkita ma'lumotni oling va bu ma'lumotlar bilan mos ravishda xabar chiqarish uchun skript yozing. Misol uchun, agar foydalanuvchi "Khumoyun" va "18" deb kiritsa, "Salom, Khumoyun. Sen 18 yoshdasan!" xabari chiqarilsin.
 
-3. Foydalanuvchidan ma’lumot olish uchun `read` buyrug‘ining `-t` (timeout) parametridan foydalaning. 10 soniya ichida foydalanuvchidan ma’lumot qabul qiladigan skript yozing. Agar belgilangan vaqt ichida ma’lumot kiritilmasa, "Vaqt tugadi" degan xabarni chiqaring.
+3. Foydalanuvchidan ma’lumot olish uchun `read` buyrug‘ining `-t` (timeout) parametridan foydalaning. 10 soniya ichida foydalanuvchidan ma’lumot qabul qiladigan skript yozing. Agar belgilangan vaqt ichida ma’lumot kiritilmasa, "Vaqt tugadi" degan xabar chiqarilsin.
 
 **Keyingi dars:** [[09-dars]]

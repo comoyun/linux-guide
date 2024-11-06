@@ -7,7 +7,7 @@ sort: 5
 ---
 ## Google Cloud Shell
 
-Google Cloud Shell sizga [cloud.google.com](https://cloud.google.com) platformasida Linux tizimidan foydalanish imkonini beradi. Ushbu bepul xizmat orqali dasturiy ta'minotni boshqarish, skriptlarni ishga tushirish yoki veb serverlarni sozlash mumkin.
+Google Cloud Shell sizga [cloud.google.com](https://cloud.google.com) platformasida Linux tizimidan foydalanish imkonini beradi. Ushbu bepul xizmat orqali dasturiy ta'minotni boshqarish, skriptlarni ishga tushirish yoki veb serverlarni sozlash mumkin. Bu yerdagi bilimlarni amalda qo'llash uchun yaxshi joy.
 
 Masalan, `neofetch` buyrug'ini ishlatib, tizim haqida ma'lumot olish mumkin:
 
@@ -54,7 +54,9 @@ Bu yerda, `aircrack-ng` dasturining o'rnatilgan joylari ko'rsatiladi.
 
 ## Biroz off-topic
 
-**"If it is free, then you're the product"** - Agar biror narsa bepul bo'lsa, demak siz mahsulotsiz. Bepul dasturlar, ayniqsa VPN xizmatlaridan foydalanganda ehtiyot choralarini ko'rishni tavsiya qilaman .
+Bepul dasturlar, ayniqsa VPN xizmatlaridan foydalanganda ehtiyot choralarini ko'rishni tavsiya qilaman .
+
+>**"If it is free, then you're the product"** - Agar biror narsa bepul bo'lsa, demak siz mahsulotsiz. 
 
 ![free-product-meme](images/free-product-meme.png)
 

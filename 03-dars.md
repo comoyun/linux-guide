@@ -24,7 +24,7 @@ $ ls
 fayl-1  fayl-2  fayl-3  fayl-4  fayl-5
 ```
 
-Barcha fayllarni o'chirish uchun `rm *` buyrug'idan foydalanasiz:
+Barcha fayllarni o'chirish uchun `rm *` buyrug'idan foydalanamiz:
 
 ```bash
 $ rm *

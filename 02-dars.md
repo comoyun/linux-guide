@@ -146,7 +146,7 @@ $ cat file.txt file-2.txt file-3.txt > file-4.txt
 
 **Eslatma**: Katta fayllar uchun `less` yoki `more` buyruqlarini ishlatish tavsiya etiladi. Chunki ular faylning butun tarkibini bir vaqtning o'zida yuklamaydi, faqat kerakli qismini sahifalab ko'rsatadi.
 
-## Bo'sh bo'lmagan papkalarni o'chirish
+## To'ldirilgan papkalarni o'chirish
 
 Bu haqida avvalgi darsda yozilgan, lekin qayta ko'rib chiqish ziyon qilmaydi. Bo'sh bo'lmagan papkalarni o'chirish uchun:
 
@@ -169,7 +169,7 @@ $ sudo nano /etc/hosts
 
 ![nano meme](./images/nano-meme.png)
 
-Fayl kontenti:
+Fayl tarkibi:
 
 ```
 127.0.0.1 localhost 
@@ -180,7 +180,7 @@ Yuqoridagi misolda **127.0.0.1** `localhost` bilan bog'lanadi, ya'ni brovzerga `
 
 ## Fayl vaqtini yangilash
 
-Agar siz `/etc/hosts` faylida o'zgartirishlar kiritgan bo'lsangiz, faylning oxirgi o'zgartirilgan sanasini yangilash uchun `touch` buyrug'idan foydalanishingiz mumkin:
+Faylning oxirgi o'zgartirilgan sanasini yangilash uchun `touch` buyrug'idan foydalanishingiz mumkin. `/etc/hosts` kabi tizim fayllarini yangilash `sudo` talab qiladi:
 
 ```bash
 $ sudo touch /etc/hosts

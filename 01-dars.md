@@ -32,11 +32,13 @@ Enter your new password: ****
 Password set successfully!
 ~~~
 
->"root" foydalanuvchisi tizimdagi barcha buyruqlar va fayllarga **to'liq** kirish huquqiga ega bo'lgan superfoydalanuvchi hisoblanadi. Buni Windows-dagi Admin-ga ham o'xshatish mumkin. 
+>"root" foydalanuvchisi tizimdagi barcha buyruqlar va fayllarga **to'liq** kirish huquqiga ega bo'lgan superfoydalanuvchi hisoblanadi. Buni Windows-dagi Admin-ga ham qiyoslash mumkin. 
 
-## Joriy katalogni chop etish
+## Joriy papkani chop etish
 
-`pwd` (print-working-directory) terminaldagi joriy ishchi manzilini chop etadi. Etibor bering `$` belgisi oddiy foydalanuvchiga, `#` belgisi esa **root** foydalanuvchiga ishora qiladi. Terminalda `#` belgisini ko'rsangiz, bilingki, siz tizim ustidan to'liq boshqaruv kuchiga egasiz; xaker sifatida bu katta yutuq hisoblanadi.
+`pwd` (print-working-directory) terminaldagi joriy ishchi manzilini chop etadi. 
+
+Etibor bering `$` belgisi oddiy foydalanuvchiga, `#` belgisi esa **root** foydalanuvchiga ishora qiladi. Terminalda `#` belgisini ko'rsangiz, bilingki, siz tizim ustidan to'liq boshqaruv kuchiga egasiz; xaker sifatida bu katta yutuq hisoblanadi.
 
 ~~~bash
 $ pwd
@@ -51,16 +53,16 @@ $ pwd
 $ mkdir papka1 papka2 papka3
 ```
 
-"Bo'sh" papkani o'chirish uchun `rmdir` (remove-directory) buyrug'idan foydalaning. Agar papka bo'sh bo'lmasa, buyruq bekor qilinadi - papka o'chirilmaydi.
+**Bo'sh** papkani o'chirish uchun `rmdir` (remove-directory) buyrug'idan foydalaning. Agar papka bo'sh bo'lmasa, buyruq bekor qilinadi - papka o'chirilmaydi.
 
 ```bash
 $ rmdir papka1 papka2 papka3
 ```
 
-Bo'sh bo'lmagan papkalarni quyidagi buyruq orqali o'chirish mumkin:
+**To'ldirilgan** papkalarni quyidagi buyruq orqali o'chirish mumkin:
 
 ```bash
-$ rm -r bosh-bolmagan-papka
+$ rm -r toldirilgan-papka
 ```
 
 Ya'ni, bu yerda `-r` (recursive) opsiyasi papka ichidagi fayllarni hammasiga `rm` buyrug'ini beradi.
@@ -71,7 +73,7 @@ Ya'ni, bu yerda `-r` (recursive) opsiyasi papka ichidagi fayllarni hammasiga `rm
 $ ls
 ```
 
-Agar siz `-l`  (long-listing) opsiyasini qo'shsangiz, u ruxsatlar (permissions), o'zgartirilgan sana (last-modified-date), fayl yoki papkaga egalik qiluvchi kimsalar (owners) va boshqa kerakli ma'lumotlarni o'z ichiga oladi.
+Agar siz `-l`  (long-listing) opsiyasini qo'shsangiz, u ruxsatlar (permissions), o'zgartirilgan sana (last-modified-date), fayl yoki papkaga egalik qiluvchi kimsalar (owners) va boshqa ma'lumotlarni ko'rsatadi.
 
 ```bash
 $ ls -l
@@ -82,7 +84,7 @@ drwxr-xr-x  2 khumoyun khumoyun 4096 Aug  7 01:32 Downloads
 ...
 ```
 
-Odatda, `ls` buyrug'i yashirin fayllarni ko'rsatmaydi chunki ular ko'pincha foydalanuvchiga keraksiz va ekranda ortiqcha joyni egallaydi. Yashirin fayllarni majburiy ko'rsatish uchun `-a` (all) opsiyasini qo'shish kifoya.
+Odatda, `ls` buyrug'i yashirin fayllarni ko'rsatmaydi chunki ular ko'pincha keraksiz. Buni ustiga, ekranda ortiqcha joy egallaydi. Yashirin fayllarni majburiy ko'rsatish uchun `-a` (all) opsiyasini qo'shish kifoya.
 
 ```bash
 $ ls -a
@@ -107,7 +109,7 @@ script.sh
 
 ### Qiziq xolat
 
-Hmm, biz `ls / > list.txt` buyrug'i "list.txt" ichiga quyidagi matnni kiritishini kutamiz:
+Hmm, biz `ls / > list.txt` buyrug'i "list.txt" ichiga quyidagicha natijani kiritishini kutamiz:
 
 ```
 bin   dev  home  lib32  libx32      media  opt   root  sbin  srv       sys  usr
@@ -132,11 +134,13 @@ mnt
 ...
 ```
 
-Yuqoridagi variant dasturchilarga qulayroq bo'lgani sababli, faylga huddi shunday tartibda yoziladi. O'ylab ko'ring, agar fayl nomlari qatorma-qator yozilsa, ularni manipulatsiya qilish ancha ossonroq bo'ladi. Ko'rinib turibdiki, ba'zi buyruqlarning natijalari faylga siz kutgandek yo'naltirilmaydi va buning ortida "yaxshiroq" sabab bor.
+Yuqoridagi variant dasturchilarga qulayroq bo'lgani sababli, faylga huddi shunday tartibda yoziladi. O'ylab ko'ring, agar fayl nomlari qatorma-qator yozilsa, ularni manipulatsiya qilish ancha ossonroq bo'ladi. Masalan, pentesterlar ishlatadigan "wordlist"ni oling. 
+
+Ko'rinib turibdiki, ba'zi buyruqlarning natijalari faylga siz kutgandek yo'naltirilmaydi va buning ortida "yaxshiroq" sabab bor.
 
 ## StdOut'ni faylga yo'naltirish
 
-StdOut ya'ni "standart output" - dastur chiqish ma'lumotlarini yozadigan oqimdir. Odatiy tarzda, ma'lumotlar ekranda ko'rinadi, ammo ularni keyinchalik ishlov berish uchun faylga yoki umuman boshqa buyruqga ham yo'naltirish mumkin.
+StdOut ya'ni "standart output" - dastur chiqish ma'lumotlarini yozadigan oqimdir. Odatda, ma'lumotlar ekranda ko'rinadi, ammo ularni keyinchalik ishlov berish uchun faylga yoki umuman boshqa buyruqga ham yo'naltirish mumkin.
 
 Quyidagi buruq `new_file.txt` nomli fayl ichiga **"bu oddiy satr"** matnini kiritadi. Diqqat, agar fayl mavjud bo'lmasa, **yangisi yaratiladi**; agar fayl ichida matn bo'lsa, u **qaytadan yoziladi**:
 
@@ -150,7 +154,7 @@ Faylga qo'shib yozish `>>` ishorasi yordamida amalga oshiriladi:
 $ echo "bu oddiy satr" >> new_file.txt
 ```
 
-Natija:
+Shunday qilib, fayl ichida:
 
 ```new_file.txt
 bu oddiy satr
@@ -173,6 +177,8 @@ Faylni nusxalash:
 $ cp fayl ../masofa/fayl
 ```
 
+>`./masofa/fayl` o'rniga shunchaki `./masofa/` deb yozsangiz ham bo'ladi.
+
 Bir nechta fayllarni nusxalash:
 
 ```bash
@@ -193,9 +199,9 @@ $ cp -r papka masofa_joy/
 
 ## Fayl/papkani qidirish
 
-Bizga kerakli buyruq ba'zi Linux distributivlarida mavjud emas; shu sababli `apt` yoki o'zingiz foydalanayotgan distributivda mavjud bo'lgan paket menejeridan `plocate` dasturini o'rnatishni maslahat beraman:
+Bizga hozir kerak bo'ladigan buyruq ba'zi Linux distributivlarida mavjud emas; shu sababli `apt` yoki o'zingiz foydalanayotgan distributivda mavjud bo'lgan paket menejeridan `plocate` dasturini o'rnating:
 
->Paket menejeri - dastur o'rnatish, yangilash, sozlash va o'chirish jarayonini avtomatlashtiradigan vosita. `apt` - Ubuntu kabi Debian-ga asoslangan tizimlar uchun standart paket menejeri.
+>Paket menejeri - dastur o'rnatish, yangilash, sozlash va o'chirish uchun mo'ljallangan dastur. `apt` - Ubuntu kabi Debian-ga asoslangan tizimlar uchun standart paket menejeri.
 
 ```bash
 $ sudo apt install plocate
@@ -203,7 +209,7 @@ $ locate hi.txt
 /root/hello/hi.txt
 ```
 
->"sudo" sizga vaqtinchalik tizim darajasidagi vazifalarni bajarish uchun imtiyoz beradi. Esingizda bo'lsin: katta kuch bilan katta mas'uliyat keladi - undan oqilona foydalaning!
+>"sudo" sizga vaqtinchalik tizim darajasidagi vazifalarni bajarish uchun imtiyoz beradi. Esingizda bo'lsin: katta kuch katta mas'uliyat talab qiladi - undan oqilona foydalaning!
 
 Agar u siz qidirayotgan narsani topolmasa, ma'lumotlar bazasini yangilang. 
 
@@ -250,7 +256,7 @@ Pastdagi jadvalni yodlab olishni maslahat beraman - juda kerakli:
 
 ## Ruxsatlarni o'zgartirish
 
-Yuqoridagi jadvalga qarab, faylni boshqa foydalanuvchilar tomonidan boshqarilishi mumkinligini belgilash mumkin. Faylni bajariladigan qilish quyidagicha (bu shuni anglatadiki, siz uni dastur yoki skript sifatida ishlatishingiz mumkin):
+Yuqoridagi jadvalga qarab, faylni boshqa foydalanuvchilar tomonidan boshqarilishi mumkinligini belgilash mumkin. Faylni bajariladigan qilish quyidagicha (bu shuni anglatadiki, siz uni dastur yoki skript sifatida ishlatishingiz mumkin xuddi Windows-dagi `.exe` yoki `.bat` fayllari singari):
 
 ```bash
 $ chmod +x file_name.sh
@@ -326,7 +332,7 @@ $ watch "cat /var/log/auth.log"
 Ba'zi buyruqlar yoki opsiyalarni tariflarini unutishingiz mumkin, ammo `man` deyarli barcha buyruqlarni yetarlicha tavsifini offline tarzda chiqarib beradi. Bu Google'dan keyingi ikkinchi eng yaxshi do'stingiz. Sintaksis quyidagicha:
 
 ```bash
-$ man kerakli_buyruq
+$ man buyruq_nomi
 ```
 
 Shuni yodda tutish kerakki, `man` ba'zi buyruqlar tavsifini chiqarmaydi, masalan `cd`, `exit`, `source`, `type`, `export` va hokazo. 
