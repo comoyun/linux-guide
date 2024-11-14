@@ -1,13 +1,14 @@
 ---
+title: 22 - "sort" va "uniq"
+description: '"sort" va "uniq" buyruqlari bilan ishlash'
+sort: 22
+author: Khumoyun (@comoyun)
 tags:
   - sort
   - uniq
   - fayl-manipulatsiya
-description: '"sort" va "uniq" buyruqlari bilan ishlash'
-title: 22 - "sort" va "uniq"
-sort: 22
 ---
-`sort` va `uniq` fayllarni manipulatsiya qilishda as qotadigan buyruqlar hisoblanadi. Xaker sifatida "wordlist" fayllardagi dublikat qatorlarni o'chirishni yoki saralashni hoxlaysiz. Dasturchi sifatida csv, log, dat kabi fayllarni ustun bo'yicha saralashni hoxlaysiz. Oddiy foydalanuvchi sifatida esa kontaktlar ro'yxati yoki oddiy txt fayllardagi ortiqcha qatorlarni bir zumda o'chirishni hoxlaysiz. Aynan shunday vaziyatlarda `sort` va `uniq` buyruqlari ayni muddao.
+`sort` va `uniq` fayllarni manipulatsiya qilishda as qotadigan buyruqlar hisoblanadi. Xaker sifatida, 'wordlist' fayllaridagi dublikatlarni o'chirish yoki saralashni xohlaysiz. Dasturchi sifatida csv, log, dat kabi fayllarni ustun bo'yicha saralashni hoxlaysiz. Oddiy foydalanuvchi sifatida esa kontaktlar ro'yxati yoki oddiy txt fayllardagi ortiqcha qatorlarni bir zumda o'chirishni hoxlaysiz. Aynan shunday vaziyatlarda `sort` va `uniq` buyruqlari ayni muddao.
 
 ## Sort
 
@@ -38,6 +39,8 @@ Endi, shunchaki `sort raqamlar.txt` buyrug'ini yozing va quyidagi natija ekranga
 8
 9
 ```
+
+>Qaniydi garderobimni shunday tartiblay olsam 🙂
 
 Buni ekranga emas faylga yo'naltirish ham mumkin, `>` yoki `>>` operatorlari orqali. Masalan:
 
@@ -105,7 +108,7 @@ anor
 
 E'tibor bergan bo'lsangiz quyidagi "raqamlar.txt" faylida bir nechta dublikat qatorlar mavjud.
 
-```
+```bash
 $ cat raqamlar.txt
 9
 9
@@ -122,9 +125,9 @@ $ cat raqamlar.txt
 1
 ```
 
-Dublikat qatorlarni o'chirish uchun `uniq` buyrug'idan foydalanamiz.
+`uniq` buyrug'i dublikat qatorlarni o'chiradi.
 
-```
+```bash
 $ uniq raqamlar.txt 
 9
 8
@@ -139,7 +142,7 @@ $ uniq raqamlar.txt
 
 Uxx, "mevalar-2.txt" faylida ortiqcha mevalar borga o'xshaydi:
 
-```
+```bash
 $ cat mevalar-2.txt
 olma
 Anor
@@ -186,7 +189,7 @@ tarvuz
 
 *"Faqat dublikat qatorlarni ekranga chiqarsam bo'ladimi?"*, deb so'rasangiz, ha. Bu juda osson. Shunchaki `-id` opsiyalarini qo'llang, ya'ni bu yerda "i" katta kichikli nomlarni e'tiborsiz qoldiradi, "d" `uniq`-ning xarakterini teskari qilib qo'yadi, ya'ni dublikatlarni o'chirish o'rniga faqat o'shalarni ekranga chiqaradi.
 
-```
+```bash
 $ sort mevalar-2.txt | uniq -id
 anor
 nok
@@ -266,6 +269,12 @@ qovun
 ```
 
 Fayldagi har bir qator **necha marta** takrorlanganini aniqlang.
+
+5. Quyidagi buyruq nima vazifa bajaradi deb o'ylaysiz?
+
+```bash
+ls /bin /usr/bin | sort | uniq | grep zip
+```
 
 ---
 

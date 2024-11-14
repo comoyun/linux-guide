@@ -1,9 +1,10 @@
 ---
-tags:
-  - foydali
 title: 16 - Terminaldagi Foydali Amallar
 description: Terminaldan yanada samarali foydalanish maqsadida ushbu darsda keltirilgan amallarni o'rganing.
 sort: 16
+author: Khumoyun (@comoyun)
+tags:
+  - foydali
 ---
 
 ![hacker-meme](images/hacker-meme.png)
@@ -239,7 +240,7 @@ cat mening eng sevimli buyruqlarimdan biri.
 
 **CTRL + D** klavishlarini bosib chiqib keting va faylga qanday yozilganini tekshirib ko'ring, albatta `cat` orqali.
 
-## Fayl yaratish - fakt
+## Fayl yaratish
 
 Hech qanday buyruqlarsiz fayl yaratish:
 

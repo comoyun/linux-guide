@@ -1,8 +1,8 @@
 ---
-tags:
-  - miner
 title: Maynerlar
 description: Linux-da maynerlarni aniqlash va o'chirish
+tags:
+  - miner
 ---
 ![mining-meme](../images/mining-meme.png)
 

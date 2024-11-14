@@ -1,23 +1,26 @@
 ---
-sort: 20
 title: 20 - "man" Sahifalari
+description: Har qanday Linux savollarga javobni qayerdan topishni bilmoqchimisiz? Xo‘p…
+sort: 20
+author: Khumoyun (@comoyun)
 tags:
   - man
   - yordam
-description: Har qanday Linux savollarga javobni qayerdan topishni bilmoqchimisiz? Xo‘p…
 ---
 ![man-meme](images/man-meme.png)
 
 Biror narsani tushunmoqchi bo'lganingizda yoki hamjamiyatga savol bersangiz, manabunga o'xshash javoblar sizni asabingizga tegishi aniq:
 
-- **"Shunchaki `man` sahifasini o'qi!"**
-- "**Google sening do'sting :)** "
-- "`rm -rf /* --preserve-root` :) "
+- **Shunchaki `man` sahifasini o'qi!**
+- **Google sening do'sting 🙂**
+- `rm -rf / --preserve-root` 🙂
 
-Bular aslida juda yaxshi maslahatlar (oxirgisini aytmaganda albatta - u butun tizimni o‘chirib qo‘yadi), lekin `man` kabi qo‘llanmalarni o‘qish murakkab va ularga ko‘nikish uchun biroz vaqt kerak. Odatda `man` sahifalari deyarli barcha ma’lumotlarni o‘z ichiga oladi va yaxshi tuzilma asosida yozilgan. Misol uchun, `man bash` 80 dan ortiq sahifadan iborat bo‘lib, ma’lumotlar juda zich yozilgani sababli uning bitta sahifasini o‘zlashtirish bir necha kun amaliyot talab qiladi. Siz sevgan yutuber va yozuvchilar ma'lumotlarni asosan `man` sahifalaridan oladilar, va ko'pincha mayda detallarni e'tibordan chetlatadilar. `man` sahifasiga avval tashrif buyurgan bo'lsangiz, sizda quyidagicha savollar tug'ilgan bo'lishi mumkin:
+Bular aslida juda yaxshi maslahatlar (oxirgisini aytmaganda albatta, u butun tizimni o‘chirib yuboradi), lekin `man` kabi qo‘llanmalarni o‘qish murakkab va ularga ko‘nikish uchun vaqt kerak. Odatda `man` sahifalari deyarli barcha ma’lumotlarni o‘z ichiga oladi va yaxshi tuzilma asosida yozilgan. Misol uchun, `man bash` 80 dan ortiq sahifadan iborat bo‘lib, ma’lumotlar juda zich yozilgani sababli uning bitta sahifasini o‘zlashtirish bir necha kun talab qiladi. 
+
+Siz sevgan YouTuberlar va yozuvchilar ma'lumotlarni asosan `man` sahifalaridan oladi, lekin ko‘pincha mayda detallarni e’tibordan chetlatadi. Agar siz `man` sahifasiga birinchi marta kirgan bo‘lsangiz, quyidagi savollar tug‘ilishi mumkin:
 
 * Nega ba'zi narsalar qavs `[]` ichida?
-* Bu nuqtalar `...` nega kerak?
+* Bu nuqtalar `...` nimani anglatadi?
 * Nega ba'zi opsiyalarda bitta chiziq, boshqalarida ikkita chiziq bor?
 
 ## Foydalanish
@@ -30,7 +33,7 @@ $ man ls
 
 ![man sahifasi misol](images/man-page-example.png)
 
-Klaviaturadagi yo‘nalish ko‘rsatkichlari (yoki `jk` tugmalari) yordamida yuqoriga va pastga harakatlanish mumkin. `q` (chiqish) yoki `:q` tugmasi esa sahifani butunlay yopish uchun ishlatiladi. Sahifa ichidan ma’lum bir atamani qidirish kerak bo‘lsa, ’/’ (slesh) belgisidan so‘ng atama yoziladi. Masalan: `/Display`. Keyingi yoki avvalgi topilgan natijaga o‘tish uchun `n` va `N` tugmalari qo‘llaniladi. Sahifani bir oyna pastga tushirish yoki yuqoriga ko‘tarish uchun esa ’z’ va ’w’ tugmalari bosiladi.
+Klaviaturadagi strelkalar (yoki `jk` tugmalari) yordamida yuqoriga va pastga harakatlanish mumkin. `q` (chiqish) yoki `:q` tugmasi esa sahifani butunlay yopish uchun ishlatiladi. Sahifa ichidan ma’lum bir atamani qidirish kerak bo‘lsa, ’/’ (slesh) belgisidan so‘ng atama yoziladi. Masalan: `/Display`. Keyingi yoki avvalgi topilgan natijaga o‘tish uchun `n` va `N` tugmalari qo‘llaniladi. Sahifani bir oyna pastga tushirish yoki yuqoriga ko‘tarish uchun esa ’z’ va ’w’ tugmalari bosiladi.
 
 >**[Vim](https://youtu.be/-txKSRn0qeA?si=5im4F9plqHuwFwx-)** matn muharriri bilan ishlagan bo'lsangiz, undagi buyruqlar va harakat ishoralari `man` sahifalariga ham tegishligini tushunasiz. 
 
@@ -79,28 +82,32 @@ Bu yerda agar `COLS` qiymati berilsa fayllarni shunga mos ravishda ekranga chiqa
 
 Sahifalar bir nechta sarlavhalarga bo'lingan. Umumiy taqsimot quyidagicha:
 
-1. **NAME** - *buyruq nomi va qisqacha tavsifi keltirilgan*.
-2. **SYNOPSIS** - *buyruq sintaksini ya'ni qanday ishlatilishini ko'rsatadi. Kvadrat qavs ichidagi argumentlar `[]` ixtiyoriy; qavs ichida bo'lmagan narsalarni yozish shart.*
-3. **DESCRIPTION** - *buyruq  nima qilishi va undan qanday foydalanish mumkinligini batafsil tavsiflaydi. Shuningdek, ixtiyoriy atributlarni o'tkazib yuborsangiz nima bo'lishini aytib beradi.*
-4. **EXAMPLES** - *buyruqdan foydalanish to'g'risida misollari keltiriladi. Ko'pincha misollar buyruqning potensialini yanada ko'rsatish maqsadida murakkab tarzda yoziladi.*
-5. **DIAGNOSTICS** - *bu bo'limda buyruq tomonidan qaytarilgan xato xabarlari ro'yxati keltirilgan bo'ladi.*
-6. **LIMITS** - *bu bo'lim buyruqning har qanday cheklovlarini tavsiflaydi.*
-7. **SEE ALSO** - *tegishli ma'lumotlarni ichiga oladi, jumladan xavolalar.*
-8. **HISTORY** - *buyruqning qisqacha tarixini beradi, masalan, qachon paydo bo'lgan, kim yaratgan.*
-9. **WARNING** - *agar bu bo'lim mavjud bo'lsa, unda foydalanuvchilar uchun muhim maslahatlar mavjud.*
-10. **NOTES** - *yordamchi ma'lumotlar: buyruqni to'liq tushunish va foydalanishda yordam beradi.*
+| **Sarlavha**    | **Tavsif**                                                                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **NAME**        | Buyruq nomi va qisqacha tavsifi keltirilgan.                                                                                                                             |
+| **SYNOPSIS**    | Buyruq sintaksini ya'ni qanday ishlatilishini ko'rsatadi. Kvadrat qavs ichidagi argumentlar `[]` ixtiyoriy; qavs ichida bo'lmagan narsalarni yozish shart.               |
+| **DESCRIPTION** | Buyruq nima qilishi va undan qanday foydalanish mumkinligini batafsil tavsiflaydi. Shuningdek, ixtiyoriy atributlarni o'tkazib yuborsangiz nima bo'lishini aytib beradi. |
+| **EXAMPLES**    | Buyruqdan foydalanish to'g'risida misollar keltiriladi. Ko'pincha misollar buyruqning potensialini yanada ko'rsatish maqsadida murakkab tarzda yoziladi.                 |
+| **DIAGNOSTICS** | Bu bo'limda buyruq tomonidan qaytarilgan xato xabarlari ro'yxati keltirilgan bo'ladi.                                                                                    |
+| **LIMITS**      | Bu bo'lim buyruqning har qanday cheklovlarini tavsiflaydi.                                                                                                               |
+| **SEE ALSO**    | Tegishli ma'lumotlarni ichiga oladi, jumladan xavolalar.                                                                                                                 |
+| **HISTORY**     | Buyruqning qisqacha tarixini beradi, masalan, qachon paydo bo'lgan, kim yaratgan.                                                                                        |
+| **WARNING**     | Agar bu bo'lim mavjud bo'lsa, unda foydalanuvchilar uchun muhim maslahatlar mavjud.                                                                                      |
+| **NOTES**       | Yordamchi ma'lumotlar.                                                                                                                                                   |
 
-Barcha `man` sahifalar an'anaviy tarzda raqamlangan bo'limlarga saralangan. Sahifalarni bunday guruhlarga ajratish yanada samarali qidiruvlarni amalga oshirish imkonini beradi. Men misol uchun dasturlash bilan shug'ullanaman, shu sababli 3-bo'limga ko'proq e'tibor qarataman. 
+Barcha `man` sahifalari raqamlangan guruxlarga ajratilgan. Sahifalarni bunday guruhlarga ajratish yanada samarali qidiruvlarni amalga oshirish imkonini beradi. Men misol uchun dasturlash bilan shug'ullanaman, shu sababli 3-bo'limga ko'proq e'tibor qarataman. 
 
-- **1-bo'lim**: *Shell buyruqlari va ilovalar*
-- **2-bo'lim:** *Asosiy yadro xizmatlari, xato kodlar*
-- **3-bo'lim:** *Dasturchilar uchun kutubxona ma'lumotlar*
-- **4-bo'lim:** *Tarmoq xizmatlari - agar TCP/IP yoki NFS o'rnatilgan bo'lsa Qurilma drayverlari va tarmoq protokollar*
-- **5-bo'lim**: *Standart fayl formatlari - masalan: `tar` arxivi qanday ko'rinishini ko'rsatadi*
-- **6-bo'lim:** *O'yinlar*
-- **7-bo'lim:** *Turli fayllar va hujjatlar*
-- **8-bo'lim:** *Tizimni boshqarish va texnik xizmat ko'rsatish buyruqlar*
-- **9-bo'lim:** *Yadro bilan bog'liq ma'lumotlar va interfeyslar*
+| **Bo'lim** | **Tavsif** |
+|------------|------------|
+| **1** | Shell buyruqlari va ilovalar |
+| **2** | Asosiy yadro xizmatlari, xato kodlar |
+| **3** | Dasturchilar uchun kutubxona ma'lumotlar |
+| **4** | Tarmoq xizmatlari - agar TCP/IP yoki NFS o'rnatilgan bo'lsa Qurilma drayverlari va tarmoq protokollar |
+| **5** | Standart fayl formatlari - masalan: `tar` arxivi qanday ko'rinishini ko'rsatadi |
+| **6** | O'yinlar |
+| **7** | Turli fayllar va hujjatlar |
+| **8** | Tizimni boshqarish va texnik xizmat ko'rsatish buyruqlar |
+| **9** | Yadro bilan bog'liq ma'lumotlar va interfeyslar |
 
 Buyruq yonidagi raqam orqali qaysi sahifa qaysi guruhga tegishligini bilsa bo'ladi. Masalan, agar siz `ls` sahifasiga qarasangiz, sahifaning eng yuqori qismida yozilgan: `LS(1)`. Qavs ichida 1-bo'lim ya'ni *shell buyruqlari va ilovalari* guruhiga mansubligi aytilmoqda. Sizga biror buyruqning 8-bo'limga oid sahifasi kerak bo'lsa, misol uchun, quyidagi buyruqni yozishingiz mumkin:
 
@@ -127,6 +134,11 @@ $ man -k ftp
 - `man` to'g'risida ko'proq ma'lumot olish uchun: `man man`
 - `man` sahifalar `jk` (pastga/yuqoriga) tugmalari yordamida boshqariladi, chunki ular `vim` dasturidan foydalanadi. `Vim` esa o‘z navbatida `vi` dasturiga asoslangan bo‘lib, uning yaratuvchisining klaviaturasida strelka tugmalari bo‘lmagan.
 - `man` sahifalari Linux-ni o'zlashtirishingizda katta rol o'ynaydi.
+
+## Topshiriq
+
+1. `which`, `whatis`, `appropos`, `type` buyruqlarini sinab ko'ring.
+2. `man` orqali `wc` buyrug'i bilan tanishing. Faylda faqatgina nechta qator borligini ko'rish uchun qaysi opsiyadan foydalanamiz?
 
 ## Foydalanilgan manbalar
 

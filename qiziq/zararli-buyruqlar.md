@@ -1,8 +1,9 @@
 ---
+title: Zararli buyruqlar
+description: Ayrim Zararli Buyruqlar
+author: Khumoyun (@comoyun)
 tags:
   - zararli-buyruqlar
-description: Ayrim zararli buyruqlar
-title: Zararli buyruqlar
 ---
 ![I crashed server](../images/i-crashed-server-meme.png)
 

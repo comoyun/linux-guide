@@ -1,9 +1,10 @@
 ---
-title: Vim matn muharriri
+title: Vim Matn Muharriri
 description: Vim yordamida zavq bilan kod yozing
 tags:
   - vim
   - matn-muharriri
+author: Khumoyun (@comoyun)
 ---
 ![vim-exit-meme](../images/vim-exit-meme.png)
 

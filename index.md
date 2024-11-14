@@ -1,13 +1,34 @@
 ---
-title: Bosh sahifa
+title: Salom $USER
 ---
 ![linux-banner](images/linux-banner-2.png)
 
-**Linux** - dunyodagi eng kuchli superkompyuterlarni va Internetni quvvatlovchi serverlarning aksariyatini boshqaradigan zamonaviy operatsion tizimdir. Bundan tashqari, u milliardlab Android qurilmalari, Arduino, aqlli soatlar, televizorlar - qisqasi, Linux hamma joyda mavjud.
+**Linux** - bu zamonaviy ochiq kodli operatsion tizim. U dunyodagi eng kuchli superkompyuterlarni va Internetni quvvatlovchi serverlarning aksariyatini boshqaradi. Shu bilan birga, u milliardlab smartfonlar, aqlli soatlar, televizorlar va IoT qurilmalarining asosi bo'lib xizmat qilmoqda.
 
-Linux o‘rganishni boshlaganingizda, ko‘plab distributivlarga duch kelasiz; u shoxdan bu shoxga sakrab, vaqtingizni bekor sarflash o‘rniga, avval qat’iy reja tuzib oling. Linux hamma uchun ham optimal variant bo‘lavermaydi; buning asosiy sababi drayverlar va dasturiy ta’minot bilan bog‘liq muammolardir. Agar Linux-ni to‘liq o‘rnatmoqchi va undan kundalik hayotda foydalanmoqchi bo‘lsangiz, avvalo aparat mosligini va drayverlar uchun yetarlicha qo‘llab-quvvatlash mavjudligini tekshiring. Boshqacha qilib aytganda, Linux bilan yaxshi chiqishadigan kompyuter sotib oling.
+## Distributiv tanlash
 
-Quyida eng ko‘p qo‘llaniladigan Linux distributivlari keltirilgan. Ulardan birini tanlab, virtual mashinalar orqali tajriba o‘tkazing - bu asosiy kompyuterga zarar yetkazmagan holda distributivni chuqurroq o‘rganish imkonini beradi.
+![distros](./images/distros.png)
+
+Distributiv o‘z ichiga Linux yadrosi, bir qator dasturlar va grafik interfeysni qamrab oladi. Bularning barchasi birgalikda to‘liq operatsion tizimni tashkil etadi. Turli distributivlar haqida ma’lumot olish uchun yordam bo‘limidagi [[yordam/distributiv-tanlash|distributiv tanlash]] sahifasiga qarang.
+
+>[!tip] Distributivni qisqacha "distro" deyishingiz mumkin.
+
+O‘rganish davomida ko‘plab distro-larga duch kelasiz. U shoxdan bu shoxga sakrab vaqtingizni bekor sarflash o'rniga, bir savolni o‘zingizga bering: _"Nega Linux-ni tanladim o'zi?"_ Maqsad aniq bo‘lsa, mos distro tanlash oson bo‘ladi:
+
+- *"Customization" xohlaysizmi?*  - Arch yoki Garuda.
+- *Eski kompyuterlarni qayta jonlantirish?*  - Mint yoki Debian.
+- *Dasturlash va dizayn uchun?*  - Debian yoki Fedora.
+- *Minimalist yondashuv yoqadimi?* - Void Linux
+- *Serverlar uchun kuchli tanlov* - Ubuntu Server yoki CentOS
+- *Maxfiylik yoki Darknet?* - Tails OS
+
+## Dastlabki qadamlar
+
+Linux-ni tanladingiz, ammo u sizni tanlamasachi? Bu holat ko‘pincha texnik bilim yetishmaganda yuz beradi. Yoki undan ham yomoni, qurilma mos kelmaganda. Imkoniyatingiz bo‘lsa, Linux bilan *aka-ukadek* chiqishadigan kompyuter sotib oling, deylik, Thinkpad-ni. 
+
+>Aslida, hech qaysi tizim 100% ideal ishlamaydi. Nosozliklar bo'lishi tabiiy. Majbur, ko'nikasiz 🙂
+
+Eng keng tarqalgan distro-larni pastda keltirdim. Ulardan birini tanlab, virtual mashinada sinab ko‘ring. "*Nega virtual mashina?*" chunki bu asosiy tizimga zarar yetkazmasdan o'rganish va distributivlarni farqlash imkonini beradi. 
 
 | Distributiv                     | Rasmiy Havola                                           |
 | :------------------------------ | :------------------------------------------------------ |
@@ -22,50 +43,47 @@ Quyida eng ko‘p qo‘llaniladigan Linux distributivlari keltirilgan. Ulardan b
 
 ## Qo'llanma
 
-Bu yerda Linux va unga oid turli tuman dasturlar haqida ma’lumot ulashaman. Ma’lumotlarni tartib bo‘yicha yozishga harakat qilaman, biroq o'z yo‘l xaritam butunlay tartibsiz. Yangi narsa o‘rganganim sayin, uni shu yerga qo‘shib boraman. Ushbu qo‘llanma nafaqat yangi Linux foydalanuvchilari uchun, balki tajribali tizim ma’murlari uchun ham foydali bo‘ladi deb o‘ylayman.
+Bu yerda Linux va unga oid turli xil dasturlar, buyruqlar haqida ma’lumot olasiz. Qo‘llanma nafaqat yangi foydalanuvchilar uchun, balki tajribali tizim administratorlari uchun ham foydali bo‘ladi. Maqsad sizni tajribali Linux foydalanuvchisiga aylantirish va keyinchalik mustaqil ravishda o‘rgana oladigan darajaga yetkazish.
 
-**Ushbu platformaning maqsadi sizni shunday darajaga olib chiqishki, bundan keyin mustaqil ravishda o‘rganishni davom ettira olasiz.**
+> [!tip] Yaxshiroq o‘qish uchun qorong‘i rejimini yoqing.
 
-## Reja
+### Qisqa reja
 
-- [ ] **Maqolalarni o'qib, Linux haqida asosiy bilimga ega bo'lish**.
-	Linux-ning tarixi, arxitekturasi, va umumiy tushunchalarni o'rganish uchun darslarni tartib bo'yicha o'qing. Bu sizga Linux tizimining qanday ishlashini va uning boshqa operatsion tizimlardan farqini tushunishga yordam beradi.
-
-- [ ] **Virtual mashinalar yoki WSL (Windows Subsystem for Linux) bilan tajriba o'tkazish**.
-	Linux-ni xavfsiz muhitda sinab ko'rish uchun virtual mashina (VMware, VirtualBox) yoki WSL yordamida o'rganing. Bu sizga Linux buyruqlarini mash qilish va distributivlarning farqlarini ossongina sinash imkonini beradi.
-
-- [ ] **O'zingizga mos Linux distributiv tanlash**.
-	Turli Linux distributivlarini (Ubuntu, Fedora, Arch, va h.k) o'rganib chiqing va o'z ehtiyojlaringizga mos keladigan birini tanlang. 
+- [ ] Darslarni **tartib** bilan o'qing.
+- [ ] Virtual mashina orqali buyruqlarni mashq qiling va distro-larni sinang.
+- [ ] Darslarni tugatganingizdan so‘ng, yo‘lingizda erkinsiz. Endi o‘zingizga ma’qul distro-ni tanlab, unga sodiq qoling.
 
 ## FAQ
 
 ### Linux men uchunmi?
 
-Linux-ni barchaga tavsiya qilsamda, geymerlar va texnik bilimga unchalik ega bo'lmagan oddiy odamlar bundan mustasno. Agar siz geymer bo'lsangiz, siz o'ynaydigan o'yinlar katta ehtimol bilan Linux uchun maxsus ishlab chiqilmagan - to'g'ri, emulyatorlar orqali o'ynash mumkin, ammo bu o'yin samaradorligini sezilarli darajada pasaytiradi, hatto kompyuteringiz eng zamonaviy rusumda bo'lsa ham.
+O'zingizni "power-user" deb bilsangiz, ha, Linux siz uchun. Geymerlarga esa yo'q, chunki ko‘pchilik o‘yinlar Windows uchun ishlab chiqilgan (to'g'ri, emulyatorlar yordamida o'ynash mumkin, ammo bu o'yin samaradorligini pasaytiradi).
 
-### Bu bilan nimaga erishaman?
+### O'rganishdan nima foyda?
 
-Linux-ni o'rganish orqali siz texnologiyaning yuragiga kirib borasiz. Linux nafaqat butun dunyo bo'ylab serverlar, superkompyuterlar va IoT qurilmalarining asosi, balki tajribali dasturchilar va tizim ma'murlari uchun ham kuchli vosita hisoblanadi. Bu tizim sizga **to'liq erkinlik** va personallashtirish imkoniyatini taqdim etadi. Linux-da ishlash orqali siz xavfsizlik, samaradorlik va barqarorlikka ega tizimlarni yaratish imkoniyatini qo'lga kiritasiz.
+Texnologiyaning yuragiga kirish, serverlarni boshqarish. Linux dasturchi uchun kuchli asbob, xaker uchun qurol, oddiy foydalanuvchi uchun esa tajriba quyonchasi desa ham bo'ladi 🙂
 
 ### Linux qiyinmi?
 
-Ha, va yo'q. Dastlab qiyin bo'lishi mumkin, ammo Linux aslida juda oddiy. Har qanday yangi narsani, shu jumladan Linux-ni o‘rganishda amal qilish kerak bo‘lgan oddiy qoida bor - u bilan qancha ko‘p shug‘ullansangiz, shuncha osonlashadi. Lekin men buning aksini boshdan kechirdim: qancha ko‘p o‘rgansam, shuncha kam bilishimni anglab, hamma narsani orqaga surardim. Biroq, asosiy kalit izchil ravishda o‘rganishni davom ettirishda ekan. Mana endi vaqt o'tib, faqat o'zimga kerakli malumotlarni o'zlashtirdim va olgan bilimlarim masofadan serverlarni boshqarish, Docker orqali virtual mashinalar yaratish, apache, nginx kabi veb-serverlarni konfiguratsiya qilish, tasklarni avtomatlashtirish va Arduino, Raspberry kabi qurilmalar bilan ajoyib tajribalar o'tkazish imkonini berdi.
+Ha, va yo'q. Dastlab qiyin bo'ladi, ammo Linux aslida juda sodda tizim. Har qanday yangi narsani o'rganishda amal qilish kerak bo‘lgan oddiy qoida bor - u bilan qancha ko‘p shug‘ullansangiz, shuncha osonlashadi. Asosiy kalit izchillikda. 
 
-### Linux-ni Android orqali o'rgansam bo'ladimi?
+Esimda, bir paytlar Linux tasavvurimda yo‘q edi, hatto uning buyruqlarini cmd-ga yozib, nega xatolik berayotganini tushunmasdim. 🙂
 
-Agar sizda kompyuter bo'lmasa, xavotir olmang, Android orqali ham Linux-ni bemalol o'rganish mumkin. Bilmagan bo'lsangiz: Android platformasining asosi Linux hisoblanadi.
+### Linux-ni smartfon orqali o'rgansam bo'ladimi?
 
- 1. [Termux](https://f-droid.org/en/packages/com.termux/) dasturini FDroid platformasidan tortib oling. Play marketdan o'rnatish tavsiya qilinmaydi chunki undagi versiya eskirgan.
- 2. Ilova menejeri bilan tanishing. Biz bu yerdagi maqolalarda `apt` bilan ishlaymiz, lekin Termux'da ilove-menejeri `pkg` deb nomlangan. Misol uchun `nginx` o'rnatmoqchi bo'lsangiz: `pkg install nginx`
- 3. Agar telefoningizda [root](https://youtu.be/_uxvvtl7bNc?si=nda_n-0Ak98EB-AM) o'rnatilgan bo'lsa ayni muddao! chunki bu yo'lingizda uchraydigan ko'plab to'siqlarni olib tashlaydi.
+Sizda kompyuter bo'lmasa, xavotir olmang, chunki Android orqali ham o'rganish mumkin. Bilmagan bo'lsangiz: Android-ning asosi Linux hisoblanadi.
+
+ 1. [Termux](https://f-droid.org/en/packages/com.termux/) dasturini **FDroid** saytidan yuklang. 
+ 2. Ilova menejeri bilan tanishing. Biz bu yerda `apt` bilan ishlaymiz, lekin Termux-da `pkg` deb nomlangan. Misol uchun, `nginx` o'rnatish uchun: `pkg install nginx`
+ 3. Agar telefoningizda [root](https://youtu.be/_uxvvtl7bNc?si=nda_n-0Ak98EB-AM) o'rnatilgan bo'lsa, ayni muddao.
 
 ### Mendan nima talab qilinadi?
 
-Operatsion tizimlar, dasturlash tillari, GUI/CLI va terminal haqida bilsangiz kifoya. Agar o'zingizni "power user" ya'ni kuchli foydalanuvchi deb hisoblasangiz ham bu darsliklar aynan siz uchun.
+Operatsion tizimlar, dasturlash tillari, GUI/CLI, fayllar va terminal haqida bilsangiz kifoya. Agar "terminal" deyilganda do'kondagi plastik karta tiqadiganni o'ylamasangiz, demak tayyorsiz. 🙂
 
-### Ingliz tilini bilaman, qaysi manbalarni maslahat berasiz?
+### Do you speak English?
 
-Ingliz tilini bilsangiz, ayni muddao! Sizga [edx.org](https://edx.org) platformasidagi "Linux Foundation" bepul to'liq kursini tavsiya qilaman. [LinuxJourney.com](https://linuxjourney.com/) saytida ham foydali resurslar mavjud. Shuningdek, quyidagi YouTube kanallarga obuna bo'lishni unutmang:
+Unda sizga [edx.org](https://edx.org) platformasidagi "Linux Foundation" bepul kursini tavsiya qilaman. [LinuxJourney.com](https://linuxjourney.com/) saytida ham foydali resurslar bor. Shuningdek, quyidagi YouTube kanallarga obuna bo'lishni unutmang:
 
 - Learn Linux TV
 - Veronica Explains
@@ -73,10 +91,10 @@ Ingliz tilini bilsangiz, ayni muddao! Sizga [edx.org](https://edx.org) platforma
 - John Hammond
 - FreeCodeCamp
 
-### Qo'shimcha savollar
+## Qo'shimcha savollar
 
-Muommo yoki boshqa savollar tug'ilsa, ushbu hamjamiyatimizdan so'rashingiz mumkin: [community-chat](https://t.me/linux_uzbek)
+Muommo yoki boshqa savollar tug'ilsa, hamjamiyatimizdan so'rashingiz mumkin - [Linux Uzbek Community](https://t.me/linux_uzbek)
 
-Ba'zi diagramma yoki darsliklar sizga tushunarsiz bo'lsa yoki o'z fikr/mulohazalaringiz bilan o'rtoqlashmoqchi bo'lsangiz, mendan [t.me/comoyun](https://t.me/comoyun) orqali so'rashdan tortinmang. Bu men va hamjamiyat uchun foydali bo'ladi.
+O'z fikr/mulohazalaringiz bilan o'rtoqlashmoqchi bo'lsangiz, mendan [t.me/comoyun](https://t.me/comoyun) orqali so'rashdan tortinmang. 
 
 Keyingi sahifa: [[01-dars]]

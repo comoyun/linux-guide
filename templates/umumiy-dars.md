@@ -2,7 +2,7 @@
 title: 24 - Tez Orada
 description: Tez orada
 sort: 24
-author: Khumoyun (@comoyun)
+author: Ism (@username)
 tags:
   - tez-orada
 ---
@@ -34,7 +34,7 @@ Ushbu mavzuga doir qo'shimcha resurslar:
 - [Kitob yoki onlayn kurs]
 - [Video lavha yoki forum]
 
-## Mashqlar
+## Topshiriq
 
 Darsga oid amaliy mashq yoki savollar:
 

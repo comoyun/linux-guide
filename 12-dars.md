@@ -1,91 +1,213 @@
 ---
-tags:
-  - terminal
-  - personallashtirish
-title: 12 - Terminal Personallashtirish
-description: Linux foydalanuvchilari ko'p vaqtlarini terminalda o'tkazadilar. Shu sababli, terminal oynasini personallashtirish, yoqimli temalar qo'yish nafaqat odamni ilhomlantiradi balki ishga bo'lgan ishtiyoqni ham ko'taradi deb o'ylayman. Demak, ishni sozlamalarni titkilashdan boshlaymiz.
+title: 12 - Arxivlar Bilan Ishlash
+description: Terminalda arxivlar bilan ishlash eng kerakli mahoratlardan biri. Chunki bu orqali siz serverdagi ko'plab fayllarni boshqa serverga ko'chirish, "backup" qilish yoki GitHub'dan zip ko'rinishida tortib olingan loyihalarni ochishni stack-overflow'siz amalga oshirasiz.
 sort: 12
+author: Khumoyun (@comoyun)
+tags:
+  - tar
+  - arxivlash
+  - zip
+  - gzip
+---
+![archive](./images/archive.png)
+
+Terminalda arxivlar bilan ishlash eng muhim ko‘nikmalardan biri hisoblanadi. Chunki bu orqali siz serverdagi ko‘plab fayllarni boshqa serverga ko‘chirish, zaxira nusxa olish yoki GitHub-dan zip formatida yuklangan loyihalarni stack-overflow-ga murojaat qilmasdan ochishni amalga oshira olasiz.
+
+## `tar`
+
+`tar` buyrug'i bir nechta fayllarni arxivlash uchun qo'llaniladi. `tar`-ning `zip` dan farqi shundaki, `zip` fayllar "compressed" ya'ni siqilgan bo'ladi (original hajmga nisbatan ancha kichikroq). `tar`-da esa hajm o'zgarishsiz qoladi.
+
+### `tar` fayl yaratish
+
+Joriy fayl tuzilishi quyidagicha:
+
+```
+`-- test
+    |-- file
+    |-- file2
+    `-- file3
+```
+
+Biz `test` nomli katalogni `tar` faylga aylantiramiz. Buning uchun terminalda:
+
+```bash
+$ tar -cf test_backup.tar test
+```
+
+Bu yerda:
+- `-c` - *create* ya'ni *yarat* ma'nosini bildiradi.
+- `-f` - fayl nomi.
+- `test_backup.tar` - natija fayl nomi (`.tar` kengaytmasi ixtiyoriy).
+
+Shunday qilib natija:
+
+```
+|-- test
+|   |-- file
+|   |-- file2
+|   `-- file3
+`-- test_backup.tar
+```
+
+### `tar` fayl kontentini ko'rish
+
+`tar` faylini chiqarish o'rniga, shunchaki u yerda nima borligini ko'rishni xohlaymiz. Buning uchun terminalda:
+
+```bash
+$ tar -tf test_backup.tar
+test/
+test/file2
+test/file3
+test/file
+```
+
+Bu yerda:
+- `-t` - arxiv tarkibini ko'rsatadi.
+- `-f` - fayl nomi.
+
+>`-v` (verbose) optsiyasini qo'shish orqali ko'proq malumot chiqarish mumkin, masalan ruxsatlar, egalik qiluvchi foydalanuvchi va o'zgartirish sanalari.
+
+### `tar` faylni chiqarish
+
+Joriy fayl tuzilishi:
+
+```
+|-- test
+|   |-- file
+|   |-- file2
+|   `-- file3
+`-- test_backup.tar
+```
+
+avval `test` katalogini o'chirib so'ng `test_backup.tar` arxivini chiqaramiz.
+
+```bash
+$ rm test -rf
+```
+
+`test` katalogi butunlay o'chirildi. Endi arxivni chiqaramiz.
+
+```bash
+$ tar -xf test_backup.tar
+```
+
+Bu yerda:
+- `-x` - *extract* ya'ni *chiqarish* ma'nosini bildiradi.
+- `-f` - fayl nomi
+
+> [!tip] Talaffuz
+> `tar -xvf test_backup.tar` yodlab qolish juda ham osson. Bu huddi nemis talaffuziga o'xshaydi - *eXtrakt Vi Fayl.*
+
+## `gzip`
+
+`gzip` buyrug'i serverda joyni tejash uchun bir nechta fayllarni siqish uchun ishlatiladi. Natija original hajmga nisbatan ancha kichikroq bo'ladi. Misol uchun 1GB fayl `gzip` orqali 20MB gacha siqilishi mumkin.
+
+### `gzip` yaratish
+
+`gzip` yaratish juda ham osson.
+
+```bash
+$ gzip katta_hajmdagi_fayl # natija - katta_hajmdagi_fayl.gz
+```
+
+birorta papkani siqish uchun avval `tar` orqali arxivlash zarur.
+
+```bash
+$ tar -cf papka.tar papka
+```
+
+so'ng, `gzip` dan foydalansak bo'ladi.
+
+```bash
+$ gzip papka.tar # natija - papka.tar.gz
+```
+
+## `gunzip`
+
+`gunzip` buyrug'i `.gz` kengaytmali fayllarni o'z holiga qaytarish uchun qo'llaniladi. Misol uchun:
+
+```bash
+$ gunzip papka.tar.gz # natija - papka.tar
+```
+
+## `tar` va `gzip` buyrug'larini birlashtirish
+
+`gzip` bilan birgalikda `tar` buyrug'i yordamida katta hajmdagi papkalarni siqishingiz mumkin.
+
+```bash
+$ tar -cvzf papka.tar.gz papka/
+```
+
+Bu yerda:
+- `-c` - yangi arxiv yaratish.
+- `-z` - `gzip` siqishdan foydalanish.
+- `-v` - ekranga ko'proq ma'lumot chiqarish (egalik qiluvchilar, o'zgartirilgan sana va h.k).
+- `-f` - fayl nomi.
+
+## `zip`
+
+Bu nostandart buyruq hisoblanadi, shu sababli uni ilova menejeri orqali o'rnatib oling: `apt install zip -y`
+
+Ushbu buyruqning vazifasini nomidan hulosa qilish mumkin - papka yoki fayllarni `zip` holatiga keltiradi. ZIP arxivini yaratish uchun quyidagi sintaksisdan foydalaning:
+
+```bash
+$ zip arxiv_nomi.zip file1 file2 file3
+```
+
+agar papkani arxivlash zarur bo'lsa (`-r`: rekusiv):
+
+```bash
+$ zip arxiv_nomi.zip papka/ -r
+```
+
+### Mavjud arxivga fayllar qo‘shish
+
+Mavjud ZIP arxiviga `-u` (*update* ya'ni *yangilash*) optsiyasi yordamida yangi fayllar qo'shishingiz mumkin:
+
+```bash
+$ zip -u arxiv_nomi.zip fayl1 fayl2
+```
+
+### ZIP arxivining roʻyxati
+
+ZIP arxivini chiqarmay faqat tarkibini olish uchun `-l` (*list*) optsiyasidan foydalanishingiz mumkin:
+
+```bash
+$ zip -l arxiv_nomi.zip
+```
+
+### ZIP arxividan fayllarni chiqarish
+
+ZIP arxividan fayllarni chiqarish uchun `unzip` buyrug'idan foydalaning:
+
+```bash
+unzip arxiv_nomi.zip
+```
+
+Bu standart ravishda joriy katalogga chiqaradi. Boshqa bir muayyan papkaga chiqarish uchun `-d` optsiyasidan foydalanasiz.
+
+```bash
+$ unzip arxiv_nomi.zip -d /boshqa/papka/
+```
+
+Qo'shimcha ma'lumot yoki misollar olish uchun terminalda `man zip` yoki `curl https://cheat.sh/zip` buyrug'ini ishga tushiring.
+
+Darvoqe, [cheat.sh](https://cheat.sh/) juda ham foydali saytlardan biri. U yerda deyarli barcha buyruqlar uchun amaliy misollar keltirilgan. Saytga quyidagicha so'rovlar yuborish mumkin:
+
+```bash
+$ curl cheat.sh/ls
+$ curl cheat.sh/btrfs
+$ curl cheat.sh/tar~list
+$ curl cheat.sh/gunzip
+...
+```
+
 ---
 
-![ohmyzsh](images/ohmyzsh.png)
+## Topshiriq
 
-Linux foydalanuvchilari ko‘p vaqtlarini terminalda o‘tkazadilar. Shu sababli, terminal oynasini personallashtirish, yoqimli temalar o'rnatish nafaqat insonni ilhomlantiradi, balki ishga bo‘lgan ishtiyoqni ham oshiradi deb o‘ylayman. Demak, ishni sozlamalarni sinchiklab o‘rganishdan boshlaymiz.
-
-Menda Windows Terminal - *Microsoft Store orqali o'rnatishingiz mumkin*
-
-![windows-terminal-docker](images/windows-terminal-docker.png)
-
-`CTRL + ,` tugmalarini bosish orqali sozlamalar bo'limiga o'ting va standart profil sifatida **Command Prompt** ni tanlang chunki Powershell ancha sekin ishlaydi.
-
-![windows-terminal-cmd-default](images/windows-terminal-cmd-default.png)
-
-Endi  **Profiles > Command Prompt** bo'limiga o'tib pastga biroz aylantirsangiz, **Appearance** bo'limini ko'rishingiz mumkin. U yerda ranglar palletasi, font, blur effektlar va orqa fon rasmiga oid maydonlarni xohishingizga ko'ra o'zgartirsangiz bo'ladi.
-
-![windows-terminal-cmd-customization](images/windows-terminal-cmd-customization.png)
-
->Ko'pchilik Windows ishlatgani tufayli, Windows Terminaldan misol keltirdim. Lekin to'g'risini aytsam, Ubuntu kabi distributivlarda personallashtirish uchun bundanda ko'proq erkinlik beriladi.
-
-Endi, dastlabki terminal oynasiga o'tib standart bash shell'dan zsh shell'ga o'tamiz - bu huddi CMD'dan Powershell'ga o'tganday gap.
-
->Agar ba'zi buyruqlar sizga tushunarsiz bo'lsa, hammasi joyida! bu buyruqlar rasmiy veb-saytlarda shunchaki nusxalab & tashlash niyatida berilgan. Shunchaki jarayonni o'rganing va iloji bo'lsa buyruqlarni qo'lda yozib chiqing. Bu mushak xotirasini yaxshilaydi.
-
-```bash
-$ sudo apt install zsh curl git -y
-```
-
-- `curl` orqali `ohmyzsh` dasturini tortib olamiz chunki u ilova menejerida mavjud emas.
-- `git` orqali ayrim plaginlarni GitHub'dan tortib olamiz.
-
-`ohmyzsh` o'rnatish:
-
-```bash
-$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-Sizdan *standart shell'ni zsh'ga o'zgartirish vaqti keldimi?* deb so'raydi. Siz esa `Y` va Enter'ni bosing.
-
-**Oh My -**
-
-![ohmyzsh-lol.png](images/ohmyzsh-lol.png)
-
-Bu juda ajoyib! lekin biz terminalni maksimal darajada o'zgartirishni hoxlaymiz va `highlighter` plaginini o'rnatamiz. Bu plagin yozgan buyruqlarimizni chiroyli qilib bo'yab beradi. Buyruq nomini xato yozadigan bo'lsak, oldindan ogohlantirib turadi - juda kerakli vosita!
-
-Avval plaginni GitHub'dan klonlaymiz (avtomatik plaginni kerakli joyga klonlaydi):
-
-```shell
-$ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-```
-
-Menda yuqoridagi buyruq muvaffaqiyatli yadarslanganini ko'rishingiz mumkin:
-
-![successfull clone](images/highlighter-plugin-success.png)
-
-Plagin tayyor. Hammasi joyida. Endi faqat uni faollashtirish qoldi holos. Buni amalga oshirish uchun `~/.zshrc` faylida `plugins` nomli massivga `zsh-syntax-highlighting` satrini qo'shsak bo'ldi.
-
-```
-$ nano ~/.zshrc
-```
-
-Keling yo'l-yo'lakay temani o'zgartirib ketamiz - `ZSH_THEME`. Standart ravishda `robbyrussell` temasi tanlangan. Siz o'zingizga kerakli temani  [bu yerdan](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes) topishingiz mumkin. Darvoqe, bu ortiqcha plagin talab qilmaydi - hammasi allaqachon kompyuteringizga o'rnatilgan!
-
-![theme choosing](images/ohmyzsh-theme.png)
-
-Shaxsan menga `flazz` temasi yoqadi chunki u minimalist va ortiqcha detallarsiz. Shunday qilib men `flazz` ga o'zgartiraman.
-
-![theme choosing](images/ohmyzsh-theme-flazz.png)
-
-Mana endi plaginni qo'shsak ham bo'ladi.
-
-![zsh-syntax-highlighting](images/zsh-syntax-highlighting.png)
-
-`CTRL + S` tugmalarini bosib faylni saqlang va `CTRL + X` tugmalarini bosib fayldan chiqib keting. Natija ish berishi uchun terminaldan chiqib qayta kirishingiz yoki quyidagi buyruqni yozib terminalga "restart" berishingiz mumkin:
-
-```bash
-$ source ~/.zshrc
-```
-
-Manabuni terminal desa bo'ladi! 🔥
-
-![terminal-result](images/terminal-result.png)
+1. `tar` yordamida `data` nomli katalogni arxivga aylantiring va `data_backup.tar` nomli fayl yarating.
+2. `gzip` yordamida `data_backup.tar` faylini siqing va `data_backup.tar.gz` nomli fayl yarating.
+3. `unzip` yordamida ZIP arxividan fayllarni chiqarib oling va `zip` yordamida yangi fayl qo'shish va arxiv tarkibini ko'rsatish amallarini bajarib ko'ring.
 
 **Keyingi dars:** [[13-dars]]

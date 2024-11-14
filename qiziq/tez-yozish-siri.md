@@ -1,6 +1,7 @@
 ---
-title: Tez yozish sirlari
+title: Tez Yozish Sirlari
 description: Touch typing usuli va yana boshqa narsalar haqida gaplashamiz.
+author: Khumoyun (@comoyun), u/Gary_Internet
 tags:
   - yozish
   - vim

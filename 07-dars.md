@@ -1,77 +1,129 @@
 ---
-tags:
-  - fayl-tizimi
-  - fayllar
-title: " 07 - Linux Fayl Tizimi"
-description: Linux fayl tizimi va terminalda qanday qilib boshqa kataloglarga "sakrash" haqida bilib olasiz.
+title: 07 - Xizmatlar
+description: Linux-dagi turli-xil xizmatlar va ularning boshqaruvi haqida gaplashamiz.
 sort: 7
+author: Khumoyun (@comoyun)
+tags:
+  - xizmatlar
 ---
-![linux-file-system](images/linux-file-system.png)
+Xizmatlarni boshqarishda `service` va `systemctl` buyruqlari ishlatiladi. `service` eski usul bo'lib, tizim xizmatlarini boshqarish uchun ishlatiladi, `systemctl` esa yangilangan va keng qamrovli imkoniyatlarga ega.
 
-Linux fayl tizimi haqiqatan ham ajoyib, chunki barcha tarmoq tizimlari, disklar va USB drayvlar fayl ko'rinishida ifodalanadi. Misol uchun, Windows'dagi **C** drayver, **D** drayver va h.k. Linux'ning `/dev/` (devices) katalogida oddiygina fayl sifatida ko'rinadi.
+- **systemctl** = yangi usul
+- **service** = eski usul
 
-> Barcha fayl nomlari katta-kichik harflarga sezgir, ya'ni `/boot`, `/Boot` va `/BOOT` uchta **turli** papkani ifodalaydi.
-
-![case-sensitivity-meme](images/case-sensitivity-meme.png)
-
-## `cd` haqida batafsil
-
-Siz `cd` (change-directory) buyrug‘i bilan tanish bo‘lishingiz mumkin, chunki Windows, MacOS, KolibriOS va boshqa operatsion tizimlar bu buyruqni to‘liq qo‘llab-quvvatlaydi. `cd` yordamida boshqa kataloglarga "sakrash" mumkin. Misol uchun, siz fayl yaratganingizda, u terminal ochilgan katalogda saqlanadi. Aytaylik, fayl `/home/khumoyun/experiments/` katalogida joylashgan bo‘lsa:
+Misol uchun, Apache2 veb-server xizmatini boshqarish uchun:
 
 ```bash
-$ touch file
-$ ls
-file papka
-$ pwd
-/home/khumoyun/experiments
+$ systemctl start apache2
+$ systemctl status apache2
+$ systemctl stop apache2
 ```
 
-Endi faylni "papka" ichida yaratmoqchi bo‘lsangiz, buni ikki xil usulda amalga oshirishingiz mumkin:
-
-- **Birinchi yo'l**: Faylni to'g'ridan-to'g'ri "papka" ichida yaratishingiz mumkin:
-
-  ```bash
-  $ touch papka/file
-  $ ls papka/
-  file
-  ```
-
-- **Ikkinchi yo'l**: Avval "papka" katalogiga o'tib, so'ng fayl yaratishingiz mumkin:
-
-  ```bash
-  $ cd papka
-  $ touch file
-  $ ls
-  file
-  ```
-
-Joriy katalogdan bir daraja yuqoriga chiqish uchun `cd ..` buyrug'ini ishlatishingiz mumkin:
-
-- `cd .` - Joriy papkani o'zini anglatadi.
-- `cd ..` - Hozirgi papkadan bir daraja yuqoriga chiqadi.
-
-**P.S.** `./papka/file` = `papka/file`
-
-Agar uch yoki to'rtta papka yuqoriga chiqmoqchi bo'lsangiz, buni quyidagi usullardan biri bilan amalga oshirishingiz mumkin:
+Yoki eski usulda:
 
 ```bash
-$ cd ../../../
+$ service apache2 start
+$ service apache2 status
+$ service apache2 stop
 ```
 
-Yoki (tajribasiz usul):
+## Veb-server yaratish
+
+Veb-server yaratish uchun `apache2` dasturini o'rnatish va ishga tushirish kerak:
 
 ```bash
-$ cd ..
-$ cd ..
-$ cd ..
+$ sudo apt install apache2
+$ service apache2 start
 ```
+
+Veb-server muvaffaqiyatli ishga tushganini tekshirish uchun quyidagi buyruqni kiritishingiz mumkin:
+
+```bash
+$ service apache2 status
+```
+
+Brauzeringizda "[localhost](http://localhost)" yoki [127.0.0.1](http://127.0.0.1) manzilini ochib, veb-sahifangizni ko'ring. Sahifani o'zgartirish uchun `/var/www/html/` papkasiga o'zgartirishlar kiriting.
+
+![apache2-web-server.png](./images/apache2-web-server.png)
+
+## SSH serverni ishga tushirish
+
+SSH (Secure Shell) orqali kompyuteringizga masofadan ulanish uchun `openssh-server` dasturini o'rnatish zarur:
+
+```bash
+$ sudo apt install openssh-server
+$ service ssh start
+```
+
+SSH xizmatining holatini tekshirish uchun:
+
+```bash
+$ service ssh status
+```
+
+Endi SSH orqali kompyuteringizga bog'lanishingiz mumkin. Buning uchun:
+
+```bash
+$ ssh root@192.168.43.5
+password: ****
+successfully logged in as user "root"
+root~#
+```
+
+SSH haqida qo'shimcha ma'lumot uchun quyidagi resurslarga murojaat qiling:
+
+- **[SSH nima?](https://www.websiterating.com/uz/web-hosting/glossary/what-is-ssh/)**
+- **[Ubuntu'da SSH server o'rnatish](https://uz.termotools.com/8299-installing-ssh-server-in-ubuntu.html)**
+
+## Xizmatlar boshqaruvi - `systemctl`
+
+Xizmatlarni boshqarish uchun `systemctl` buyrug'idan foydalaning. `systemctl` sizga xizmatlarni yoqish, o'chirish va qayta ishga tushirish imkonini beradi.
+
+### Xizmatni yoqish
+
+```bash
+$ systemctl start ssh
+```
+
+### Xizmatni o'chirish
+
+```bash
+$ systemctl stop ssh
+```
+
+### Xizmatni qayta ishga tushirish
+
+```bash
+$ systemctl restart ssh
+```
+
+### Xizmatlar haqida umumiy ma'lumot
+
+Xizmatlar tizimning asosiy funksiyalarini amalga oshiradi. Masalan, Apache2 veb-server xizmatini ishga tushirganingizda, siz web sahifalaringizni onlayn qilib ko'rsatish imkoniyatiga ega bo'lasiz. Shuningdek, SSH server yordamida masofadan kompyuteringizga bog'lanishingiz mumkin. Har bir xizmat o'zining `.conf` keygaytmasiga ega `/etc/xizmat/` papkasida joylashgan konfiguratsiya fayli orqali boshqariladi.
+
+## Samaradorlikni oshiring
+
+- **CTRL + C** - ko'pincha skript yoki dasturdan chiqish uchun ishlatiladi.
+- **CTRL + D** - terminal yoki dasturdan chiqish uchun ishlatiladi.
+- **CTRL + SHIFT + C** - terminalda belgilangan matnni nusxalaydi | brovzerda dasturchi panelini ochadi.
+- **CTRL + SHIFT + V** - nusxalangan matnni belgilangan joyga qo'yadi.
 
 ---
 
 ## Topshiriq
 
-1. `cd` buyrug'i yordamida bir papkadan boshqa papkaga qanday o'tish mumkin?
-2. Agar siz joriy papkadan ikki daraja yuqoriga chiqmoqchi bo'lsangiz, qanday buyrug'ni ishlatishingiz kerak?
-3. Yashirin papkalarni ko'rish uchun qanday buyrug'ni ishlatish mumkin?
+### Tarmoqni tahlil qilish
+
+1. `nmap` yordamida o'z kompyuteringizdagi barcha ochiq portlarni aniqlang va ularga qanday xizmatlar bog'langanligini tahlil qiling.
+2. `/etc/hosts` fayli haqida batafsil o'rganing.
+
+### Veb-serverni sozlash
+
+1. Apache2 veb-serverini o'rnating va ishga tushiring. O'z veb sahifalaringizni `/var/www/html/` papkasiga qo'ying.
+
+### SSH serverni boshqarish
+
+1. SSH orqali boshqa bir serverga ulanib, birorta fayl yuklab oling.
+2. SSH xizmatining xavfsizligini oshirish uchun konfiguratsiyani sozlang. Misol uchun, `root` hisobini qulflang.
 
 **Keyingi dars:** [[08-dars]]

@@ -1,9 +1,10 @@
 ---
 title: Protsessor Nima
+description: Kompyuter protsessorlari va Linux o'rnatayotganda to'g'ri arxitekturani tanlash
+author: Khumoyun (@comoyun)
 tags:
   - protsessor
   - cpu
-description: Kompyuter protsessorlari va Linux o'rnatayotganda to'g'ri arxitekturani tanlash
 ---
 ![man-meme](../images/processor-meme.png)
 

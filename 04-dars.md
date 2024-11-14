@@ -1,27 +1,16 @@
 ---
+title: 04 - Asosiy Buyruqlar
+description: Ayrim foydali buyruqlar bilan tanishamiz.
+sort: 4
+author: Khumoyun (@comoyun)
 tags:
   - nmap
   - shebang
   - ping
-title: 04 - Foydali Buyruqlar
-description: Linux-da terminalga oid ayrim faktlar va foydali buyruqlar bilan tanishamiz.
-sort: 4
 ---
-## Shebang
+## `ping` so'rov yuborish
 
-Shebang dasturni qanday turkumdaligini aniqlash uchun kodning boshiga qo'yiladi. Bu, skriptning qaysi interpreter yordamida bajarilishi kerakligini belgilaydi. Misol uchun, `#!/bin/bash` Bash skriptlari uchun, `#!/usr/bin/env python3` Python skriptlari uchun ishlatiladi. Shebang-ni quyidagi tarzda ko'rishingiz mumkin:
-
-```bash
-#!/bin/bash
-```
-
-Shebang qatorini yo'q qilsangiz, skriptni bajarish uchun har doim to'g'ri interpreterni manual ko'rsatishingiz kerak bo'ladi.
-
->Shebang `#/usr/bin/env dastur` ko‘rinishida ifodalanishi lozim, chunki Python singari dasturlar turli tizimlarda turlicha joylarga o‘rnatilgan bo‘ladi. Misol uchun, biror kishining Python dasturi `/usr/bin`-da emas, balki virtual muhit ichida joylashgan bo‘lishi mumkin. `env` buyrug‘i esa to‘g‘ri yo‘lni avtomatik tarzda topadi.
-
-## Serverga "ping" so'rov yuborish
-
-`ping` buyrug‘i server yoki boshqa tarmoq qurilmasining ishlayotganligini tekshirish uchun qo‘llaniladi. Bu buyruq serverga so‘rov yuboradi va javob qaytishini kutadi. `-c` (count) parametri so‘rovlar sonini belgilaydi. Agar bu parametrni qo‘shmasangiz, `ping` to‘xtovsiz so‘rov yuboraveradi; kunning oxirida serverning ishdan chiqish xavfi ham bor. :)
+`ping` buyrug‘i server yoki boshqa tarmoq qurilmasining ishlayotganligini tekshirish uchun qo‘llaniladi. Bu buyruq serverga so‘rov yuboradi va javob qaytishini kutadi. `-c` (count) opsiyasi so‘rovlar sonini belgilaydi. Agar bu parametrni qo‘shmasangiz, `ping` to‘xtovsiz so‘rov yuboraveradi; kunning oxirida serverning ishdan chiqish xavfi ham bor. 🙂
 
 Misol:
 
@@ -29,22 +18,20 @@ Misol:
 $ ping -c 5 google.com
 ```
 
-Bu yerda `google.com` manziliga 5 marta ping so'rovi yuboriladi.
+Bu yerda `google.com` manziliga 5 marta ping yuboradi.
 
-## `grep` orqali filterlash
+## `grep` bilan filterlash
 
-`grep` buyrug'i matn ichida ma'lum bir qidiruv terminini izlash uchun ishlatiladi. `grep` qidirayotgan terminni topgan satrlarni chiqaradi. `cat` buyrug'i fayl mazmunini ko'rsatadi, va `|` (pipe) operatori `cat` orqali olingan ma'lumotni `grep`ga uzatadi.
-
-Misol:
+`grep` matndagi ma'lum bir terminni topish uchun ishlatiladi va topilgan satrlarni chiqaradi. `cat` faylni ko'rsatadi, `|` esa uning natijasini `grep`ga uzatadi.
 
 ```bash
 $ ping -c 5 192.168.43.2 > ip.txt
 $ cat ip.txt | grep "64 bytes"
 ```
 
-Bu yerda, ping so'rovi natijalari `ip.txt` faylga saqlanadi va `grep "64 bytes"` orqali 64 baytli javoblar filtrlash orqali chiqariladi.
+Bu misolda, `ping` natijalari `ip.txt`ga yoziladi va `grep "64 bytes"` "64 bytes" yozilgan qatorlarni chiqaradi.
 
-## Linux - `cut`
+## `cut` bilan matnni ajratish
 
 `cut` buyrug'i matnni ajratish va kerakli maydonlarni olish uchun ishlatiladi. `-d` opsiyasi ajratgich belgi, `-f` opsiyasi esa chiqarilishi kerak bo'lgan maydonni belgilaydi.
 
@@ -90,10 +77,23 @@ $ sudo apt install nmap -y
 
 >`-y` opsiyasi o'rnatish jarayonida barcha so'rovlarga avtomatik "ha" javobini beradi.
 
+## Shebang
+
+Shebang dasturni qanday turkumdaligini aniqlash uchun kodning boshiga qo'yiladi. Bu, skriptning qaysi interpreter yordamida bajarilishi kerakligini belgilaydi. Misol uchun, `#!/bin/bash` Bash skriptlari uchun, `#!/usr/bin/env python3` Python skriptlari uchun ishlatiladi. Shebang-ni quyidagi tarzda ko'rishingiz mumkin:
+
+```bash
+#!/bin/bash
+```
+
+Shebang qatorini yo'q qilsangiz, skriptni bajarish uchun har doim to'g'ri interpreterni manual ko'rsatishingiz kerak bo'ladi.
+
+Shebang `#/usr/bin/env dastur` ko‘rinishida ifodalanishi lozim, chunki Python singari dasturlar turli tizimlarda turlicha joylarga o‘rnatilgan bo‘ladi. Misol uchun, biror kishining Python dasturi `/usr/bin`-da emas, balki virtual muhit ichida joylashgan bo‘lishi mumkin. `env` buyrug‘i esa to‘g‘ri yo‘lni avtomatik tarzda topadi.
+
 ---
 
 ## Topshiriq
 
 1. `grep` buyrug'idan foydalanib, `ping` so'rovi natijalarida ma'lum bir kalit so'zni qanday qidirish mumkinligini tajriba qiling. Misol uchun, `ping` so'rovidan keyin "timeout" kalit so'zini qidirish. 
+2. `cal`, `date` `free`, `df` va `exit` kabi oddiy buyruqlarni terminalga yozib ko'ring.
 
 **Keyingi dars:** [[05-dars]]

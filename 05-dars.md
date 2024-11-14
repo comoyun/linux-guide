@@ -1,19 +1,14 @@
 ---
+title: 05 - Tizim Boshqaruvi
+description: Google Cloud Shell-ni o‘rganish. Tizimni boshqarish va protsesslarni kuzatish
+sort: 5
+author: Khumoyun (@comoyun)
 tags:
   - cloud-shell
-title: 05 - Foydali Buyruqlar
-description: Linux-da terminalga oid ayrim faktlar va foydali buyruqlar bilan tanishamiz.
-sort: 5
 ---
-## Google Cloud Shell
+Google Cloud Shell sizga [cloud.google.com](https://cloud.google.com) platformasida Linux tizimidan foydalanish imkonini beradi. Ushbu bepul xizmat orqali dasturiy ta'minotni boshqarish, skriptlarni ishga tushirish yoki veb serverlarni sozlash mumkin. Bilimlaringizni amalda qo'llash uchun yaxshi joy.
 
-Google Cloud Shell sizga [cloud.google.com](https://cloud.google.com) platformasida Linux tizimidan foydalanish imkonini beradi. Ushbu bepul xizmat orqali dasturiy ta'minotni boshqarish, skriptlarni ishga tushirish yoki veb serverlarni sozlash mumkin. Bu yerdagi bilimlarni amalda qo'llash uchun yaxshi joy.
-
-Masalan, `neofetch` buyrug'ini ishlatib, tizim haqida ma'lumot olish mumkin:
-
-```bash
-khumoyun@cloud:~$ neofetch
-```
+`neofetch` buyrug'ini ishlatib, tizim haqida ma'lumot olish mumkin:
 
 ![Google Cloud Server](./images/google-cloud-server.png)
 
@@ -25,15 +20,13 @@ Tizimda faoliyat yuritayotgan dasturlarni ko'rish va boshqarish uchun quyidagi b
 
 - **`ps aux`**: Bu buyruq tizimdagi barcha protseslar haqida kengroq ma'lumot beradi, shu jumladan foydalanuvchi, CPU va xotira foydalanish statistikasini ko'rsatadi.
 
-- **`top`**: Bu buyruq tizimda faoliyat yuritayotgan jarayonlarning real vaqt ma'lumotlarini ko'rsatadi. O'zgaruvchan ma'lumotlar bilan doimiy ravishda yangilanadi.
+- **`top`**: Bu buyruq tizimda faoliyat yuritayotgan protsesslarni real vaqtda ko'rsatadi.
 
-- **`htop`**: `top`ning yaxshilangan versiyasi bo'lib, interaktiv grafik interfeysni taqdim etadi va tizimdagi resurslarni boshqarishni osonlashtiradi. U standart dastur emas, shu sababli uni avval o'rnatish kerak: `sudo apt install htop -y`
+- **`htop`**: `top`ning zamonaviy versiyasi. Interaktiv grafik interfeysni taqdim etadi va tizimdagi resurslarni boshqarishni osonlashtiradi. U standart dastur emas, shu sababli uni avval o'rnatish kerak: `sudo apt install htop -y`
 
 ## Dastur joylashuvini topish
 
 Agar siz ma'lum bir dastur yoki buyruqning tizimdagi joylashuvini bilmoqchi bo'lsangiz, `whereis` buyrug'idan foydalanishingiz mumkin. Bu buyruq dastur yoki buyruq fayllarini qayerda saqlanganligini aniqlaydi.
-
-Sintaksis:
 
 ```bash
 $ whereis buyruq
@@ -48,15 +41,43 @@ aircrack-ng: /usr/bin/aircrack-ng /usr/include/aircrack-ng /usr/share/man/man1/a
 
 Bu yerda, `aircrack-ng` dasturining o'rnatilgan joylari ko'rsatiladi.
 
-> **Pro maslahat:**
+> [!tip]- **Pro maslahat:**
 > Buyruq yoki dastur haqida qo'shimcha ma'lumot olish uchun ko'pincha `--help` yoki qisqacha `-h` optsiyalarini ishlatishingiz mumkin. Misol uchun:
 > `python --help`
+
+## Yoyish
+
+Barcha fayllarni o'chirish uchun `rm *` buyrug'idan foydalanamiz:
+
+```bash
+$ rm *
+```
+
+>[!danger] `rm -rf /*`
+>Ba'zan internetda `sudo rm -rf /` buyrug'i bilan "meme"larga duch kelasiz. Bu buyruq **tizimdagi barcha fayllarni o'chirib tashlaydi** va bu qaytarib bo'lmas jarayon.>
+
+![rm meme](./images/rm-meme.png)
+
+Yana bir qancha yoyish usullari bilan jadvalda tanishingiz mumkin:
+
+| Usul                      | Mos keladi                                                                  |
+| ------------------------- | ---------------------------------------------------------------------------- |
+| `*`                       | Barcha fayllar                                                              |
+| `d*`                      | d harfi bilan boshlanuvchi barcha fayllar                                   |
+| `kitob*.pdf`              | kitob bilan boshlanuvchi va .pdf bilan tugaydigan barcha fayllar            |
+| `Rasm???`                 | Rasm bilan boshlanib, aniq uchta belgidan iborat fayllar                    |
+| `[xyz]*`                  | x, y yoki z harflaridan biri bilan boshlanuvchi barcha fayllar              |
+| `ARXIV.[0-9][0-9]`        | ARXIV. bilan boshlanib, ikkita raqamdan iborat fayllar                      |
+| `[[:lower:]]*`            | Kichik harf bilan boshlanuvchi barcha fayllar                               |
+| `[![:upper:]]*`           | Katta harf bilan boshlanmaydigan barcha fayllar                             |
+| `*[[::digit::]].png`      | Raqam bilan tugaydigan va .png kengaytmali barcha fayllar                   |
 
 ## Biroz off-topic
 
 Bepul dasturlar, ayniqsa VPN xizmatlaridan foydalanganda ehtiyot choralarini ko'rishni tavsiya qilaman .
 
->**"If it is free, then you're the product"** - Agar biror narsa bepul bo'lsa, demak siz mahsulotsiz. 
+>[!quote] 
+>**If it is free, then you're the product** - Agar biror narsa bepul bo'lsa, demak siz mahsulotsiz. 
 
 ![free-product-meme](images/free-product-meme.png)
 
@@ -64,11 +85,14 @@ Bepul dasturlar, ayniqsa VPN xizmatlaridan foydalanganda ehtiyot choralarini ko'
 
 ## Topshiriq
 
-#### Google Cloud Shell’da ishlash
-1. Google Cloud Shell’da ishlayotgan barcha jarayonlarni aniqlang va ularning resurs iste'mol qilish ma'lumotlarini ko'ring. `ps`, `top`, va `htop` buyruqlarini solishtirib ko'ring.
-2. Google Cloud Shell’da `neofetch` yordamida tizim haqida batafsil ma'lumot oling va tizim konfiguratsiyasi bilan tanishing.
+### Google Cloud Shell
 
-#### Dastur joylashuvini aniqlash
+1. Google Cloud Shell-da ishlayotgan barcha protsesslarni aniqlang va ularning resurs iste'mol qilish ma'lumotlarini ko'ring. `ps`, `top`, va `htop` buyruqlarini solishtirib ko'ring.
+2. Google Cloud Shell-da `neofetch` yordamida tizim haqida batafsil ma'lumot oling.
+
+### Dastur joylashuvini aniqlash
+
 1. `whereis` buyrug’ini ishlatib, ayrim o'rnatilgan dasturlarning joylashuvini aniqlang. `whereis cd` qanday natija beradi deb o'ylaysiz? 
+2. `file` va `reset` buyruqlarini yozib ko'ring.
 
 **Keyingi dars:** [[06-dars]]

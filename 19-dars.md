@@ -1,50 +1,51 @@
 ---
-sort: 19
 title: 19 - "find" Buyrug'i
+description: "\"find\" buyrug'i haqida batafsil; xayotiy misollar va foydali buyruqlar."
+sort: 19
+author: Khumoyun (@comoyun)
 tags:
   - find
-description: "\"find\" buyrug'i haqida batafsil; xayotiy misollar va foydali buyruqlar."
 ---
 ![find-grandma-meme](./images/find-grandma-meme.png)
 
-`find` buyrug‘i yordamida papkalar va fayllarni qidirish hamda topilgan natijalar ustida turli amallarni bajarish juda oson. Uning qudrati fayllarni nom, hajm, o‘zgartirilgan sana yoki tarkib bo‘yicha izlash imkonini beradi. Bu yerda asosiy ma’lumotlarni yozishga harakat qildim.
+`find` buyrug‘i yordamida papkalar va fayllarni qidirish hamda topilgan natijalar ustida turli amallarni bajarish juda oson. U fayllarni nomi, hajmi, o‘zgartirilgan sanasi yoki tarkibi bo‘yicha izlash imkonini beradi. Bu yerda asosiy ma'lumotlarni taqdim etishga harakat qildim.
 
-## Starter
+## Dastlabki qadam
 
-Tizim yoki shaxsiy fayllaringiz ustida qidiruv amallarini ishlashni hozircha tavsiya qilmayman; yetarli tajribaga erishsangiz bas. Shu bois men quyidagi buyruqlarni yozib chiqdim. Bu sizga `find` bilan turli eksperimentlar qilishingizga yordam beradi. Marxamat, nusxalab terminalga uloqtiring.
+Tizim yoki shaxsiy fayllaringiz ustida qidiruv amallarini bajarishni hozircha tavsiya qilmayman; yetarli tajribaga erishsangiz bas. Shu bois men quyidagi buyruqlarni yozib chiqdim. Bu sizga `find` buyrug'ini xavfsiz ishlatish uchun simulyatsiya muhitini yaratadi. Marxamat, nusxalab terminalga uloqtiring.
 
 ```bash
 # uy papkaga sakraymiz
 cd ~
 
-# eksperiment nomli papka yaratamiz 
+# eksperiment nomli papka yaratish 
 mkdir eksperiment
 
 cd eksperiment
 
-# Matn Fayllarini Yaratish
+# matn fayllarini yaratish
 echo "Bu matn fayli." > namuna.txt
 echo "Boshqa matn fayli." > boshqa.txt
 
-# Rasm Fayllarini Yaratish
+# rasm fayllarini yaratish
 touch rasm1.jpg
 touch rasm2.png
 
-# Bo'sh Fayllarni Yaratish
+# bo'sh fayllarni yaratish
 touch bosh1.txt
 touch bosh2.txt
 
-# papkalar Yaratish
+# papkalar yaratish
 mkdir papka1
 mkdir papka2
 mkdir -p papka3/pastpapka1/pastpapka2
 
-# "Executable" Fayllarni Yaratish
+# "executable" fayllarni yaratish
 echo '#!/bin/bash' > skript.sh 
 echo 'echo "Bu skript."' >> skript.sh 
 chmod +x skript.sh
 
-# O'zgartirilgan vaqtlar bilan Fayllarni Yaratish
+# o'zgartirilgan vaqtlar bilan Fayllarni Yaratish
 touch -d "2023-01-01" ozgartirilgan_2023.txt
 touch -d "2022-01-01" ozgartirilgan_2022.txt
 
@@ -236,8 +237,6 @@ $ find -type f -regex '.*\.\(png\|txt\)'
 ./rasm2.png
 ...
 ```
-
-> [Terminal](https://linux.xumoyun.uz/terminal) sahifasiga kirib buyruqlarni yozib mashq qilishingiz mumkin.
 
 ## Topshiriqlar
 

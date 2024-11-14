@@ -1,8 +1,9 @@
 ---
+title: '"man" qani?'
+description: "\"man\" yordamchi dasturini o'rnatish."
+author: Khumoyun (@comoyun)
 tags:
   - man
-description: tez orada
-title: '"man" qani?'
 ---
 ![no-man](../images/no-man.png)
 

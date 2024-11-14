@@ -1,10 +1,11 @@
 ---
-tags:
-  - ubuntu
-  - tweaks
 title: 10 - Ubuntu Tweaks
 description: "Agar Ubuntu Linux distributividan foydalanadigan bo'lsangiz, samaradorlikni oshirish va kichik qulayliklarga ega bo'lish uchun quyidagi bir nechta buyruqlarni terminalda yozib ko'ring:"
 sort: 10
+author: Khumoyun (@comoyun)
+tags:
+  - ubuntu
+  - tweaks
 ---
 ![ubuntu-logo](images/ubuntu.png)
 

@@ -1,12 +1,13 @@
 ---
+title: 14 - Grafik Sozlamalar
+description: Ushbu yo'riqnomani o'qib chiqgach, tizimdagi vaqt, til, tema va yana ko'plab sozlamalarni qanday qilib o'zgartirish haqida bilib olasiz. Berilgan ma'lumotlar deyarli barcha distributivlarga tegishli.
+sort: 14
+author: Khumoyun (@comoyun)
 tags:
   - sozlamalar
   - til
   - vaqt
   - gnome-extensions
-title: 14 - Grafik Sozlamalar
-description: Ushbu yo'riqnomani o'qib chiqgach, tizimdagi vaqt, til, tema va yana ko'plab sozlamalarni qanday qilib o'zgartirish haqida bilib olasiz. Berilgan ma'lumotlar deyarli barcha distributivlarga tegishli.
-sort: 14
 ---
 Ushbu yo‘riqnomani o‘qib chiqgach, tizimdagi vaqt, til, mavzu va boshqa ko‘plab sozlamalarni qanday o‘zgartirish mumkinligini bilib olasiz. Keltirilgan ma’lumotlar deyarli barcha distributivlarga taalluqli.
 
@@ -74,7 +75,8 @@ Mana endi printer qo'shildi. **Printing Options → Test Page** tugmasini bosi
 
 Noutbuk qopqog‘ini yopganingizda, u batareya quvvatini tejash maqsadida ekranni o‘chiradi. Bu xatti-harakatni o‘z xohishingizga ko‘ra sozlashingiz mumkin.
 
-> Noutbuk yopiq holda uzoq ishlasa qizib ketadi. Ehtiyot choralarini ko'ring.
+>[!warning] Ehtiyot bo'ling
+>Noutbuk yopiq holda uzoq ishlasa qizib ketadi.
 
 1. Terminal oynasini oching (Ubuntu: **CTRL + ALT + T**)
 2. `sudo nano /etc/systemd/logind.conf` - faylni matn muharriri orqali oching.

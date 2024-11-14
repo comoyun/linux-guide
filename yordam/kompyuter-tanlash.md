@@ -1,9 +1,9 @@
 ---
-title: Linux uchun kompyuter tanlash
-description: Linux bilan yaxshi chiqishadigan kompyuter tanlash & ayrim komponentlarga, masalan, protsessor, xotira va grafik karta kabi qismlarga e'tibor berish
+title: Linuxbop Kompyuter
+description: Protsessor, xotira va grafik karta kabi asosiy komponentlarga e’tibor berib, Linux bilan yaxshi ishlaydigan kompyuterni tanlang.
 tags:
   - tizim-tanlash
   - aparat-tanlash
   - kompyuter-tanlash
 ---
-## Tez orada
+Tez orada

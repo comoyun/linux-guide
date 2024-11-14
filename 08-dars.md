@@ -1,184 +1,130 @@
 ---
-tags:
-  - foydali
-title: 08 - Foydali Ma'lumotlar
-description: Linux-da terminalga oid ayrim faktlar va foydali buyruqlar bilan tanishamiz.
+title: 08 - Xizmatlar Boshqaruvi
+description: Xizmatlar boshqaruvi va qanday qilib "service" yaratishni o'rganamiz.
 sort: 8
+author: Khumoyun (@comoyun)
+tags:
+  - xizmatlar
 ---
-## Global o'zgaruvchilar
+## Avtomatik ishga tushuvchi xizmatlar
 
-Global o'zgaruvchilarni yodlash maqsadga muvofiq bo'ladi:
-
-| O'zgaruvchi | Tavsif |
-| :--- | :--- |
-| `$HOME` | Joriy foydalanuvchining "uy" katalogi. Misol: `/home/khumoyun/` |
-| `$PATH` | Bajariladigan (executable) fayllar ro'yxati. |
-| `$PWD` | Hozirgi terminal ish-joy katalogi |
-| `$RANDOM` | Tasodifiy raqam - 0dan 32767gacha |
-| `$UID` | Joriy foydalanuvchining identifikatori. |
-| `$PS1` | [$PS1 variable](https://www.warp.dev/blog/whats-so-special-about-ps1) |
-| `$PS2` | - |
-
-O'zgaruvchilarni ekranga chiqarish (muhit - *Google Cloud Shell*):
+Linux tizimida ba'zi dasturlar, masalan Apache2, OpenSSH va MySQL, kompyuter qayta ishga tushirilganda avtomatik ravishda ishga tushadi. Misol uchun, Apache2 dasturini o'rnatganingizda:
 
 ```bash
-$ echo $PATH
-/home/khumoyun/.local/bin:/opt/gradle/bin:/opt/maven/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/usr/local/rvm/bin:/google/go_appengine:/google/google_appengine:/google/migrate/anthos/:/home/khumoyun/.gems/bin:/usr/local/rvm/bin:/home/khumoyun/gopath/bin:/google/gopath/bin:/google/flutter/bin:/usr/local/nvm/versions/node/v20.10.0/bin
+$ sudo apt install apache2
 ```
 
-## Exit / chiqish kodlari
+Shundan so‘ng, brauzeringizda ’localhost’ manziliga kirsangiz, Apache2 veb-serverining sahifasi ko‘rinadi.
 
-Har bir buyruq **chiqish kodini** qaytaradi. Muvaffaqiyatli buyruq har doim "0" ni qaytaradi va muvaffaqiyatsiz buyruq noldan farqli qiymatlarni qaytaradi. Muvaffaqiyatsizlik kodlari 1 dan 255 gacha bo‘lgan musbat sonlardir.
+###  Aniqlash
 
-Skript yozishda foydalanishimiz mumkin bo‘lgan yana bir qulay buyruq - ’exit’. Hech qanday argumentlarsiz ’exit’ buyrug‘ini ishga tushirish ishlayotgan skriptni tugatadi va ’exit’ dan oldin bajarilgan oxirgi buyruqning chiqish kodini qaytaradi.
-
-Dastur tugagach, **chiqish kodi** `$?` o'zgaruvchisiga yoziladi. Dastur muvaffaqiyatli bajarilganini aniqlash uchun: `echo $?` buyrug'ini berasiz.
-
-## Kommentlar / Izohlar
-
-Izohlar asosan kod ichiga yoziladi. Ular manba kodini odamlarga tushunishni osonlashtirish maqsadida qo'yiladi va odatda kompilyatorlar tomonidan e'tiborga olinmaydi (bu degani, kommentlarni dasturga hech qanday ta'siri yo'q). Kommentlarni terminalda ham yozish mumkin, lekin u hech qanday amalni bajarmaydi:
+Avtomatik ishga tushadigan xizmatlarni aniqlash uchun quyidagi buyruqni ishlatamiz:
 
 ```bash
-$ # lalalalalala
-$
+$ sudo systemctl is-enabled apache2
 ```
 
-Siz kommentlarni uzunroq buyruqlarning vazifalarini tushuntirish uchun ishlatishingiz mumkin:
+Agar bu buyruq `enabled` deb javob bersa, demak xizmat avtomatik ravishda ishga tushadi.
+
+### O'chirish
+
+Xizmatni avtomatik ishga tushishni o'chirish uchun quyidagi buyruqni ishlatamiz:
 
 ```bash
-$ ls -lht ~ | head -n 5 # Uy katalogidagi fayllarni o'zgartirish vaqti bo'yicha filterlash - yuqoridagi 5tasini ko'rsatadi
+$ sudo systemctl disable apache2
 ```
 
-## Linux - `read`
-
-Bu buyruq `stdin`dan o'zgaruvchilarga kiritilgan ma'lumotlarni o'qiydi. Qo'llanilishi bunday:
+Yoki
 
 ```bash
-read [-ers] [-a massiv] [-d chegaralovchi] [-i matn] [-n nchars] [-N nchars]
-     [-p prompt] [-t vaqt] [-u fd] [ozgaruvchi1 ...] [ozgaruvchi2 ...]
+$ sudo systemctl disable apache2.service
 ```
 
-Agar oʻzgaruvchi nomlari koʻrsatilmagan boʻlsa, kiritilgan maʼlumotlar `$REPLY` oʻzgaruvchisida saqlanadi.
+### Qayta yuklash
+
+Xizmatni o'chirmasdan konfiguratsiyasini qayta yuklash uchun quyidagi buyruqdan foydalanamiz:
 
 ```bash
-#!/bin/bash
-
-read # malumot kiritilishini kutadi
-echo $REPLY # kiritilgan malumotni chop etadi
+$ sudo systemctl reload <xizmat nomi>
 ```
 
-| Optsiya | To'liq Nomi | Tavsifi |
-| :--: | :--- | :--- |
-| `-a` | array/massiv | So'zlarni indekslangan massivda saqlaydi |
-| `-e` |  | ["-e" optsiyasi ](https://www.baeldung.com/linux/read-command) |
-| `-d` | delimiter/chegaralovchi | Chegaralovchi o'rnatadi |
-| `-n` | nchars | **n** ta belgilar o‘qilgandan so‘ng o‘qishni to‘xtatadi |
-| `-N` | nchars | **n** belgilar yoki EOF o‘qilgandagina o‘qishni to‘xtatadi, chegarani e’tiborsiz qoldiradi |
-| `-p` | prompt | Konsolda prompt satrini chop etadi |
-| `-i` | interactive | Foydalanuvchi o'zgartirishi mumkin bo'lgan to'ldiruvchi matnni chop etadi. `-e` bilan birgalikda ishlatiladi |
-| `-r` | raw input | $ va * kabi maxsus belgilarning talqinini o'chirib qo'yadi |
-| `-s` | silent/sokin | ["-s" optsiyasi ](https://www.baeldung.com/linux/read-command) |
-| `-t` | timeout/turib-turish | Chiqishdan oldin ma'lum vaqt kutadi |
-| `-u` | file descriptor | ["-u" optsiyasi ](https://www.baeldung.com/linux/read-command) |
+### Xizmatlar ro'yxatini ko'rsatish
+
+Tizimdagi barcha xizmatlarni ko'rsatish uchun quyidagi buyruqni ishlatamiz:
 
 ```bash
-#!/bin/bash
-
-read -p 'Ismingni kirit: ' name
-
-read -sp 'Endi kodni kirit: ' password
-
-if [ "$password" == "1234" ] && [ "$name" == "Toshbolta" ]; then
-   echo -e "\nTo'g'ri, sen xaqiqiy Toshboltasan!"
-else
-   echo -e "\nYo'q, sen Toshbolta emassan."
-fi
-
-echo "" # Bo'sh qatorni bildiradi
+$ sudo systemctl list-units --type=service
 ```
 
-Natija:
-
-```
-Ismingni kirit: User1
-Endi kodni kirit: 2353
-Yo'q, sen Toshbolta emassan.
-```
-
-#### Raqamlarni massivda saqlash:
+Avtomatik ishga tushadigan xizmatlarni filterlash uchun:
 
 ```bash
-#!/bin/bash
-
-read -p "Raqam kirit: " -a array
-
-echo "unda bunda boyni qizi mana shunda:"
-echo ${array[2]}
+$ sudo systemctl list-units --type=service | grep enabled
 ```
 
-Natija:
+### Yangi xizmat yaratish
 
-```
-Raqam kirit: 100 200 300 400
-unda bunda boyni qizi mana shunda:
-300
-```
-
-## Ikki yoki bitta qo'shtirnoq?
-
-Ikkita va bitta qo'shtirnoq o'rtasida muhim farq bor. Ikkita qo'shtirnoq ichidagi o'zgaruvchilarning ahamiyati bor. Bitta qo'shtirnoq ichida esa aksincha. Masalan:
+Yangi xizmat yaratish uchun `/etc/systemd/system/` katalogida `.service` kengaytmali fayl yarating. Misol: `myservice.service`
 
 ```bash
-echo "Sizning uyingiz: $HOME" # Sizning uyingiz: /home/<foydalanuvchi nomi>
-echo 'Uyingiz: $HOME' # Sizning uyingiz: $HOME
+$ sudo nano /etc/systemd/system/myservice.service
 ```
+
+Fayl ichiga quyidagi konfiguratsiyalarni yozing:
+
+```
+[Unit]
+Description=Oddiy xizmat
+After=network.target
+
+[Service]
+ExecStart=/skript/manzili
+Restart=always
+
+[Install]
+WantedBy=default.target
+```
+
+Bu yerda:
+1. **Description** - Xizmat tavsifi.
+2. **After** - Agar xizmat boshqa bir xizmatga bog'liq bo'lsa.
+3. **ExecStart** - Xizmatni ishga tushiradigan buyruq yoki skript.
+4. **Restart** - Xizmatni qayta ishga tushirish harakati.
+
+Faylni saqlang va matn muharriridan chiqing. Keyin tizimga yangi xizmatlar haqida xabar berish uchun:
 
 ```bash
-INPUT="G'alati    bo'shliqqa     ega qator.    "
-echo $INPUT # Gʻalati boʻshliqqa ega qator.
-echo "$INPUT" # G'alati    bo'shliqqa     ega qator.    .
+$ sudo systemctl daemon-reload
 ```
+
+Yangi xizmatni ishga tushiring:
 
 ```bash
-$ echo Galati   boshliqqa     ega  qator
-Galati boshliqqa ega qator
-$ echo '  Galati   boshliqqa   ega      qator'
-  Galati   boshliqqa   ega      qator
+$ sudo systemctl start myservice
 ```
 
-Endi jiddiyroq misolni ko'rib chiqing:
+Xizmatni avtomatik ishga tushirishni yoqish:
 
 ```bash
-FILE="Sevimli narsalar.txt"
-cat $FILE # 2 ta faylni chop etishga urinmoqda: Sevimli va narsalar.txt
-cat "$FILE" # 1 faylni chop etadi: `Sevimli narsalar.txt`
+$ sudo systemctl enable myservice
 ```
 
-## Avvalgi buyruqga ishora berish
-
-Aytaylik, siz quyidagi vaziyatda `sudo` buyrug'ini berishni unutdingiz:
+Xizmat holatini tekshirish uchun:
 
 ```bash
-$ apt install nodejs
-E: Could not open lock file /var/lib/dpkg/lock-frontend - open (13: Permission denied)
-E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root son?
+$ sudo systemctl status myservice
 ```
 
-Butun kommandani qaytadan yozib chiqish o'rniga siz `!!` argumentidan foydalanishingiz mumkin:
+## Bonus
+
+Tizimni to'liq yoqish vaqti haqida ma'lumot olish uchun:
 
 ```bash
-$ sudo !! # bundan oldingi buyruqni '!!' o'rniga qo'yish kerakligini bildiradi
-$ sudo apt install nodejs
+$ systemd-analyze
 ```
 
----
+Agar siz WSL foydalanuvchisi bo'lsangiz, `systemd` muammosiga duch kelishingiz mumkin. Bunday holatda VirtualBox yoki VMWare dasturlaridan foydalanishni tavsiya qilaman. Yoki Linux-ga butunlay o'tish vaqti kelgandir?
 
-## Topshiriq
-
-1. Berilgan `$PATH` o'zgaruvchisi qiymatidagi barcha joylashuvlarni qanday qilib alohida qatorlarda chop etish mumkin? Skript yozing.
-
-2. `read` buyruq funksiyasidan foydalanib, foydalanuvchidan ikkita ma'lumotni oling va bu ma'lumotlar bilan mos ravishda xabar chiqarish uchun skript yozing. Misol uchun, agar foydalanuvchi "Khumoyun" va "18" deb kiritsa, "Salom, Khumoyun. Sen 18 yoshdasan!" xabari chiqarilsin.
-
-3. Foydalanuvchidan ma’lumot olish uchun `read` buyrug‘ining `-t` (timeout) parametridan foydalaning. 10 soniya ichida foydalanuvchidan ma’lumot qabul qiladigan skript yozing. Agar belgilangan vaqt ichida ma’lumot kiritilmasa, "Vaqt tugadi" degan xabar chiqarilsin.
+![install-linux](images/install-linux-meme.png)
 
 **Keyingi dars:** [[09-dars]]

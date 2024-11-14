@@ -1,209 +1,114 @@
 ---
-tags:
-  - tarmoq
-  - ping
-title: 02 - Tarmoq Buyruqlari
-description: Ushbu darsda terminal orqai IP manzillar va mavjud Wi-Fi adapterlar ro'yhatini olishni o'rganamiz.
+title: " 02 - Linux Fayl Tizimi"
+description: Linux fayl tizimi va terminalda qanday qilib boshqa papkalarga "sakrash" haqida bilib olasiz.
 sort: 2
+author: Khumoyun (@comoyun)
+tags:
+  - fayl-tizimi
+  - fayllar
 ---
-## Tarmoq ma'lumotlarini ko'rsatish
+![linux-file-system](images/linux-file-system.png)
 
-Mahalliy IP manzilingizni Windows'dagi `ipconfig` buyrug'iga o'xshash tarzda ko'rsatish uchun quyidagi buyruqlardan foydalanishingiz mumkin:
+Linux fayl tizimi haqiqatan ham ajoyib, chunki barcha tarmoq tizimlari, disklar va USB drayvlar fayl ko'rinishida ifodalanadi. Misol uchun, Windows'dagi **C** drayver, **D** drayver va h.k. Linux-ning `/dev/` (devices) katalogida oddiygina fayl sifatida ko'rinadi.
 
-```bash
-$ ifconfig
-```
+>[!info] Sezgir nomlar
+>Barcha fayl nomlari katta-kichik harflarga sezgir, ya'ni `/boot`, `/Boot` va `/BOOT` uchta **turli** papkani ifodalaydi.
 
-Yoki, yanada zamonaviy va ko'proq distributivlarda mavjud bo'lgan buyruq orqali:
+![case-sensitivity-meme](images/case-sensitivity-meme.png)
 
-```bash
-$ ip a
-```
+| Papka         | Tavsif                                                                                                                |
+| ------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `/home`       | Shaxsiy papkangiz. Sizga tegishli fayllar va dasturlar shu yerda saqlanadi.                                           |
+| `/var`        | Vaqt o'tishi bilan o'zgaradigan, tartibsiz fayllar bilan to'la joy.                                                   |
+| `/tmp`        | Vaqtinchalik fayllar saqlanadigan joy.                                                                                |
+| `/usr`        | Dasturlar foydalanadigan kutubxonalar joylashgan.                                                                     |
+| `/root`       | Super foydalanuvchining (root) uy papkasi.                                                                            |
+| `/mnt`        | Fleshka, disk, SSD, telefon xotirasi va boshqa tashqi qurilmalar joylashadi.                                          |
+| `/lost+found` | Fayl tizimi buzilganda qisman tiklash uchun ishlatiladi; odatda bo‘sh bo‘ladi.                                        |
+| `/dev`        | Fleshka, disk va boshqa kompyuterga ulangan qurilmalar turadi.                                                        |
+| `/proc`       | Maxsus virtual fayl tizimi. Linux yadrosi (kernel) tomonidan boshqariladi va tizim haqidagi ma'lumotlarni ko'rsatadi. |
 
-Muayyan Wi-Fi adapteri haqida ma'lumot olish:
+>[!success] Bilarmidingiz?
+>FBI va xakerlar ko'pincha `dd` (disk-destroyer) yordamida `/dev` papkasidagi butun diskni boshqa kompyuterga ko'chirib analiz qilishadi (yoki tiklab bo'lmas darajada o'chirib yuborishadi).
+>
+>Masalan, bu butun diskni oddiy faylga yozadi:
+>
+>```bash
+>sudo dd if=/dev/sda of=backup.img bs=4M status=progress
+>```
 
-```bash
-$ ifconfig wlan0
-```
+## `cd` haqida batafsil
 
->Agar `ifconfig` o'rnatilmagan bo'lsa, `sudo apt install net-tools` buyrug'i orqali o'rnatishingiz mumkin.
-
-## Xost tirik yoki yo'qligini tekshirish
-
-Xost ya'ni serverni tirik yoki yo'qligini tekshirish uchun `ping` buyrug'ini ishlating:
-
-```bash
-$ ping localhost
-PING localhost (127.0.0.1) 56(84) bytes of data.
-64 bytes from localhost (127.0.0.1): icmp_seq=1 ttl=64 time=0.030 ms
-64 bytes from localhost (127.0.0.1): icmp_seq=2 ttl=64 time=0.039 ms
-64 bytes from localhost (127.0.0.1): icmp_seq=3 ttl=64 time=0.040 ms
-^C
---- localhost ping statistics ---
-3 packets transmitted, 3 received, 0% packet loss, time 2050ms
-rtt min/avg/max/mdev = 0.030/0.036/0.040/0.004 ms
-```
-
->`localhost` - **127.0.0.1** ya'ni uy manzil bilan barobar. 
-
-Ba'zilar `ping` buyrug'ini xostning IP manzilini aniqlash uchun ishlatadilar. `ping` dasturidan chiqish uchun **CTRL + C** tugmalarini bosing yoki oldindan `ping -c 3 localhost` buyrug'ini bering, shunda dastur 3 marta so'rov yuborib avtomatik chiqadi. Asosiysi `ping senat.uz` buyrug'ini yozib, esingizdan chiqib qolib ketmasin :)
-
-### Bilarmidingiz?
-
-![ping-tip](images/ping-tip.png)
-
-Linux-da `ping` buyrug'i yordamida shlyuz IP manzilini osongina topish mumkin:
+`cd` (change-directory) buyrug‘i bilan tanish bo‘lishingiz aniq, chunki u Windows, MacOS, KolibriOS va boshqa operatsion tizimlarda ham bor. `cd` yordamida boshqa papkalarga sakrash mumkin. Misol uchun, siz fayl yaratganingizda, u terminal ochilgan papkaga saqlanadi. Aytaylik, joriy ish manzili `/home/khumoyun/experiments/` bo‘lsa:
 
 ```bash
-$ ping _gateway
-```
-
-Shlyuz IP - ko'pincha bu hotspot yoki routerning IP-manzilidir.
-
-## IP manzillarni MAC manzillari bilan bog'lash
-
-MAC manzillar ARP keshida saqlanadi. Ko'rish uchun quyidagi buyruqni kiriting:
-
-```bash
-$ arp -a
-Internet Address       Physical Address       Type
-192.168.1.1            00-11-22-33-44-55     dynamic
-192.168.1.10           10-22-33-44-55-66     dynamic
-192.168.1.20           20-33-44-55-66-77     dynamic
-```
-
-Kompyuterdagi ochiq portlar va ular bilan bog'langan dasturlarni bilish uchun `netstat` buyrug'idan foydalaning:
-
-```bash
-$ netstat -tul
-```
-
-- **-t**: TCP bog'lanishlarini ko'rsatadi.
-- **-u**: UDP bog'lanishlarini ko'rsatadi.
-- **-l**: Faqat ochiq portlarni ko'rsatadi.
-
-## Buyruqlar tarixini qanday ko'rish mumkin?
-
-Ba'zan IP va MAC manzillarni qaytadan yozishga erinamiz. Yaxshiyamki, bizda buyruqlar tarixini ko'rish imkoniyati bor:
-
-```bash
-$ history
-  1  sudo apt update
-  2  sudo apt upgrade
-  3  ping 7.7.7.7
-  4  history
-```
-
-Yoki uy katalogida joylashgan `.bash_history` yashirin faylini ko'rish orqali:
-
-```bash
-$ cd ~
-$ cat .bash_history
-```
-
-Tarixni tozalash uchun:
-
-```bash
-$ history -c
-$ history
-```
-
-## "Uy"ga qaytish
-
-`cd` (change-directory) buyrug'i orqali terminalni istalgan manzilga yo'naltirishingiz mumkin. Uyga qaytish uchun:
-
-```bash
-$ cd ~
-```
-
-Siz `cd` buyrug'ini hech qanday argumentlarsiz yozish orqali ham bir xil natijaga erishish mumkin.
-
-```bash
+$ touch file
+$ ls
+file papka
 $ pwd
-/home/khumoyun/Downloads/never-gonna-give-you-up/
-$ cd
-$ pwd
-/home/khumoyun
+/home/khumoyun/experiments
 ```
 
-## Fayl kontentini ko'rish
+Endi faylni "papka" ichida yaratmoqchi bo‘lsangiz, buni ikki xil usulda amalga oshirish mumkin:
 
-`cat` (concatenate) asosan fayllarni bir-biriga bog'lash uchun ishlatiladi, lekin kichik fayllar ichidagi kontentni ko'rish uchun ham ishlatishingiz mumkin:
+- **Birinchi yo'l**: Faylni to'g'ridan-to'g'ri "papka" ichida yaratish:
+
+  ```bash
+  $ touch papka/file
+  $ ls papka/
+  file
+  ```
+
+- **Ikkinchi yo'l**: Avval papkaga o'tib, so'ng fayl yaratish:
+
+  ```bash
+  $ cd papka
+  $ touch file
+  $ ls
+  file
+  ```
+
+Joriy katalogdan bir daraja yuqoriga chiqish uchun `cd ..` buyrug'ini ishlatishingiz mumkin:
+
+- `cd .` - Joriy papkani o'zini anglatadi.
+- `cd ..` - Joriy papkadan bir daraja yuqoriga chiqadi.
+
+>[!tip] `./papka/file` = `papka/file`
+
+Agar uchta papka yuqoriga chiqmoqchi bo'lsangiz:
 
 ```bash
-$ echo "Linux ajoyib!" > linux.txt
-$ cat linux.txt
-Linux ajoyib!
+$ cd ../../../
 ```
 
->MB hajmdagi fayllarni `cat` yordamida o'qish joriy terminal seansni qotirib qo'yishi yoki "crash"-ga olib kelishi mumkin. 
-
-Fayllarni bir-biriga bog'lash (natija `file-4.txt` bo'ladi):
+Yoki (tajribasiz usul):
 
 ```bash
-$ cat file.txt file-2.txt file-3.txt > file-4.txt
+$ cd ..
+$ cd ..
+$ cd ..
 ```
 
-**Eslatma**: Katta fayllar uchun `less` yoki `more` buyruqlarini ishlatish tavsiya etiladi. Chunki ular faylning butun tarkibini bir vaqtning o'zida yuklamaydi, faqat kerakli qismini sahifalab ko'rsatadi.
+Qisqartmalar:
 
-## To'ldirilgan papkalarni o'chirish
+| Qisqartma                | Natija                                                               |
+| ------------------------ | -------------------------------------------------------------------- |
+| `cd`                     | Uy papkaga sakraydi.                                                 |
+| `cd -`                   | Ishchi manzilni avvalgi ishchi manzilga o'zgartiradi.                |
+| `cd ~foydalanuvchi_nomi` | Foydalanuvchi nomi ko'rsatilgan uyga o'tadi. Masalan, `cd ~khumoyun` |
 
-Bu haqida avvalgi darsda yozilgan, lekin qayta ko'rib chiqish ziyon qilmaydi. Bo'sh bo'lmagan papkalarni o'chirish uchun:
+## Samaradorlikni oshiring
 
-```bash
-$ rm -rf papka papka2 papka3
-```
+1. **CTRL + SHIFT + C** - matnni nusxalaydi
+2. **CTRL + SHIFT + V** - nusxalangan matnni qo'yadi
 
-Bu yerda:
-
-- **-r** (recursive) opsiyasi: Kataloglar va ularning tarkibidagi fayllarni har biriga `rm` buyrug'ini beradi.
-- **-f** (force) opsiyasi: Majburiy o'chirishni bildiradi va ogohlantirishlarsiz bajaradi.
-
-## `/etc/hosts` faylini o'zgartirish
-
-`/etc/hosts` fayli domen nomlarini har qanday IP manzillariga bog'lash imkonini beradi. Siz undan saytlarni test yoki blokirovka qilish uchun ishlatishingiz mumkin.
-
-```bash
-$ sudo nano /etc/hosts
-```
-
-![nano meme](./images/nano-meme.png)
-
-Fayl tarkibi:
-
-```
-127.0.0.1 localhost 
-192.168.1.10 myserver.local
-```
-
-Yuqoridagi misolda **127.0.0.1** `localhost` bilan bog'lanadi, ya'ni brovzerga `localhost` deb yozganingizda so'rovlarni **127.0.0.1** IP manziliga yuboradi. **192.168.1.10** IP-manzili `myserver.local` bilan bog'lanadi. `/etc/hosts` faylini mahalliy DNS server sifatida tasavvur qilishingiz mumkin.
-
-## Fayl vaqtini yangilash
-
-Faylning oxirgi o'zgartirilgan sanasini yangilash uchun `touch` buyrug'idan foydalanishingiz mumkin. `/etc/hosts` kabi tizim fayllarini yangilash `sudo` talab qiladi:
-
-```bash
-$ sudo touch /etc/hosts
-```
-
->`touch` buyrug'i fayllar yaratish yoki ularning o'zgartirilgan sanalarini yangilash maqsadida foydalaniladi.
-
-## Samaradorlikni oshirish
-
-- **CTRL + SHIFT + T** (terminalda) - Yangi terminal "tab" ochish
-- **ALT + F4** - Aktiv oynani yopish
-- **CTRL + TAB** (brauzerda) - Tablarni almashtirish
-- **CTRL + Pg Up** (brauzer + terminal) - Tablarni chapga/o'ngga almashtirish
-- **ALT + 1..9** (brauzer + terminal) - Tablarni indeks bo'yicha almashtirish
 
 ---
 
 ## Topshiriq
 
-1. **Tarmoq ma'lumotlari**  
-   - Kompyuteringizning tarmoq interfeyslarining ma'lumotlarini olish uchun ishlatishingiz mumkin bo'lgan buyruqlarni aniqlang va ularning qanday natijalarni ko'rsatishini tushuntiring.
-2. **xumoyun.uz serveriga 10 marta `ping` so'rovini yuboring**
-3. **ARP keshini tekshirish**  
-   - IP manzillar va MAC manzillar orasidagi farqlarni aniqlang. ARP keshini qanday ko'rish mumkin?
+1. `cd` buyrug'i yordamida bir papkadan boshqa papkaga qanday o'tish mumkin?
+2. Joriy papkadan ikki daraja yuqoriga chiqmoqchi bo'lsangiz qanday qilasiz?
+3. Yashirin papkalarni ko'rish uchun qaysi buyruq/opsiyani yozish kerak?
 
 **Keyingi dars:** [[03-dars]]

@@ -1,15 +1,16 @@
 ---
+title: 21 - "head" va "tail"
+description: '"head" va "tail" buyruqlari nima qiladi va ularning farqlari nima? Ushbu darsda bilib olasiz.'
+sort: 21
+author: Khumoyun (@comoyun)
 tags:
   - head
   - tail
   - cat
-description: '"head" va "tail" buyruqlari nima qiladi va ularning farqlari nima? Ushbu darsda bilib olasiz.'
-title: 21 - "head" va "tail"
-sort: 21
 ---
 ![head-tail-cat](images/head-tail-cat.png)
 
-Fayllarni ko‘rish uchun turli xil buyruqlar bor. Biroq, ularning hammasi ham har qanday sharoitda qo'llashga mos kelavermaydi. Hajmi kattaroq fayllarni ko'rishda `cat`, `tac` (`cat`-ning teskarisi, ya'ni fayl tarkibini teskari tartibda ko'rsatadi) kabi buyruqlar samarali emas. Chunki u butun faylni bir vaqtning o‘zida ekranga chiqaradi, natijada terminal "muzlab qolishi" yoki hatto ishdan chiqishi ham ehtimoldan xoli emas. Shu bois, katta hajmli fayllar uchun `less`, `more`, `awk`, yoxud `head` va `tail` singari buyruqlardan foydalanish ancha qulayroq. Hozircha faqat `head` va `tail` haqida gaplashamiz.
+Fayllarni ko‘rish uchun turli xil buyruqlar bor. Biroq, ularning hammasi ham har qanday sharoitda qo'llashga mos kelavermaydi. Hajmi kattaroq fayllarni ko'rishda `cat`, `tac` (`cat`-ning teskarisi, ya'ni fayl tarkibini teskari tartibda ko'rsatadi) kabi buyruqlar samarali emas. Chunki u butun faylni bir vaqtning o‘zida ekranga chiqaradi, natijada terminal "muzlab qolishi" yoki ishdan chiqishi ham ehtimoldan xoli emas. Shu bois, katta hajmli fayllar uchun `less`, `more`, `awk`, yoxud `head` va `tail` singari buyruqlardan foydalanish ancha qulayroq. Hozircha faqat `head` va `tail` haqida gaplashamiz.
 
 ## Umumiy o'xshashliklar
 
@@ -25,7 +26,7 @@ tail [PARAMETRLAR] fayl
 `head` buyrug'i faylning dastlabki 10 qatorini chiqaradi. Agar ko'rsatilgan qatorlar sonini o'zgartirishni xohlasangiz, `-n` parametridan foydalanishingiz mumkin:
 
 ```bash
-head -n 15 fayl.txt
+$ head -n 15 fayl.txt
 ```
 
 Bu misol `fayl.txt` ning birinchi 15 qatorini ekranga chiqaradi.
@@ -33,7 +34,7 @@ Bu misol `fayl.txt` ning birinchi 15 qatorini ekranga chiqaradi.
 Agar siz qatorlarni orqadan hisoblashni xohlasangiz, masalan, oxirgi 88 qatordan avvalgi qatorlarni chiqarish kerak bo'lsa, `-n` parametriga manfiy qiymat beriladi:
 
 ```bash
-head -n -88 fayl.txt
+$ head -n -88 fayl.txt
 ```
 
 Bu misolda fayl oxiridan yuqoriga 88 qatorni chiqarib tashlaydi, ya'ni qolgan qatorlarni ko'rsatadi.
@@ -41,7 +42,7 @@ Bu misolda fayl oxiridan yuqoriga 88 qatorni chiqarib tashlaydi, ya'ni qolgan qa
 `head` bir vaqtning o'zida bir nechta fayl tarkiblarini ham ko'rsata oladi:
 
 ```bash
-head fayl1.txt fayl2.txt
+$ head fayl1.txt fayl2.txt
 ```
 
 Bu buyruq har ikki faylning birinchi 10 qatorini chiqaradi.
@@ -53,7 +54,7 @@ Bu buyruq har ikki faylning birinchi 10 qatorini chiqaradi.
 `tail` buyruqi faylning oxirgi 10 qatorini chiqaradi. Lekin, bunda ham `-n` parametri yordamida qatorlar sonini o'zgartirish mumkin:
 
 ```bash
-tail -n 20 fayl.txt
+$ tail -n 20 fayl.txt
 ```
 
 Bu `fayl.txt` ning oxirgi 20 qatorini ekranga chiqaradi.
@@ -61,7 +62,7 @@ Bu `fayl.txt` ning oxirgi 20 qatorini ekranga chiqaradi.
 `tail`-ning qiziqarli xususiyatlaridan biri - real vaqt rejimida fayldagi o'zgarishlarni kuzatish imkoniyati. Buning uchun `-f` parametri ishlatiladi:
 
 ```bash
-tail -f fayl.txt
+$ tail -f fayl.txt
 ```
 
 Bu buyruq fayldagi o‘zgarishlarni uzluksiz ravishda ko‘rsatib turadi. Masalan, `log` fayllarini kuzatishda juda qo‘l keladi. 
@@ -78,7 +79,8 @@ $ sudo tail -f /var/log/auth.log
 2. Aytaylik, siz `/var/log/messages` faylidan 5-dan 10-gacha bo'lgan qatorlarini chiqarishingiz kerak. Buni `head` va  `tail` yordamida qanday amalga oshirasiz? (ishora: "pipe" operatori ishlatiladi)
 3. `head` yordamida `/var/log/messages` faylidan oxirgi 10 ta qatorni chiqarib tashlab, qoldiq qatorlarni ko'rsatmoqchisiz. Buni qanday amalga oshirish mumkin? (ishora: `-n` parametriga manfiy raqam beriladi)
 
-Agar javob topishda qiyinchlikka duch kelsangiz, ChatGPT-dan so'rang, lekin so'rashdan avval yaxshilab o'ylang.
+>[!question]- Javobimni qanday tekshiraman?
+>ChatGPT-dan so'rang.
 
 ## Fikr bildirish
 
