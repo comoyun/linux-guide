@@ -6,8 +6,6 @@ tags:
   - aparat-tanlash
   - kompyuter-tanlash
 ---
-## Kompyuter tanlashda maslahatlar
-
 **Oddiy foydalanuvchi uchun:**
 
 - O'rtacha tezlikdagi x86_64 protsessor
@@ -20,4 +18,6 @@ tags:
 - 8+ yadro
 - Maxsus virtualizatsiya imkoniyatlari
 
-Eslatma: Sun'iy intellekt yoki video tahrirlash bilan shug'ullanmasangiz, o'rtacha protsessor ham yetarli bo'ladi.
+>[!warning] Eslatma 
+>Sun'iy intellekt yoki video tahrirlash bilan shug'ullanmasangiz, o'rtacha protsessor ham yetarli bo'ladi.
+
