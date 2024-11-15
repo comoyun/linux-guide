@@ -7,13 +7,11 @@ tags:
   - ilovalar
   - apt
 ---
-## Ilova menejeri
-
-Ilova boshqaruvchisi (package-manager) internetdan dasturlarni o‘rnatish, mavjud dasturlarni yangilash yoki o‘chirish kabi xizmatlarni taqdim etadi. Har bir Linux distributivida ilova boshqaruvchisi turlicha nomlanadi. Misol uchun, Ubuntu va Debian asosidagi distributivlarda `apt`, Arch asosidagi distributivlarda esa `pacman` ishlatiladi. Biz `apt` yordamida turli buyruqlarni ko‘rib chiqamiz.
+Ilova menejeri (package-manager) internetdan dasturlarni o‘rnatish, mavjud dasturlarni yangilash yoki o‘chirish kabi xizmatlarni taqdim etadi. Har bir Linux distributivida ilova boshqaruvchisi turlicha nomlanadi. Misol uchun, Ubuntu va Debian asosidagi distributivlarda `apt`, Arch asosidagi distributivlarda esa `pacman` ishlatiladi. Biz `apt` yordamida turli buyruqlarni ko‘rib chiqamiz.
 
 >`apt-get`, `aptitude` va `apt` buyruqlari bir xil vazifani bajaradi, ammo `apt` buyrug'idan foydalanish tavsiya etiladi, chunki u yangi va qulay.
 
-### Barcha ilovalarni yangilash
+## Barcha ilovalarni yangilash
 
 Tizimning optimal ishlashini ta'minlash uchun dasturlarni muntazam ravishda yangilab turish kerak. Buning uchun quyidagi buyruqlarni ishlatamiz:
 
@@ -35,7 +33,7 @@ Tizimning optimal ishlashini ta'minlash uchun dasturlarni muntazam ravishda yang
   $ sudo apt dist-upgrade
   ```
 
-### Ilovalarni `apt` bilan o'rnatish
+## Ilovalarni `apt` bilan o'rnatish
 
 `apt` yordamida dasturlarni o'rnatish juda oson. Misol uchun, VLC Media Player-ni o'rnatish uchun:
 
@@ -47,7 +45,7 @@ $ sudo apt install vlc -y
 
 ![APT install meme](images/apt-install-meme.png)
 
-### Ilovalarni `dpkg` orqali o'rnatish
+## Ilovalarni `dpkg` orqali o'rnatish
 
 Agar siz `deb` kengaytmali faylni o'rnatmoqchi bo'lsangiz, `dpkg` buyrug'idan foydalanishingiz mumkin. Bu Windows’dagi “.exe” fayllarni o'rnatish kabi ishlaydi:
 
@@ -63,7 +61,7 @@ Agar qaram dasturlar yetishmayotganligi haqida xatolik yuzaga kelsa, qaram dastu
 $ sudo apt install -f
 ```
 
-### Ilovalarni o'chirib tashlash
+## Ilovalarni o'chirib tashlash
 
 Dasturni o'chirish uchun quyidagi buyruqni yozing:
 
@@ -77,7 +75,7 @@ Masalan, VLC dasturini o'chirish uchun:
 $ sudo apt remove vlc
 ```
 
-### O'rnatish mumkin bo'lgan ilovalarni qidirish
+## O'rnatish mumkin bo'lgan ilovalar
 
 Agar siz tizimda mavjud bo'lmagan dasturlarni qidirmoqchi bo'lsangiz, quyidagi buyruqni ishlatishingiz mumkin:
 
@@ -85,11 +83,11 @@ Agar siz tizimda mavjud bo'lmagan dasturlarni qidirmoqchi bo'lsangiz, quyidagi b
 $ sudo apt search dastur-nomi
 ```
 
-### `autoremove` /  `autoclean`
+## `autoremove` /  `autoclean`
 
 `autoremove` va `autoclean` buyruqlari tizimni toza va samarali saqlash uchun ishlatiladi.
 
-#### `autoremove`
+### `autoremove`
 
 O'chirilgan dasturlarga qaram bo'lgan paketlar tizimda qolib ketishi mumkin. `autoremove` bu kerak bo'lmagan paketlarni tozalaydi:
 
@@ -97,7 +95,7 @@ O'chirilgan dasturlarga qaram bo'lgan paketlar tizimda qolib ketishi mumkin. `au
 $ sudo apt autoremove
 ```
 
-#### `autoclean`
+### `autoclean`
 
 `apt` tizimga o'rnatilgan va yangilangan dasturlar uchun `.deb` fayllarini yuklab oladi. `autoclean` eskirgan fayllarni tozalaydi va diskni bo'shatishga yordam beradi:
 
@@ -131,7 +129,7 @@ Ko'pchilik `netstat -tulpn | grep :port_raqami` buyrug'idan foydalanadi, lekin b
 
 Masofaviy kompyuterlarda yoki bulutli serverlarda kompyuter nomi va versiya to'g'risida ma'lumot olish uchun bir nechta usullar mavjud.
 
-### Birinchi usul
+### `/etc/os-release`
 
 Unix-ga o'xshash tizimlarda `/etc/` katalogi tizim va ilovalar uchun konfiguratsiya fayllarni saqlaydi. `/etc/os-release` faylini o'qib, operatsion tizim haqida ma'lumot olish mumkin:
 
@@ -141,7 +139,7 @@ $ cat /etc/os-release
 
 ![Linux info](images/linux-info.png)
 
-### Ikkinchi usul
+### `uname`
 
 `uname` buyrug'i tizim ma'lumotlarini, jumladan yadro versiyasini ko'rsatadi. `-a` optsiyasi barcha ma'lumotlarni ko'rsatadi:
 
@@ -149,7 +147,7 @@ $ cat /etc/os-release
 $ uname -a
 ```
 
-### Uchinchi usul
+### `hostnamectl`
 
 `hostnamectl` buyrug'i tizimning nomi, virtualizatsiya turi va boshqa ma'lumotlarni ko'rsatadi:
 
@@ -157,7 +155,7 @@ $ uname -a
 $ hostnamectl
 ```
 
-### To'rtinchi usul
+### `neofetch`
 
 `neofetch` dasturini o'rnatib, tizim haqida chiroyli ko'rinishda ma'lumot olish mumkin:
 

@@ -1,5 +1,5 @@
 ---
-title: " 02 - Linux Fayl Tizimi"
+title: " 02 - Fayl Tizimi"
 description: Linux fayl tizimi va terminalda qanday qilib boshqa papkalarga "sakrash" haqida bilib olasiz.
 sort: 2
 author: Khumoyun (@comoyun)

@@ -7,4 +7,4 @@ tags:
   - virtual-mashina
   - tez-orada
 ---
-Tez orada :)
+Tez orada 

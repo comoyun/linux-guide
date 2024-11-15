@@ -36,6 +36,7 @@ Klaviaturadagi har bir harfning joylashuvini pastga qarab topish, mushak xotiras
 
 Har bir necha soniyada to‘xtab, xato qilganingizni tekshirish uchun ekranga qarash, doimo ekranga uzluksiz qarab turishdan ko‘ra ancha sekinroq. 
 
+>[!warning] Xatolarni tuzatish
 >Xatolarni faqatgina `backspace` yordamida tuzatmang. `Ctrl + Backspace` tugmalarini bosing va keyin darhol xato so'zni **boshidan** yozing. Bu mushak xotirasini to'g'ri shakllantirishga hissa qo'shadi.
 
 ## Yozishni o'rganish
@@ -138,7 +139,7 @@ yoki "*men X tezlikda qotib qolgandayman. Nima qilishim kerak?*"
 
 Mana, hech kim o‘qishni istamaydigan javoblar.
 
-Qayta qayta mashq qilish orqali. "Monkeytype", "Typeracer" yoki "10fastfingers"dan foydalanayotganingiz ahamiyatsiz. Siz ekraningizda ko‘rayotgan so‘zlardan nusxa ko‘chiryapsiz. O‘ylab ko‘ring: har bir matn terish veb-saytida siz faqat shu ishni qilasiz. Hammasi bir xil. Agar biror so‘zni bir veb-saytda mukammal yoza olsangiz, uni boshqa veb-saytda ham xuddi shunday mukammal yoza olasiz. Miyangiz uchun bularning barchasi bir xil. Siz shunchaki matnni ko‘chirib yozyapsiz xolos.
+Qayta-qayta mashq qilish orqali. "Monkeytype", "Typeracer" yoki "10fastfingers"dan foydalanayotganingiz ahamiyatsiz. Siz ekraningizda ko‘rayotgan so‘zlardan nusxa ko‘chiryapsiz. O‘ylab ko‘ring: har bir matn terish veb-saytida siz faqat shu ishni qilasiz. Hammasi bir xil. Agar biror so‘zni bir veb-saytda mukammal yoza olsangiz, uni boshqa veb-saytda ham xuddi shunday mukammal yoza olasiz. Miyangiz uchun bularning barchasi bir xil. Siz shunchaki matnni ko‘chirib yozyapsiz xolos.
 
 Vaqt o'tib mushak xotirangiz rivojlanadi, tezlik bilan birga albatta. Bu oylar yoki, ehtimol, yillar davom etadigan ishdir.
 

@@ -1,6 +1,6 @@
 ---
 title: 18 - Grafiksiz Tizim
-description: Linux-ni faqat terminal interfeysida ishlatish orqali tizim resurslarini optimallashtirish, xavfsizlik va buglarsiz server muhitini o'rganish imkoniyatini qo'lga kiritasiz. Ba'zilar GUI-ni o'z ichiga olmaydigan minimalistik tizimni afzal ko'rishadi. Ushbu maqolada bu jarayonni qanday amalga oshirish to'g'risida gaplashamiz.
+description: GUI-ni o‘chirib, Linux-ni terminal orqali ishlatish resurslarni tejaydi va xavfsizlikni oshiradi. Ushbu maqolada, bu jarayonni qanday amalga oshirishni ko‘rib chiqamiz.
 sort: 18
 author: Khumoyun (@comoyun)
 tags:
@@ -8,7 +8,12 @@ tags:
 ---
 ![no-gui-meme](images/no-gui-meme.png)
 
-Linux-ni faqat terminal interfeysida ishlatish orqali tizim resurslarini optimallashtirish, xavfsizlik va buglarsiz server muhitini o'rganish imkoniyatini qo'lga kiritasiz. Ba'zilar GUI-ni o'z ichiga olmaydigan minimalistik tizimni afzal ko'rishadi. Ushbu maqolada bu jarayonni qanday amalga oshirish to'g'risida gaplashamiz.
+Grafik interfeys (GUI) kompyuterni boshqarishni osonlashtiradi, lekin ba'zan undan voz kechish foydali bo'ladi. Nega?
+
+- Tizim resurslarini tejaydi
+- Xavfsizlikni oshiradi
+- Serverlarni boshqarishni o'rganish imkonini beradi
+- Tizimni chuqurroq tushunishga yordam beradi
 
 Agar siz Ubuntu, Fedora yoki CentOS kabi distributiv ishlatsangiz, displey menejeri xizmatini to'xtatishingiz mumkin. Masalan, `systemctl` bilan:
 
@@ -17,7 +22,7 @@ $ sudo systemctl stop gdm # GNOME Displey menejeri
 $ sudo systemctl stop lightdm # LightDM (Ubuntu va boshqalar)
 ```
 
-## GUI avtomatik ishga tushishini oldini olish
+## GUI yuklashini bloklash
 
 Displey menejerini yuklashda avtomatik ravishda ishga tushirishni o'chirib qo'yishingiz mumkin:
 
@@ -26,10 +31,10 @@ $ sudo systemctl disable gdm # GNOME Display Manager
 $ sudo systemctl disable lightdm # LightDM
 ```
 
-Displey menejerini to'xtatgandan so'ng, GUI-ni to'liq o'chirish uchun tizimni o'chirib yoqish lozim.
+Displey menejerini to'xtagandan so'ng, GUI-ni to'liq o'chirish uchun tizimni o'chirib yoqish lozim.
 
 ![no-gui-example](images/no-gui-example.png)
 
-**Video ro'likni** afzal ko'ruvchilar uchun [xavola](https://youtu.be/mSYpy8QTxQI?si=cq0ueMUYmzXs6oTw).
+Terminal muhitida ishlash avvaliga g'alati tuyuladi. Biroq vaqt o'tishi bilan uning afzalliklarini his qila boshlaysiz. Video rolikni afzal ko'ruvchilar uchun [xavola](https://youtu.be/mSYpy8QTxQI?si=cq0ueMUYmzXs6oTw).
 
 **Keyingi dars:** [[19-dars]]

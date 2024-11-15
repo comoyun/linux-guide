@@ -78,7 +78,7 @@ Bu yerda agar `COLS` qiymati berilsa fayllarni shunga mos ravishda ekranga chiqa
 
 ![linux-xumoyun-uz-terminal](images/ls-terminal-output.png)
 
-## Sarlavha va bo'limlar
+## Sarlavha va guruxlar
 
 Sahifalar bir nechta sarlavhalarga bo'lingan. Umumiy taqsimot quyidagicha:
 
@@ -125,7 +125,7 @@ $ man -k ftp
 
 ![man-k-option](images/man-k-option.png)
 
->`whatis` buyrug'i ham guruhlarni aniqlaydi
+>[!tip] `whatis` buyrug'i ham guruhlarni aniqlaydi
 
 ## Xulosa
 

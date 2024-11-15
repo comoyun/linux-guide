@@ -10,7 +10,7 @@ tags:
 ---
 `sort` va `uniq` fayllarni manipulatsiya qilishda as qotadigan buyruqlar hisoblanadi. Xaker sifatida, 'wordlist' fayllaridagi dublikatlarni o'chirish yoki saralashni xohlaysiz. Dasturchi sifatida csv, log, dat kabi fayllarni ustun bo'yicha saralashni hoxlaysiz. Oddiy foydalanuvchi sifatida esa kontaktlar ro'yxati yoki oddiy txt fayllardagi ortiqcha qatorlarni bir zumda o'chirishni hoxlaysiz. Aynan shunday vaziyatlarda `sort` va `uniq` buyruqlari ayni muddao.
 
-## Sort
+## `sort`
 
 `sort` buyrug'i qatorlarni alifbo va raqamlar bo'yicha tartiblaydi. Aytaylik sizda "raqamlar.txt" fayli bor va u quyidagi matnga ega:
 
@@ -104,7 +104,7 @@ gilos
 anor
 ```
 
-## Uniq
+## `uniq`
 
 E'tibor bergan bo'lsangiz quyidagi "raqamlar.txt" faylida bir nechta dublikat qatorlar mavjud.
 
